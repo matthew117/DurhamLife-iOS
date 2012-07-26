@@ -7,12 +7,19 @@
 //
 
 #import "RootViewController.h"
+#import "DUDataSingleton.h"
+#import "DUEvent.h"
+#import "DUNetworkedDataProvider.h"
 
 @implementation RootViewController
+
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Browse Events"; 
+    [self performSelectorInBackground:@selector(backgroundLoadEvents) withObject:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -35,6 +42,29 @@
 	[super viewDidDisappear:animated];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    // Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+    
+    // Relinquish ownership any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    
+    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+    // For example: self.myOutlet = nil;
+}
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+#pragma mark - UITableViewDataSource Implementation
+
 /*
  // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -51,7 +81,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    DUDataSingleton *dataProvider = [DUDataSingleton instance];
+    NSMutableArray *eventList = dataProvider.eventList;
+    
+    if (eventList == nil)
+    {
+        return 0;
+    }
+    else
+    {
+        return [eventList count];
+    }
 }
 
 // Customize the appearance of table view cells.
@@ -60,13 +100,21 @@
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
+    DUDataSingleton *dataProvider = [DUDataSingleton instance];
+    NSMutableArray *eventList = dataProvider.eventList;
+    DUEvent *event = [eventList objectAtIndex:indexPath.row];
+    cell.textLabel.text = event.name; 
+    
     // Configure the cell.
     return cell;
 }
+
+#pragma mark - UITableViewDelegate Implementation
 
 /*
 // Override to support conditional editing of the table view.
@@ -120,25 +168,21 @@
 	*/
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Background Thread
+
+- (void)backgroundLoadEvents
 {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+    DUNetworkedDataProvider *networkDataAccess = [[DUNetworkedDataProvider alloc] init];
+    DUDataSingleton *dataProvider = [DUDataSingleton instance];
+    dataProvider.eventList = [[NSMutableArray alloc] init];
+    NSMutableArray *eventList = dataProvider.eventList;
     
-    // Relinquish ownership any cached data, images, etc that aren't in use.
+    [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
 }
 
-- (void)viewDidUnload
+- (void)gotLoadedEvents
 {
-    [super viewDidUnload];
-
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
+    [self.tableView reloadData];
 }
 
 @end
