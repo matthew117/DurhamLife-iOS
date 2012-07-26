@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD68C15C15E30007BB3BE /* DUUser.m */; };
+		2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */; };
 		2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
 		2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
 		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		2F7DD68B15C15E30007BB3BE /* DUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUUser.h; sourceTree = "<group>"; };
 		2F7DD68C15C15E30007BB3BE /* DUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUUser.m; sourceTree = "<group>"; };
+		2F7DD69815C16CBB007BB3BE /* DUEventXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventXMLParser.h; sourceTree = "<group>"; };
+		2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventXMLParser.m; sourceTree = "<group>"; };
 		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F7DD68F15C16C4C007BB3BE /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				2F7DD69815C16CBB007BB3BE /* DUEventXMLParser.h */,
+				2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */,
+			);
+			name = XML;
+			sourceTree = "<group>";
+		};
 		2FE12A8D15C1462000B2C6F7 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +177,7 @@
 		2FE12AD515C1488400B2C6F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F7DD68F15C16C4C007BB3BE /* XML */,
 				2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */,
 				2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */,
 				2F7DD68B15C15E30007BB3BE /* DUUser.h */,
@@ -283,6 +296,7 @@
 				2FE12AB315C1462100B2C6F7 /* RootViewController.m in Sources */,
 				2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */,
 				2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */,
+				2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
