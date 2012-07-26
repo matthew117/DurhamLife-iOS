@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD68C15C15E30007BB3BE /* DUUser.m */; };
 		2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */; };
+		2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */; };
+		2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */; };
 		2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
 		2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
 		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
@@ -42,6 +44,10 @@
 		2F7DD68C15C15E30007BB3BE /* DUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUUser.m; sourceTree = "<group>"; };
 		2F7DD69815C16CBB007BB3BE /* DUEventXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventXMLParser.h; sourceTree = "<group>"; };
 		2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventXMLParser.m; sourceTree = "<group>"; };
+		2F7DD69C15C1757D007BB3BE /* DUNetworkedDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNetworkedDataProvider.h; sourceTree = "<group>"; };
+		2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNetworkedDataProvider.m; sourceTree = "<group>"; };
+		2F7DD69F15C193C6007BB3BE /* DUDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDataSingleton.h; sourceTree = "<group>"; };
+		2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUDataSingleton.m; sourceTree = "<group>"; };
 		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +103,17 @@
 				2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */,
 			);
 			name = XML;
+			sourceTree = "<group>";
+		};
+		2F7DD69B15C17560007BB3BE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2F7DD69C15C1757D007BB3BE /* DUNetworkedDataProvider.h */,
+				2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */,
+				2F7DD69F15C193C6007BB3BE /* DUDataSingleton.h */,
+				2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		2FE12A8D15C1462000B2C6F7 = {
@@ -177,6 +194,7 @@
 		2FE12AD515C1488400B2C6F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2F7DD69B15C17560007BB3BE /* Data */,
 				2F7DD68F15C16C4C007BB3BE /* XML */,
 				2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */,
 				2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */,
@@ -297,6 +315,8 @@
 				2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */,
 				2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */,
 				2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */,
+				2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */,
+				2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
