@@ -25,6 +25,10 @@
     {
         _isNameTag = true;
     }
+    if ([elementName isEqualToString:@"descriptionHeader"])
+    {
+        
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
