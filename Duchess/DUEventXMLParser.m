@@ -27,7 +27,7 @@
     }
     if ([elementName isEqualToString:@"descriptionHeader"])
     {
-        
+        _isDescriptionHeaderTag = true;
     }
 }
 
