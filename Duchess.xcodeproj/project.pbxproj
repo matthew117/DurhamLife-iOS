@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
+		2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
+		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
+		2FE12AA715C1462100B2C6F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */; };
+		2FE12AAA15C1462100B2C6F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AA915C1462100B2C6F7 /* main.m */; };
+		2FE12AAD15C1462100B2C6F7 /* DuchessAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */; };
+		2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */; };
+		2FE12AB315C1462100B2C6F7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AB215C1462100B2C6F7 /* RootViewController.m */; };
+		2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AB415C1462100B2C6F7 /* RootViewController.xib */; };
+		2FE12ABD15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
+		2FE12ABE15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
+		2FE12ABF15C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
+		2FE12AC715C1462100B2C6F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */; };
+		2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC915C1462100B2C6F7 /* DuchessTests.h */; };
+		2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FE12AC015C1462100B2C6F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FE12A8F15C1462000B2C6F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE12A9715C1462000B2C6F7;
+			remoteInfo = Duchess;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */ = {isa = PBXFileReference; path = "Duchess-Info.plist"; sourceTree = "<group>"; };
+		2FE12AA615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */ = {isa = PBXFileReference; path = "Duchess-Prefix.pch"; sourceTree = "<group>"; };
+		2FE12AA915C1462100B2C6F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */ = {isa = PBXFileReference; path = DuchessAppDelegate.h; sourceTree = "<group>"; };
+		2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessAppDelegate.m; sourceTree = "<group>"; };
+		2FE12AAF15C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		2FE12AB115C1462100B2C6F7 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		2FE12AB215C1462100B2C6F7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		2FE12AB515C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuchessTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */ = {isa = PBXFileReference; path = "DuchessTests-Info.plist"; sourceTree = "<group>"; };
+		2FE12AC615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */ = {isa = PBXFileReference; path = "DuchessTests-Prefix.pch"; sourceTree = "<group>"; };
+		2FE12AC915C1462100B2C6F7 /* DuchessTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessTests.h; sourceTree = "<group>"; };
+		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FE12A9515C1462000B2C6F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */,
+				2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */,
+				2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE12AB815C1462100B2C6F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE12ABD15C1462100B2C6F7 /* UIKit.framework in Frameworks */,
+				2FE12ABE15C1462100B2C6F7 /* Foundation.framework in Frameworks */,
+				2FE12ABF15C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FE12A8D15C1462000B2C6F7 = {
+			isa = PBXGroup;
+			children = (
+				2FE12AA215C1462100B2C6F7 /* Duchess */,
+				2FE12AC215C1462100B2C6F7 /* DuchessTests */,
+				2FE12A9B15C1462000B2C6F7 /* Frameworks */,
+				2FE12A9915C1462000B2C6F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FE12A9915C1462000B2C6F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12A9815C1462000B2C6F7 /* Duchess.app */,
+				2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FE12A9B15C1462000B2C6F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12A9C15C1462100B2C6F7 /* UIKit.framework */,
+				2FE12A9E15C1462100B2C6F7 /* Foundation.framework */,
+				2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FE12AA215C1462100B2C6F7 /* Duchess */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */,
+				2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */,
+				2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */,
+				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
+				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
+				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
+				2FE12AA315C1462100B2C6F7 /* Supporting Files */,
+			);
+			path = Duchess;
+			sourceTree = "<group>";
+		};
+		2FE12AA315C1462100B2C6F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */,
+				2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */,
+				2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */,
+				2FE12AA915C1462100B2C6F7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FE12AC215C1462100B2C6F7 /* DuchessTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12AC915C1462100B2C6F7 /* DuchessTests.h */,
+				2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */,
+				2FE12AC315C1462100B2C6F7 /* Supporting Files */,
+			);
+			path = DuchessTests;
+			sourceTree = "<group>";
+		};
+		2FE12AC315C1462100B2C6F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */,
+				2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */,
+				2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FE12A9715C1462000B2C6F7 /* Duchess */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE12ACF15C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "Duchess" */;
+			buildPhases = (
+				2FE12A9415C1462000B2C6F7 /* Sources */,
+				2FE12A9515C1462000B2C6F7 /* Frameworks */,
+				2FE12A9615C1462000B2C6F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Duchess;
+			productName = Duchess;
+			productReference = 2FE12A9815C1462000B2C6F7 /* Duchess.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FE12ABB15C1462100B2C6F7 /* DuchessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "DuchessTests" */;
+			buildPhases = (
+				2FE12AB715C1462100B2C6F7 /* Sources */,
+				2FE12AB815C1462100B2C6F7 /* Frameworks */,
+				2FE12AB915C1462100B2C6F7 /* Resources */,
+				2FE12ABA15C1462100B2C6F7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE12AC115C1462100B2C6F7 /* PBXTargetDependency */,
+			);
+			name = DuchessTests;
+			productName = DuchessTests;
+			productReference = 2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FE12A8F15C1462000B2C6F7 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "Duchess" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2FE12A8D15C1462000B2C6F7;
+			productRefGroup = 2FE12A9915C1462000B2C6F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FE12A9715C1462000B2C6F7 /* Duchess */,
+				2FE12ABB15C1462100B2C6F7 /* DuchessTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FE12A9615C1462000B2C6F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE12AA715C1462100B2C6F7 /* InfoPlist.strings in Resources */,
+				2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */,
+				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE12AB915C1462100B2C6F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE12AC715C1462100B2C6F7 /* InfoPlist.strings in Resources */,
+				2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FE12ABA15C1462100B2C6F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FE12A9415C1462000B2C6F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE12AAA15C1462100B2C6F7 /* main.m in Sources */,
+				2FE12AAD15C1462100B2C6F7 /* DuchessAppDelegate.m in Sources */,
+				2FE12AB315C1462100B2C6F7 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE12AB715C1462100B2C6F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FE12AC115C1462100B2C6F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FE12A9715C1462000B2C6F7 /* Duchess */;
+			targetProxy = 2FE12AC015C1462100B2C6F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FE12AA615C1462100B2C6F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FE12AAF15C1462100B2C6F7 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		2FE12AB415C1462100B2C6F7 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FE12AB515C1462100B2C6F7 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FE12AC615C1462100B2C6F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FE12ACD15C1462100B2C6F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2FE12ACE15C1462100B2C6F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		2FE12AD015C1462100B2C6F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
+				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2FE12AD115C1462100B2C6F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
+				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2FE12AD315C1462100B2C6F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Duchess.app/Duchess";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DuchessTests/DuchessTests-Prefix.pch";
+				INFOPLIST_FILE = "DuchessTests/DuchessTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2FE12AD415C1462100B2C6F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Duchess.app/Duchess";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DuchessTests/DuchessTests-Prefix.pch";
+				INFOPLIST_FILE = "DuchessTests/DuchessTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "Duchess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE12ACD15C1462100B2C6F7 /* Debug */,
+				2FE12ACE15C1462100B2C6F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE12ACF15C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "Duchess" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE12AD015C1462100B2C6F7 /* Debug */,
+				2FE12AD115C1462100B2C6F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "DuchessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE12AD315C1462100B2C6F7 /* Debug */,
+				2FE12AD415C1462100B2C6F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FE12A8F15C1462000B2C6F7 /* Project object */;
+}
