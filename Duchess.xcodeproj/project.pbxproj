@@ -148,13 +148,11 @@
 		2FE12AA215C1462100B2C6F7 /* Duchess */ = {
 			isa = PBXGroup;
 			children = (
+				4785266915C1D1780075AB21 /* View */,
 				2FE12AD515C1488400B2C6F7 /* Model */,
 				2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */,
 				2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */,
 				2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */,
-				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
-				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
-				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
 				2FE12AA315C1462100B2C6F7 /* Supporting Files */,
 			);
 			path = Duchess;
@@ -202,6 +200,16 @@
 				2F7DD68C15C15E30007BB3BE /* DUUser.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		4785266915C1D1780075AB21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
+				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
+				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +423,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
 				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,6 +437,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
 				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
