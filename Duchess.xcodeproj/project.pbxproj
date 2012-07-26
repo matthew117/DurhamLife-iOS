@@ -39,20 +39,20 @@
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */ = {isa = PBXFileReference; path = "Duchess-Info.plist"; sourceTree = "<group>"; };
+		2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Duchess-Info.plist"; sourceTree = "<group>"; };
 		2FE12AA615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */ = {isa = PBXFileReference; path = "Duchess-Prefix.pch"; sourceTree = "<group>"; };
+		2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Duchess-Prefix.pch"; sourceTree = "<group>"; };
 		2FE12AA915C1462100B2C6F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */ = {isa = PBXFileReference; path = DuchessAppDelegate.h; sourceTree = "<group>"; };
+		2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessAppDelegate.h; sourceTree = "<group>"; };
 		2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessAppDelegate.m; sourceTree = "<group>"; };
 		2FE12AAF15C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		2FE12AB115C1462100B2C6F7 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		2FE12AB115C1462100B2C6F7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2FE12AB215C1462100B2C6F7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2FE12AB515C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuchessTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */ = {isa = PBXFileReference; path = "DuchessTests-Info.plist"; sourceTree = "<group>"; };
+		2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DuchessTests-Info.plist"; sourceTree = "<group>"; };
 		2FE12AC615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */ = {isa = PBXFileReference; path = "DuchessTests-Prefix.pch"; sourceTree = "<group>"; };
+		2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DuchessTests-Prefix.pch"; sourceTree = "<group>"; };
 		2FE12AC915C1462100B2C6F7 /* DuchessTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessTests.h; sourceTree = "<group>"; };
 		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
