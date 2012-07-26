@@ -22,6 +22,7 @@
 		2FE12AC715C1462100B2C6F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */; };
 		2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC915C1462100B2C6F7 /* DuchessTests.h */; };
 		2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */; };
+		2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DuchessTests-Prefix.pch"; sourceTree = "<group>"; };
 		2FE12AC915C1462100B2C6F7 /* DuchessTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessTests.h; sourceTree = "<group>"; };
 		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
+		2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEvent.h; sourceTree = "<group>"; };
+		2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 		2FE12AA215C1462100B2C6F7 /* Duchess */ = {
 			isa = PBXGroup;
 			children = (
+				2FE12AD515C1488400B2C6F7 /* Model */,
 				2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */,
 				2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */,
 				2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */,
@@ -153,6 +157,15 @@
 				2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FE12AD515C1488400B2C6F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */,
+				2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +276,7 @@
 				2FE12AAA15C1462100B2C6F7 /* main.m in Sources */,
 				2FE12AAD15C1462100B2C6F7 /* DuchessAppDelegate.m in Sources */,
 				2FE12AB315C1462100B2C6F7 /* RootViewController.m in Sources */,
+				2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
