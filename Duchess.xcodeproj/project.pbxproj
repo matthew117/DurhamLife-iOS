@@ -11,6 +11,7 @@
 		2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */; };
 		2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */; };
 		2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */; };
+		2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */; };
 		2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
 		2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
 		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
@@ -48,6 +49,7 @@
 		2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNetworkedDataProvider.m; sourceTree = "<group>"; };
 		2F7DD69F15C193C6007BB3BE /* DUDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDataSingleton.h; sourceTree = "<group>"; };
 		2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUDataSingleton.m; sourceTree = "<group>"; };
+		2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUCustomEventTableViewCell.xib; sourceTree = "<group>"; };
 		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -208,6 +210,7 @@
 				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
 				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
 				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
+				2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				2FE12AA715C1462100B2C6F7 /* InfoPlist.strings in Resources */,
 				2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */,
 				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
+				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
