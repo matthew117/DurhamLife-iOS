@@ -12,13 +12,14 @@
 #import "DUNetworkedDataProvider.h"
 
 @implementation RootViewController
+@synthesize customTableViewCell;
 
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Browse Events"; 
+    self.title = @"Browse Events";
     [self performSelectorInBackground:@selector(backgroundLoadEvents) withObject:nil];
 }
 
@@ -52,6 +53,7 @@
 
 - (void)viewDidUnload
 {
+    [self setCustomTableViewCell:nil];
     [super viewDidUnload];
     
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
@@ -60,6 +62,7 @@
 
 - (void)dealloc
 {
+    [customTableViewCell release];
     [super dealloc];
 }
 
@@ -97,24 +100,63 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"CustomCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        [[NSBundle mainBundle] loadNibNamed:@"DUCustomEventTableViewCell" owner:self options:nil];
+        cell = customTableViewCell;
+        self.customTableViewCell = nil;
     }
 
     DUDataSingleton *dataProvider = [DUDataSingleton instance];
     NSMutableArray *eventList = dataProvider.eventList;
     DUEvent *event = [eventList objectAtIndex:indexPath.row];
-    cell.textLabel.text = event.name; 
     
-    // Configure the cell.
+    UILabel *eventNameLabel;
+    eventNameLabel = (UILabel *)[cell viewWithTag:1];
+    eventNameLabel.text = event.name;
+    
+    UILabel *eventAddressLabel;
+    eventAddressLabel = (UILabel *)[cell viewWithTag:2];
+    eventAddressLabel.text = event.address1;
+    
+    UILabel *eventDateLabel;
+    eventDateLabel = (UILabel *)[cell viewWithTag:3];
+    NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:@"d MMMM"]; 
+    
+    NSLog(@"%@", event.startDate);
+    
+    NSString *eventStartDateStr = [formatter stringFromDate:event.startDate];
+    NSString *eventEndDateStr = [formatter stringFromDate:event.endDate];
+    eventDateLabel.text = [NSString stringWithFormat:@"%@ until %@", eventStartDateStr, eventEndDateStr];
+    
+    UILabel *eventDescriptionLabel;
+    eventDescriptionLabel = (UILabel *)[cell viewWithTag:4];
+    eventDescriptionLabel.text = event.descriptionHeader;
+    
+    UILabel *eventReviewsLabel;
+    eventReviewsLabel = (UILabel *)[cell viewWithTag:5];
+    NSMutableString *stars = [[NSMutableString alloc] init];
+    for (int i = 0; i < event.averageReview; i++)
+    {
+        [stars appendString:@"*"];
+    }
+    eventReviewsLabel.text = [NSString stringWithFormat:@"%@", stars];
+    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate Implementation
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGFloat cellHeight;
+    cellHeight = 120.0f;
+    return cellHeight;
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -172,12 +214,14 @@
 
 - (void)backgroundLoadEvents
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     DUNetworkedDataProvider *networkDataAccess = [[DUNetworkedDataProvider alloc] init];
     DUDataSingleton *dataProvider = [DUDataSingleton instance];
     dataProvider.eventList = [[NSMutableArray alloc] init];
     NSMutableArray *eventList = dataProvider.eventList;
     
     [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
+    [pool release];
 }
 
 - (void)gotLoadedEvents

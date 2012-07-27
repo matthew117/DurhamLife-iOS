@@ -10,7 +10,9 @@
 
 @interface RootViewController : UITableViewController {
 
+    UITableViewCell *customTableViewCell;
 }
 
+@property (nonatomic, assign) IBOutlet UITableViewCell *customTableViewCell;
 
 @end
