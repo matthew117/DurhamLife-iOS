@@ -12,6 +12,10 @@
 		2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */; };
 		2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */; };
 		2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */; };
+		2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */; };
+		2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */; };
+		2FCCAE2415C2E7D700CC3D61 /* DUEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */; };
+		2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */; };
 		2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
 		2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
 		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
@@ -50,6 +54,12 @@
 		2F7DD69F15C193C6007BB3BE /* DUDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDataSingleton.h; sourceTree = "<group>"; };
 		2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUDataSingleton.m; sourceTree = "<group>"; };
 		2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUCustomEventTableViewCell.xib; sourceTree = "<group>"; };
+		2FCCAE1A15C2DA9E00CC3D61 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2FCCAE2115C2E7D600CC3D61 /* DUEventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventDetailsViewController.h; sourceTree = "<group>"; };
+		2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventDetailsViewController.m; sourceTree = "<group>"; };
+		2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUEventDetailsViewController.xib; sourceTree = "<group>"; };
 		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */,
 				2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */,
 				2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */,
 				2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */,
@@ -140,6 +151,7 @@
 		2FE12A9B15C1462000B2C6F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */,
 				2FE12A9C15C1462100B2C6F7 /* UIKit.framework */,
 				2FE12A9E15C1462100B2C6F7 /* Foundation.framework */,
 				2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */,
@@ -163,6 +175,8 @@
 		2FE12AA315C1462100B2C6F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2FCCAE1A15C2DA9E00CC3D61 /* Reachability.h */,
+				2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */,
 				2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */,
 				2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */,
 				2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */,
@@ -211,6 +225,9 @@
 				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
 				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
 				2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */,
+				2FCCAE2115C2E7D600CC3D61 /* DUEventDetailsViewController.h */,
+				2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */,
+				2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -286,6 +303,7 @@
 				2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */,
 				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
 				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
+				2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +347,8 @@
 				2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */,
 				2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */,
 				2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */,
+				2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */,
+				2FCCAE2415C2E7D700CC3D61 /* DUEventDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 
 @synthesize window=_window;
 @synthesize navigationController=_navigationController;
+@synthesize currentEvent = _currentEvent;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

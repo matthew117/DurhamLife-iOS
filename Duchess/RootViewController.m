@@ -10,6 +10,9 @@
 #import "DUDataSingleton.h"
 #import "DUEvent.h"
 #import "DUNetworkedDataProvider.h"
+#import "Reachability.h"
+#import "DUEventDetailsViewController.h"
+#import "DuchessAppDelegate.h"
 
 @implementation RootViewController
 @synthesize customTableViewCell;
@@ -20,7 +23,22 @@
 {
     [super viewDidLoad];
     self.title = @"Browse Events";
-    [self performSelectorInBackground:@selector(backgroundLoadEvents) withObject:nil];
+    
+    Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    
+    activityView = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
+    [self.view addSubview: activityView];
+    activityView.center = self.view.center; 
+    if (status == NotReachable)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Network Problem" message:@"Could not connect to the Internet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    else
+    {
+        [activityView startAnimating];
+        [self performSelectorInBackground:@selector(backgroundLoadEvents) withObject:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -127,8 +145,6 @@
     NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateFormat:@"d MMMM"]; 
     
-    NSLog(@"%@", event.startDate);
-    
     NSString *eventStartDateStr = [formatter stringFromDate:event.startDate];
     NSString *eventEndDateStr = [formatter stringFromDate:event.endDate];
     eventDateLabel.text = [NSString stringWithFormat:@"%@ until %@", eventStartDateStr, eventEndDateStr];
@@ -201,13 +217,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
+    DuchessAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    delegate.currentEvent = indexPath.row;
+    
+    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsViewController" bundle:nil];
+
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
-	*/
 }
 
 #pragma mark - Background Thread
@@ -226,6 +242,7 @@
 
 - (void)gotLoadedEvents
 {
+    [activityView stopAnimating];
     [self.tableView reloadData];
 }
 
