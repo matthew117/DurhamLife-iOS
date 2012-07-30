@@ -220,7 +220,7 @@
     DuchessAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     delegate.currentEvent = indexPath.row;
     
-    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsViewController" bundle:nil];
+    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsTabRoot" bundle:nil];
 
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];

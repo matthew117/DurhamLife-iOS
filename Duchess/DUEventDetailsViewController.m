@@ -57,17 +57,52 @@
     linearLayoutView.orientation = CSLinearLayoutViewOrientationVertical;
     [self.view addSubview:linearLayoutView];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
-    label.text = @"Hello";
+    UILabel *eventNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 310, 20)];
+    eventNameLabel.textAlignment = UITextAlignmentCenter;
+    eventNameLabel.text = event.name;
+    [eventNameLabel setBackgroundColor:[UIColor clearColor]];
+    [eventNameLabel setTextColor:[UIColor whiteColor]];
+    eventNameLabel.font = [UIFont boldSystemFontOfSize:18];
+    
+    UILabel *eventDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
+    eventDescriptionLabel.numberOfLines = 0;
+    eventDescriptionLabel.lineBreakMode = UILineBreakModeWordWrap;
+    [eventDescriptionLabel setBackgroundColor:[UIColor clearColor]];
+    [eventDescriptionLabel setTextColor:[UIColor blackColor]];
+    eventDescriptionLabel.font = [UIFont systemFontOfSize:15];
+    eventDescriptionLabel.adjustsFontSizeToFitWidth = NO;
+    eventDescriptionLabel.text = event.descriptionHeader;
+    [eventDescriptionLabel sizeToFit];
+    
+    
+    
+    CGRect frame = eventDescriptionLabel.bounds;
+    
+    UIView *whiteView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 305, frame.size.height + 10)];
+    
+    NSLog(@"Frame: {x: %f, y: %f, width: %f, height: %f}", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
+    
+    whiteView.backgroundColor = [UIColor whiteColor];
+    whiteView.layer.cornerRadius = 10;
+    [whiteView addSubview:eventDescriptionLabel];
+    eventDescriptionLabel.center = whiteView.center;
     
     // create a layout item for the view you want to display
-    CSLinearLayoutItem *item = [CSLinearLayoutItem layoutItemForView:label];
-    //item.padding = CSLinearLayoutMakePadding(5.0, 10.0, 5.0, 10.0);
-    item.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
-    item.fillMode = CSLinearLayoutItemFillModeNormal;
+    CSLinearLayoutItem *nameItem = [CSLinearLayoutItem layoutItemForView:eventNameLabel];
+    nameItem.padding = CSLinearLayoutMakePadding(5.0, 5.0, 5.0, 5.0);
+    nameItem.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
+    nameItem.fillMode = CSLinearLayoutItemFillModeNormal;
+    
+    CSLinearLayoutItem *descriptionLabel = [CSLinearLayoutItem layoutItemForView:whiteView];
+    descriptionLabel.padding = CSLinearLayoutMakePadding(0, 5.0, 0, 5.0);
+    descriptionLabel.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
+    descriptionLabel.fillMode = CSLinearLayoutItemFillModeNormal;
+
     
     // add the layout item to the linear layout view
-    [linearLayoutView addItem:item];
+    [linearLayoutView addItem:nameItem];
+    [linearLayoutView addItem:descriptionLabel];
+    NSLog(@"Frame: {x: %f, y: %f, width: %f, height: %f}", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
 }
 
 - (void)viewDidUnload
