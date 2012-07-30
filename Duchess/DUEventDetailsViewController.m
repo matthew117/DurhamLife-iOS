@@ -10,10 +10,11 @@
 #import "DuchessAppDelegate.h"
 #import "DUDataSingleton.h"
 #import "DUEvent.h"
+#import <QuartzCore/QuartzCore.h>
+#import "CSLinearLayoutView.h"
+#import "CSLinearLayoutItem.h"
 
 @implementation DUEventDetailsViewController
-@synthesize eventNameLabel;
-@synthesize eventDescriptionLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,8 +27,6 @@
 
 - (void)dealloc
 {
-    [eventNameLabel release];
-    [eventDescriptionLabel release];
     [super dealloc];
 }
 
@@ -53,14 +52,26 @@
     NSMutableArray *eventList = dataProvider.eventList;
     DUEvent *event = [eventList objectAtIndex:delegate.currentEvent];
     
-    eventNameLabel.text = event.name;
-    eventDescriptionLabel.text = event.descriptionHeader;
+    // create the linear layout view
+    CSLinearLayoutView *linearLayoutView = [[[CSLinearLayoutView alloc] initWithFrame:self.view.bounds] autorelease];
+    linearLayoutView.orientation = CSLinearLayoutViewOrientationVertical;
+    [self.view addSubview:linearLayoutView];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    label.text = @"Hello";
+    
+    // create a layout item for the view you want to display
+    CSLinearLayoutItem *item = [CSLinearLayoutItem layoutItemForView:label];
+    //item.padding = CSLinearLayoutMakePadding(5.0, 10.0, 5.0, 10.0);
+    item.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
+    item.fillMode = CSLinearLayoutItemFillModeNormal;
+    
+    // add the layout item to the linear layout view
+    [linearLayoutView addItem:item];
 }
 
 - (void)viewDidUnload
 {
-    [self setEventNameLabel:nil];
-    [self setEventDescriptionLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

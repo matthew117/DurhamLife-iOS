@@ -32,6 +32,8 @@
 		2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC915C1462100B2C6F7 /* DuchessTests.h */; };
 		2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */; };
 		2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */; };
+		470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
+		470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,10 @@
 		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
 		2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEvent.h; sourceTree = "<group>"; };
 		2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEvent.m; sourceTree = "<group>"; };
+		470F860715C5D87B0073AD88 /* CSLinearLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutItem.h; sourceTree = "<group>"; };
+		470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutItem.m; sourceTree = "<group>"; };
+		470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutView.h; sourceTree = "<group>"; };
+		470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,10 @@
 		2FE12AA315C1462100B2C6F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				470F860715C5D87B0073AD88 /* CSLinearLayoutItem.h */,
+				470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */,
+				470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */,
+				470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */,
 				2FCCAE1A15C2DA9E00CC3D61 /* Reachability.h */,
 				2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */,
 				2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */,
@@ -357,6 +367,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */,
+				470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */,
+				470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

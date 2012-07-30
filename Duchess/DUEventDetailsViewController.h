@@ -8,13 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface DUEventDetailsViewController : UIViewController {
     
-    UILabel *eventNameLabel;
-    UILabel *eventDescriptionLabel;
 }
-@property (nonatomic, retain) IBOutlet UILabel *eventNameLabel;
-@property (nonatomic, retain) IBOutlet UILabel *eventDescriptionLabel;
 
 @end
