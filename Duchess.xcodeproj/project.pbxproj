@@ -10,8 +10,6 @@
 		2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */; };
 		2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
-		2F4E62E915C6BF12008815F9 /* college.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E62E815C6BF12008815F9 /* college.png */; };
-		2F4E62EB15C6C113008815F9 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E62EA15C6C113008815F9 /* grid.png */; };
 		2F4E632915C6D553008815F9 /* DUEventDetailsTabRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */; };
 		2F4E632A15C6D553008815F9 /* DUEventDetailsTabRoot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E632815C6D553008815F9 /* DUEventDetailsTabRoot.xib */; };
 		2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD68C15C15E30007BB3BE /* DUUser.m */; };
@@ -58,8 +56,6 @@
 
 /* Begin PBXFileReference section */
 		2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2F4E62E815C6BF12008815F9 /* college.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = college.png; sourceTree = "<group>"; };
-		2F4E62EA15C6C113008815F9 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		2F4E632615C6D552008815F9 /* DUEventDetailsTabRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventDetailsTabRoot.h; sourceTree = "<group>"; };
 		2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventDetailsTabRoot.m; sourceTree = "<group>"; };
 		2F4E632815C6D553008815F9 /* DUEventDetailsTabRoot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUEventDetailsTabRoot.xib; sourceTree = "<group>"; };
@@ -141,8 +137,6 @@
 		2F4E632B15C6E3D9008815F9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				2F4E62EA15C6C113008815F9 /* grid.png */,
-				2F4E62E815C6BF12008815F9 /* college.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -357,8 +351,6 @@
 				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
 				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
 				2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */,
-				2F4E62E915C6BF12008815F9 /* college.png in Resources */,
-				2F4E62EB15C6C113008815F9 /* grid.png in Resources */,
 				2F4E632A15C6D553008815F9 /* DUEventDetailsTabRoot.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

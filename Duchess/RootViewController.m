@@ -138,7 +138,7 @@
     
     UILabel *eventAddressLabel;
     eventAddressLabel = (UILabel *)[cell viewWithTag:2];
-    eventAddressLabel.text = event.address1;
+    eventAddressLabel.text = event.location.address1;
     
     UILabel *eventDateLabel;
     eventDateLabel = (UILabel *)[cell viewWithTag:3];
