@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DUEvent.h"
+#import "DULocation.h"
 
 @interface DUEventXMLParser : NSObject <NSXMLParserDelegate>
 {
@@ -15,6 +16,7 @@
     
     @private
     DUEvent *_currentEvent;
+    DULocation *_currentLocation;
     NSMutableArray *_currentCategories;
     
     BOOL _isNameTag;
@@ -39,6 +41,7 @@
     BOOL _isAssociatedCollegeTag;
     BOOL _isAssociatedSocietyTag;
     BOOL _isEventScopeTag;
+    BOOL _isEventPrivacyTag;
     BOOL _isCategoryTag;
 }
 

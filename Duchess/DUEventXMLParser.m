@@ -70,6 +70,12 @@
     {
         _isICalURLTag = true;
     }
+    else if ([elementName isEqualToString:@"location"])
+    {
+        _currentLocation = [[DULocation alloc] init];
+        NSString *locationID = [attributeDict objectForKey:@"id"];
+        _currentLocation.locationID = [locationID integerValue];
+    }
     else if ([elementName isEqualToString:@"address1"])
     {
         _isAddress1Tag = true;
@@ -109,6 +115,10 @@
     else if ([elementName isEqualToString:@"eventScope"])
     {
         _isEventScopeTag = true;
+    }
+    else if ([elementName isEqualToString:@"eventPrivacy"])
+    {
+        _isEventPrivacyTag = true;
     }
     else if ([elementName isEqualToString:@"category"])
     {
@@ -178,6 +188,12 @@
     {
         _isICalURLTag = false;
     }
+    else if ([elementName isEqualToString:@"location"])
+    {
+        _currentEvent.location = _currentLocation;
+        _currentLocation = nil;
+        [_currentLocation release];
+    }
     else if ([elementName isEqualToString:@"address1"])
     {
         _isAddress1Tag = false;
@@ -217,6 +233,10 @@
     else if ([elementName isEqualToString:@"eventScope"])
     {
         _isEventScopeTag = false;
+    }
+    else if ([elementName isEqualToString:@"eventPrivacy"])
+    {
+        _isEventPrivacyTag = false;
     }
     else if ([elementName isEqualToString:@"category"])
     {
@@ -282,27 +302,27 @@
     }
     else if (_isAddress1Tag)
     {
-        _currentEvent.address1 = [NSString stringWithString:string];
+        _currentLocation.address1 = [NSString stringWithString:string];
     }
     else if (_isAddress2Tag)
     {
-        _currentEvent.address2 = [NSString stringWithString:string];
+        _currentLocation.address2 = [NSString stringWithString:string];
     }
     else if (_isCityTag)
     {
-        _currentEvent.city = [NSString stringWithString:string];
+        _currentLocation.city = [NSString stringWithString:string];
     }
     else if (_isPostcodeTag)
     {
-        _currentEvent.postcode = [NSString stringWithString:string];
+        _currentLocation.postcode = [NSString stringWithString:string];
     }
     else if (_isLatitudeTag)
     {
-        _currentEvent.latitude = [NSString stringWithString:string];
+        _currentLocation.latitude = [NSString stringWithString:string];
     }
     else if (_isLongitudeTag)
     {
-        _currentEvent.longitude = [NSString stringWithString:string];
+        _currentLocation.longitude = [NSString stringWithString:string];
     }
     else if (_isAverageReviewTag)
     {
@@ -322,6 +342,11 @@
         if ([string isEqualToString:@"University"]) _currentEvent.eventScope = UNIVERSITY;
         if ([string isEqualToString:@"College"]) _currentEvent.eventScope = COLLEGE;
         if ([string isEqualToString:@"Society"]) _currentEvent.eventScope = SOCIETY;
+    }
+    else if (_isEventPrivacyTag)
+    {
+        if ([string isEqualToString:@"Open"]) _currentEvent.eventPrivacy = OPEN;
+        if ([string isEqualToString:@"Private"]) _currentEvent.eventPrivacy = PRIVATE;
     }
 }
 
