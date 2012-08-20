@@ -11,7 +11,7 @@
 @interface RootViewController : UITableViewController {
 
     UITableViewCell *customTableViewCell;
-    UIActivityIndicatorView *activityView;
+    UIActivityIndicatorView *downloadActivityIndicator;
 }
 
 @property (nonatomic, assign) IBOutlet UITableViewCell *customTableViewCell;

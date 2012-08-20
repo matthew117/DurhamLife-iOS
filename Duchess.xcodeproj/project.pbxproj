@@ -42,6 +42,8 @@
 		2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */; };
 		470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
+		478CCEB115E2C3E400419CD7 /* DUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */; };
+		478CCEB215E2C3E400419CD7 /* DUDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478CCEB015E2C3E400419CD7 /* DUDashboardViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,9 @@
 		470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutItem.m; sourceTree = "<group>"; };
 		470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutView.h; sourceTree = "<group>"; };
 		470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutView.m; sourceTree = "<group>"; };
+		478CCEAE15E2C3E400419CD7 /* DUDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUDashboardViewController.h; path = ../DUDashboardViewController.h; sourceTree = "<group>"; };
+		478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUDashboardViewController.m; path = ../DUDashboardViewController.m; sourceTree = "<group>"; };
+		478CCEB015E2C3E400419CD7 /* DUDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUDashboardViewController.xib; path = ../DUDashboardViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +270,9 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				478CCEAE15E2C3E400419CD7 /* DUDashboardViewController.h */,
+				478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */,
+				478CCEB015E2C3E400419CD7 /* DUDashboardViewController.xib */,
 				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
 				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
 				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
@@ -323,6 +331,9 @@
 /* Begin PBXProject section */
 		2FE12A8F15C1462000B2C6F7 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+			};
 			buildConfigurationList = 2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "Duchess" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -352,6 +363,7 @@
 				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
 				2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */,
 				2F4E632A15C6D553008815F9 /* DUEventDetailsTabRoot.xib in Resources */,
+				478CCEB215E2C3E400419CD7 /* DUDashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +415,7 @@
 				2FDC2FC715E237DB0026B917 /* DUReview.m in Sources */,
 				2FDC2FCA15E23D440026B917 /* DUSociety.m in Sources */,
 				2FDC2FCD15E244480026B917 /* DULocation.m in Sources */,
+				478CCEB115E2C3E400419CD7 /* DUDashboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +517,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
@@ -519,6 +533,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
@@ -539,6 +554,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DuchessTests/DuchessTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DuchessTests/DuchessTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -561,6 +577,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DuchessTests/DuchessTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DuchessTests/DuchessTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
