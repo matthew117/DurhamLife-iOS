@@ -23,17 +23,13 @@
 @synthesize imageURL = _imageURL;
 @synthesize adImageURL = _adImageURL;
 @synthesize iCalURL = _iCalURL;
-@synthesize address1 = _address1;
-@synthesize address2 = _address2;
-@synthesize city = _city;
-@synthesize postcode = _postcode;
-@synthesize latitude = _latitude;
-@synthesize longitude = _longitude;
+@synthesize location = _location;
 @synthesize numberOfReviews = _numberOfReviews;
 @synthesize averageReview = _averageReview;
 @synthesize associatedCollege = _associatedCollege;
 @synthesize associatedSociety = _associatedSociety;
 @synthesize eventScope = _eventScope;
+@synthesize eventPrivacy = _eventPrivacy;
 @synthesize categories = _categories;
 
 @end

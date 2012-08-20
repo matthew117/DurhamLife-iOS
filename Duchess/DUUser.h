@@ -21,13 +21,13 @@
     NSMutableArray *_subscribedSocities;
 }
 
-@property (nonatomic)         NSInteger  userID;
-@property (nonatomic, retain) NSString  *forename;
-@property (nonatomic, retain) NSString  *surname;
-@property (nonatomic, retain) NSString  *email;
-@property (nonatomic, retain) NSString  *department;
-@property (nonatomic, retain) NSString  *college;
-@property (nonatomic, retain) NSMutableArray *categoryPreferences;
-@property (nonatomic, retain) NSMutableArray *subscribedSocities;
+@property (nonatomic)        NSInteger  userID;
+@property (nonatomic,retain) NSString  *forename;
+@property (nonatomic,retain) NSString  *surname;
+@property (nonatomic,retain) NSString  *email;
+@property (nonatomic,retain) NSString  *department;
+@property (nonatomic,retain) NSString  *college;
+@property (nonatomic,retain) NSMutableArray *categoryPreferences;
+@property (nonatomic,retain) NSMutableArray *subscribedSocities;
 
 @end

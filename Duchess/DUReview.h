@@ -2,8 +2,8 @@
 //  DUReview.h
 //  Duchess
 //
-//  Created by App Dev on 20/08/2012.
-//
+//  Created by Matthew Bates on 20/08/2012.
+//  Copyright 2012 Durham University. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -22,4 +22,5 @@
 @property (nonatomic)        NSInteger  rating;
 @property (nonatomic,retain) NSString  *comment;
 @property (nonatomic,retain) NSDate    *timestamp;
+
 @end
