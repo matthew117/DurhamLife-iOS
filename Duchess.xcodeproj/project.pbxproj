@@ -506,6 +506,7 @@
 				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
 				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
