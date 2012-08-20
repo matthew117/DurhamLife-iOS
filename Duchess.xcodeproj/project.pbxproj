@@ -10,8 +10,6 @@
 		2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */; };
 		2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
-		2F4E62E615C6B331008815F9 /* DUUserHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E62E415C6B331008815F9 /* DUUserHub.m */; };
-		2F4E62E715C6B331008815F9 /* DUUserHub.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E62E515C6B331008815F9 /* DUUserHub.xib */; };
 		2F4E62E915C6BF12008815F9 /* college.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E62E815C6BF12008815F9 /* college.png */; };
 		2F4E62EB15C6C113008815F9 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E62EA15C6C113008815F9 /* grid.png */; };
 		2F4E632915C6D553008815F9 /* DUEventDetailsTabRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */; };
@@ -25,6 +23,8 @@
 		2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */; };
 		2FCCAE2415C2E7D700CC3D61 /* DUEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */; };
 		2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */; };
+		2FDC2FC415E2347B0026B917 /* DUDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC2FC315E2347B0026B917 /* DUDashboard.xib */; };
+		2FDC2FC715E237DB0026B917 /* DUReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FDC2FC615E237DB0026B917 /* DUReview.m */; };
 		2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
 		2FE12A9F15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
 		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
@@ -57,9 +57,6 @@
 
 /* Begin PBXFileReference section */
 		2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2F4E62E315C6B331008815F9 /* DUUserHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUUserHub.h; sourceTree = "<group>"; };
-		2F4E62E415C6B331008815F9 /* DUUserHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUUserHub.m; sourceTree = "<group>"; };
-		2F4E62E515C6B331008815F9 /* DUUserHub.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUUserHub.xib; sourceTree = "<group>"; };
 		2F4E62E815C6BF12008815F9 /* college.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = college.png; sourceTree = "<group>"; };
 		2F4E62EA15C6C113008815F9 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		2F4E632615C6D552008815F9 /* DUEventDetailsTabRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventDetailsTabRoot.h; sourceTree = "<group>"; };
@@ -80,6 +77,9 @@
 		2FCCAE2115C2E7D600CC3D61 /* DUEventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventDetailsViewController.h; sourceTree = "<group>"; };
 		2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventDetailsViewController.m; sourceTree = "<group>"; };
 		2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUEventDetailsViewController.xib; sourceTree = "<group>"; };
+		2FDC2FC315E2347B0026B917 /* DUDashboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUDashboard.xib; sourceTree = "<group>"; };
+		2FDC2FC515E237DB0026B917 /* DUReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReview.h; sourceTree = "<group>"; };
+		2FDC2FC615E237DB0026B917 /* DUReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReview.m; sourceTree = "<group>"; };
 		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,6 +166,7 @@
 		2FE12A8D15C1462000B2C6F7 = {
 			isa = PBXGroup;
 			children = (
+				2FDC2FC315E2347B0026B917 /* DUDashboard.xib */,
 				2FE12AA215C1462100B2C6F7 /* Duchess */,
 				2FE12AC215C1462100B2C6F7 /* DuchessTests */,
 				2FE12A9B15C1462000B2C6F7 /* Frameworks */,
@@ -254,6 +255,8 @@
 				2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */,
 				2F7DD68B15C15E30007BB3BE /* DUUser.h */,
 				2F7DD68C15C15E30007BB3BE /* DUUser.m */,
+				2FDC2FC515E237DB0026B917 /* DUReview.h */,
+				2FDC2FC615E237DB0026B917 /* DUReview.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -271,9 +274,6 @@
 				2F4E632615C6D552008815F9 /* DUEventDetailsTabRoot.h */,
 				2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */,
 				2F4E632815C6D553008815F9 /* DUEventDetailsTabRoot.xib */,
-				2F4E62E315C6B331008815F9 /* DUUserHub.h */,
-				2F4E62E415C6B331008815F9 /* DUUserHub.m */,
-				2F4E62E515C6B331008815F9 /* DUUserHub.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -350,10 +350,10 @@
 				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
 				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
 				2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */,
-				2F4E62E715C6B331008815F9 /* DUUserHub.xib in Resources */,
 				2F4E62E915C6BF12008815F9 /* college.png in Resources */,
 				2F4E62EB15C6C113008815F9 /* grid.png in Resources */,
 				2F4E632A15C6D553008815F9 /* DUEventDetailsTabRoot.xib in Resources */,
+				2FDC2FC415E2347B0026B917 /* DUDashboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +401,8 @@
 				2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */,
 				2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */,
 				2FCCAE2415C2E7D700CC3D61 /* DUEventDetailsViewController.m in Sources */,
-				2F4E62E615C6B331008815F9 /* DUUserHub.m in Sources */,
 				2F4E632915C6D553008815F9 /* DUEventDetailsTabRoot.m in Sources */,
+				2FDC2FC715E237DB0026B917 /* DUReview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
