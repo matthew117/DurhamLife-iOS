@@ -6,9 +6,9 @@
 //  Copyright 2012 Durham University. All rights reserved.
 //
 
-#import "DuchessAppDelegate.h"
+#import "DUAppDelegate.h"
 
-@implementation DuchessAppDelegate
+@implementation DUAppDelegate
 
 @synthesize window = _window;
 @synthesize navigationController = _navigationController;
@@ -62,11 +62,5 @@
      */
 }
 
-- (void)dealloc
-{
-    [_window release];
-    [_navigationController release];
-    [super dealloc];
-}
 
 @end

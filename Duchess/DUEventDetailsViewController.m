@@ -7,28 +7,26 @@
 //
 
 #import "DUEventDetailsViewController.h"
-#import "DuchessAppDelegate.h"
+#import "DUAppDelegate.h"
 #import "DUDataSingleton.h"
 #import "DUEvent.h"
 #import <QuartzCore/QuartzCore.h>
 #import "CSLinearLayoutView.h"
 #import "CSLinearLayoutItem.h"
+#import "DURoundedBorderLabel.h"
 
 @implementation DUEventDetailsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -46,14 +44,14 @@
     self.title = @"Event Details";
     // Do any additional setup after loading the view from its nib.
     
-    DuchessAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     DUDataSingleton *dataProvider = [DUDataSingleton instance];
     NSMutableArray *eventList = dataProvider.eventList;
     DUEvent *event = [eventList objectAtIndex:delegate.currentEvent];
     
     // create the linear layout view
-    CSLinearLayoutView *linearLayoutView = [[[CSLinearLayoutView alloc] initWithFrame:self.view.bounds] autorelease];
+    CSLinearLayoutView *linearLayoutView = [[CSLinearLayoutView alloc] initWithFrame:self.view.bounds];
     linearLayoutView.orientation = CSLinearLayoutViewOrientationVertical;
     [self.view addSubview:linearLayoutView];
     
@@ -64,28 +62,12 @@
     [eventNameLabel setTextColor:[UIColor whiteColor]];
     eventNameLabel.font = [UIFont boldSystemFontOfSize:18];
     
-    UILabel *eventDescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 20)];
-    eventDescriptionLabel.numberOfLines = 0;
-    eventDescriptionLabel.lineBreakMode = UILineBreakModeWordWrap;
-    [eventDescriptionLabel setBackgroundColor:[UIColor clearColor]];
+    DURoundedBorderLabel *eventDescriptionLabel = [[DURoundedBorderLabel alloc] init];
+    [eventDescriptionLabel setBackgroundColor:[UIColor whiteColor]];
     [eventDescriptionLabel setTextColor:[UIColor blackColor]];
-    eventDescriptionLabel.font = [UIFont systemFontOfSize:15];
-    eventDescriptionLabel.adjustsFontSizeToFitWidth = NO;
     eventDescriptionLabel.text = event.descriptionHeader;
-    [eventDescriptionLabel sizeToFit];
-    
-    
-    
-    CGRect frame = eventDescriptionLabel.bounds;
-    
-    UIView *whiteView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 305, frame.size.height + 10)];
-    
-    NSLog(@"Frame: {x: %f, y: %f, width: %f, height: %f}", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
-    
-    whiteView.backgroundColor = [UIColor whiteColor];
-    whiteView.layer.cornerRadius = 10;
-    [whiteView addSubview:eventDescriptionLabel];
-    eventDescriptionLabel.center = whiteView.center;
+    eventDescriptionLabel.font = [UIFont systemFontOfSize:15];
+    [eventDescriptionLabel sizeToFitFixedWidth:300.0];
     
     // create a layout item for the view you want to display
     CSLinearLayoutItem *nameItem = [CSLinearLayoutItem layoutItemForView:eventNameLabel];
@@ -93,16 +75,15 @@
     nameItem.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
     nameItem.fillMode = CSLinearLayoutItemFillModeNormal;
     
-    CSLinearLayoutItem *descriptionLabel = [CSLinearLayoutItem layoutItemForView:whiteView];
-    descriptionLabel.padding = CSLinearLayoutMakePadding(0, 5.0, 0, 5.0);
+    CSLinearLayoutItem *descriptionLabel = [CSLinearLayoutItem layoutItemForView:eventDescriptionLabel];
+    descriptionLabel.padding = CSLinearLayoutMakePadding(5.0, 7.0, 5.0, 7.0);
     descriptionLabel.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
-    descriptionLabel.fillMode = CSLinearLayoutItemFillModeNormal;
+    descriptionLabel.fillMode = CSLinearLayoutItemFillModeStretch;
 
     
     // add the layout item to the linear layout view
     [linearLayoutView addItem:nameItem];
     [linearLayoutView addItem:descriptionLabel];
-    NSLog(@"Frame: {x: %f, y: %f, width: %f, height: %f}", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
 }
 
 - (void)viewDidUnload

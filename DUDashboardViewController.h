@@ -10,4 +10,7 @@
 
 @interface DUDashboardViewController : UIViewController
 
+- (IBAction)browseButton:(UIButton *)sender;
+- (IBAction)aboutButton:(UIButton *)sender;
+
 @end

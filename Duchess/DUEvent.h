@@ -49,25 +49,25 @@ typedef enum eventPrivacyEnum
     NSArray     *_categories;
 }
 
-@property (nonatomic,retain) NSString    *name;
-@property (nonatomic,retain) NSString    *descriptionHeader;
-@property (nonatomic,retain) NSString    *descriptionBody;
-@property (nonatomic,retain) NSDate      *startDate;
-@property (nonatomic,retain) NSDate      *endDate;
-@property (nonatomic,retain) NSString    *contactTelephoneNumber;
-@property (nonatomic,retain) NSString    *contactEmailAddress;
-@property (nonatomic,retain) NSString    *accessibilityInformation;
-@property (nonatomic,retain) NSString    *linkedWebsiteURL;
-@property (nonatomic,retain) NSString    *imageURL;
-@property (nonatomic,retain) NSString    *adImageURL;
-@property (nonatomic,retain) NSString    *iCalURL;
-@property (nonatomic,retain) DULocation  *location;
+@property (nonatomic,strong) NSString    *name;
+@property (nonatomic,strong) NSString    *descriptionHeader;
+@property (nonatomic,strong) NSString    *descriptionBody;
+@property (nonatomic,strong) NSDate      *startDate;
+@property (nonatomic,strong) NSDate      *endDate;
+@property (nonatomic,strong) NSString    *contactTelephoneNumber;
+@property (nonatomic,strong) NSString    *contactEmailAddress;
+@property (nonatomic,strong) NSString    *accessibilityInformation;
+@property (nonatomic,strong) NSString    *linkedWebsiteURL;
+@property (nonatomic,strong) NSString    *imageURL;
+@property (nonatomic,strong) NSString    *adImageURL;
+@property (nonatomic,strong) NSString    *iCalURL;
+@property (nonatomic,strong) DULocation  *location;
 @property (nonatomic)        NSInteger    numberOfReviews;
 @property (nonatomic)        NSInteger    averageReview;
-@property (nonatomic,retain) NSString    *associatedCollege;
-@property (nonatomic,retain) NSString    *associatedSociety;
+@property (nonatomic,strong) NSString    *associatedCollege;
+@property (nonatomic,strong) NSString    *associatedSociety;
 @property (nonatomic)        EventScope   eventScope;
 @property (nonatomic)        EventPrivacy eventPrivacy;
-@property (nonatomic,retain) NSArray     *categories;
+@property (nonatomic,strong) NSArray     *categories;
 
 @end

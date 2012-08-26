@@ -25,4 +25,40 @@
     }
 }
 
+- (NSArray*)getAllEvents
+{
+    return nil;
+}
+- (NSArray*)getEventsByCollege:(NSString*)college
+{
+    return nil;
+}
+- (NSArray*)getEventsByColleges:(NSArray*)collegeList
+{
+    return nil;
+}
+- (NSArray*)getEventsBySociety:(NSString*)society
+{
+    return nil;
+}
+- (NSArray*)getEventsBySocieties:(NSArray*)societyList
+{
+    return nil;
+}
+
+- (NSArray*)getSocieties
+{
+    return nil;
+}
+
+- (NSArray*)getReviews
+{
+    return nil;
+}
+
+- (NSArray*)getLocations
+{
+    return nil;
+}
+
 @end

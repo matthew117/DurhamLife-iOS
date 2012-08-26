@@ -20,11 +20,11 @@
 }
 
 @property (nonatomic) NSInteger locationID;
-@property (nonatomic,retain) NSString *address1;
-@property (nonatomic,retain) NSString *address2;
-@property (nonatomic,retain) NSString *city;
-@property (nonatomic,retain) NSString *postcode;
-@property (nonatomic,retain) NSString *latitude;
-@property (nonatomic,retain) NSString *longitude;
+@property (nonatomic,strong) NSString *address1;
+@property (nonatomic,strong) NSString *address2;
+@property (nonatomic,strong) NSString *city;
+@property (nonatomic,strong) NSString *postcode;
+@property (nonatomic,strong) NSString *latitude;
+@property (nonatomic,strong) NSString *longitude;
 
 @end

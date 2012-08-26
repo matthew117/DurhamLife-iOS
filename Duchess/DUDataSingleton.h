@@ -13,8 +13,20 @@
     NSMutableArray *_eventList;
 }
 
-@property (nonatomic, retain) NSMutableArray *eventList;
+@property (nonatomic, strong) NSMutableArray *eventList;
 
-+ (DUDataSingleton *)instance;
++ (DUDataSingleton*)instance;
+
+- (NSArray*)getAllEvents;
+- (NSArray*)getEventsByCollege:(NSString*)college;
+- (NSArray*)getEventsByColleges:(NSArray*)collegeList;
+- (NSArray*)getEventsBySociety:(NSString*)society;
+- (NSArray*)getEventsBySocieties:(NSArray*)societyList;
+
+- (NSArray*)getSocieties;
+
+- (NSArray*)getReviews;
+
+- (NSArray*)getLocations;
 
 @end

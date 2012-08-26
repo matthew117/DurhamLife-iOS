@@ -54,9 +54,8 @@
 #pragma mark - Lifecycle
 
 - (void)dealloc {
-    [_items release], _items = nil;
+    _items = nil;
     
-    [super dealloc];
 }
 
 
@@ -179,12 +178,10 @@
         return;
     }
     
-    [linearLayoutItem retain];
     
     [_items removeObject:linearLayoutItem];
     [linearLayoutItem.view removeFromSuperview];
     
-    [linearLayoutItem release];
 }
 
 - (void)removeAllItems {
@@ -233,12 +230,10 @@
         return;
     }
     
-    [movingItem retain];
     [_items removeObject:movingItem];
     
     NSUInteger existingItemIndex = [_items indexOfObject:existingItem];
     [_items insertObject:movingItem atIndex:existingItemIndex];
-    [movingItem release];
     
     [self setNeedsLayout];
 }
@@ -248,7 +243,6 @@
         return;
     }
     
-    [movingItem retain];
     [_items removeObject:movingItem];
     
     if (existingItem == [_items lastObject]) {
@@ -257,7 +251,6 @@
         NSUInteger existingItemIndex = [_items indexOfObject:existingItem];
         [_items insertObject:movingItem atIndex:++existingItemIndex];
     }
-    [movingItem release];
     
     [self setNeedsLayout];
 }
@@ -267,7 +260,6 @@
         return;
     }
     
-    [movingItem retain];
     [_items removeObject:movingItem];
     
     if (index == ([_items count] - 1)) {
@@ -275,7 +267,6 @@
     } else {
         [_items insertObject:movingItem atIndex:index];
     }
-    [movingItem release];
     
     [self setNeedsLayout];
 }

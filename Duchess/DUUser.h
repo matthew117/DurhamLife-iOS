@@ -22,12 +22,12 @@
 }
 
 @property (nonatomic)        NSInteger  userID;
-@property (nonatomic,retain) NSString  *forename;
-@property (nonatomic,retain) NSString  *surname;
-@property (nonatomic,retain) NSString  *email;
-@property (nonatomic,retain) NSString  *department;
-@property (nonatomic,retain) NSString  *college;
-@property (nonatomic,retain) NSMutableArray *categoryPreferences;
-@property (nonatomic,retain) NSMutableArray *subscribedSocities;
+@property (nonatomic,strong) NSString  *forename;
+@property (nonatomic,strong) NSString  *surname;
+@property (nonatomic,strong) NSString  *email;
+@property (nonatomic,strong) NSString  *department;
+@property (nonatomic,strong) NSString  *college;
+@property (nonatomic,strong) NSMutableArray *categoryPreferences;
+@property (nonatomic,strong) NSMutableArray *subscribedSocities;
 
 @end

@@ -20,7 +20,7 @@
 @property (nonatomic)        NSInteger  reviewID;
 @property (nonatomic)        NSInteger  eventID;
 @property (nonatomic)        NSInteger  rating;
-@property (nonatomic,retain) NSString  *comment;
-@property (nonatomic,retain) NSDate    *timestamp;
+@property (nonatomic,strong) NSString  *comment;
+@property (nonatomic,strong) NSDate    *timestamp;
 
 @end

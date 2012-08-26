@@ -45,6 +45,6 @@
     BOOL _isCategoryTag;
 }
 
-@property (nonatomic, retain) NSMutableArray *eventList;
+@property (nonatomic, strong) NSMutableArray *eventList;
 
 @end

@@ -42,17 +42,15 @@
 }
 
 + (CSLinearLayoutItem *)layoutItemForView:(UIView *)aView {
-    CSLinearLayoutItem *item = [[[CSLinearLayoutItem alloc] initWithView:aView] autorelease];
+    CSLinearLayoutItem *item = [[CSLinearLayoutItem alloc] initWithView:aView];
     return item;
 }
 
 #pragma mark - Memory Management
 
 - (void)dealloc {
-    self.view = nil;
     self.userInfo = nil;
     
-    [super dealloc];
 }
 
 

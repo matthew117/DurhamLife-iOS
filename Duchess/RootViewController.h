@@ -14,6 +14,6 @@
     UIActivityIndicatorView *downloadActivityIndicator;
 }
 
-@property (nonatomic, assign) IBOutlet UITableViewCell *customTableViewCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *customTableViewCell;
 
 @end

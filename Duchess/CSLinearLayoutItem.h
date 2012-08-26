@@ -34,12 +34,12 @@ typedef struct {
 
 @interface CSLinearLayoutItem : NSObject
 
-@property (nonatomic, retain) UIView *view;
+@property (nonatomic, strong) UIView *view;
 @property (nonatomic, assign) CSLinearLayoutItemFillMode fillMode;
 @property (nonatomic, assign) CSLinearLayoutItemHorizontalAlignment horizontalAlignment;
 @property (nonatomic, assign) CSLinearLayoutItemVerticalAlignment verticalAlignment;
 @property (nonatomic, assign) CSLinearLayoutItemPadding padding;
-@property (nonatomic, assign) NSDictionary *userInfo;
+@property (nonatomic, unsafe_unretained) NSDictionary *userInfo;
 @property (nonatomic, assign) NSInteger tag;
 
 - (id)initWithView:(UIView *)aView;

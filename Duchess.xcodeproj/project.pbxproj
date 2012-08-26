@@ -10,14 +10,12 @@
 		2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */; };
 		2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
-		2F4E632915C6D553008815F9 /* DUEventDetailsTabRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */; };
-		2F4E632A15C6D553008815F9 /* DUEventDetailsTabRoot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E632815C6D553008815F9 /* DUEventDetailsTabRoot.xib */; };
 		2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD68C15C15E30007BB3BE /* DUUser.m */; };
 		2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */; };
 		2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */; };
 		2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */; };
 		2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */; };
-		2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */; };
+		2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */; };
 		2FCCAE2415C2E7D700CC3D61 /* DUEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */; };
 		2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */; };
@@ -29,7 +27,7 @@
 		2FE12AA115C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
 		2FE12AA715C1462100B2C6F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */; };
 		2FE12AAA15C1462100B2C6F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AA915C1462100B2C6F7 /* main.m */; };
-		2FE12AAD15C1462100B2C6F7 /* DuchessAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */; };
+		2FE12AAD15C1462100B2C6F7 /* DUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */; };
 		2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */; };
 		2FE12AB315C1462100B2C6F7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AB215C1462100B2C6F7 /* RootViewController.m */; };
 		2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AB415C1462100B2C6F7 /* RootViewController.xib */; };
@@ -42,8 +40,24 @@
 		2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */; };
 		470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
+		4713B59515E92F5A00A45687 /* DashboardButtonBackgroundNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59315E92F5A00A45687 /* DashboardButtonBackgroundNormal.png */; };
+		4713B59615E92F5A00A45687 /* DashboardButtonBackgroundSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59415E92F5A00A45687 /* DashboardButtonBackgroundSelected.png */; };
+		4713B5A115E93B6200A45687 /* bookmark_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59B15E93B6200A45687 /* bookmark_dashboard_icon.png */; };
+		4713B5A215E93B6200A45687 /* browse_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59C15E93B6200A45687 /* browse_dashboard_icon.png */; };
+		4713B5A315E93B6200A45687 /* calendar_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59D15E93B6200A45687 /* calendar_dashboard_icon.png */; };
+		4713B5A415E93B6200A45687 /* college_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59E15E93B6200A45687 /* college_dashboard_icon.png */; };
+		4713B5A515E93B6200A45687 /* my_society_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59F15E93B6200A45687 /* my_society_dashboard_icon.png */; };
+		4713B5A615E93B6200A45687 /* society_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B5A015E93B6200A45687 /* society_dashboard_icon.png */; };
+		4713B5AA15E95F5A00A45687 /* DUReviewXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */; };
+		4781009815EA8ADD002FBC67 /* DUEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4781009715EA8ADD002FBC67 /* DUEventListViewController.m */; };
+		4781009C15EAD7F2002FBC67 /* DUCollegeEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4781009A15EAD7F2002FBC67 /* DUCollegeEventsViewController.m */; };
+		4781009D15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4781009B15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib */; };
+		478100A415EAE4A7002FBC67 /* DUAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478100A215EAE4A7002FBC67 /* DUAboutViewController.m */; };
+		478100A515EAE4A7002FBC67 /* DUAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478100A315EAE4A7002FBC67 /* DUAboutViewController.xib */; };
 		478CCEB115E2C3E400419CD7 /* DUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */; };
-		478CCEB215E2C3E400419CD7 /* DUDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478CCEB015E2C3E400419CD7 /* DUDashboardViewController.xib */; };
+		478CCEB215E2C3E400419CD7 /* DUDashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */; };
+		4793FDB815E4EAFC007135BA /* DURoundedBorderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793FDB715E4EAFC007135BA /* DURoundedBorderLabel.m */; };
+		47FF471A15E7F5F6002F10D6 /* DUDashboardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +72,6 @@
 
 /* Begin PBXFileReference section */
 		2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2F4E632615C6D552008815F9 /* DUEventDetailsTabRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventDetailsTabRoot.h; sourceTree = "<group>"; };
-		2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventDetailsTabRoot.m; sourceTree = "<group>"; };
-		2F4E632815C6D553008815F9 /* DUEventDetailsTabRoot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUEventDetailsTabRoot.xib; sourceTree = "<group>"; };
 		2F7DD68B15C15E30007BB3BE /* DUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUUser.h; sourceTree = "<group>"; };
 		2F7DD68C15C15E30007BB3BE /* DUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUUser.m; sourceTree = "<group>"; };
 		2F7DD69815C16CBB007BB3BE /* DUEventXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventXMLParser.h; sourceTree = "<group>"; };
@@ -90,8 +101,8 @@
 		2FE12AA615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Duchess-Prefix.pch"; sourceTree = "<group>"; };
 		2FE12AA915C1462100B2C6F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessAppDelegate.h; sourceTree = "<group>"; };
-		2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessAppDelegate.m; sourceTree = "<group>"; };
+		2FE12AAB15C1462100B2C6F7 /* DUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUAppDelegate.h; sourceTree = "<group>"; };
+		2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUAppDelegate.m; sourceTree = "<group>"; };
 		2FE12AAF15C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		2FE12AB115C1462100B2C6F7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2FE12AB215C1462100B2C6F7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -108,9 +119,31 @@
 		470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutItem.m; sourceTree = "<group>"; };
 		470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutView.h; sourceTree = "<group>"; };
 		470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutView.m; sourceTree = "<group>"; };
+		4713B59315E92F5A00A45687 /* DashboardButtonBackgroundNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DashboardButtonBackgroundNormal.png; sourceTree = "<group>"; };
+		4713B59415E92F5A00A45687 /* DashboardButtonBackgroundSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DashboardButtonBackgroundSelected.png; sourceTree = "<group>"; };
+		4713B59B15E93B6200A45687 /* bookmark_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_dashboard_icon.png; sourceTree = "<group>"; };
+		4713B59C15E93B6200A45687 /* browse_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = browse_dashboard_icon.png; sourceTree = "<group>"; };
+		4713B59D15E93B6200A45687 /* calendar_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_dashboard_icon.png; sourceTree = "<group>"; };
+		4713B59E15E93B6200A45687 /* college_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = college_dashboard_icon.png; sourceTree = "<group>"; };
+		4713B59F15E93B6200A45687 /* my_society_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_society_dashboard_icon.png; sourceTree = "<group>"; };
+		4713B5A015E93B6200A45687 /* society_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = society_dashboard_icon.png; sourceTree = "<group>"; };
+		4713B5A815E95F5A00A45687 /* DUReviewXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewXMLParser.h; sourceTree = "<group>"; };
+		4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewXMLParser.m; sourceTree = "<group>"; };
+		4781009615EA8ADD002FBC67 /* DUEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventListViewController.h; sourceTree = "<group>"; };
+		4781009715EA8ADD002FBC67 /* DUEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventListViewController.m; sourceTree = "<group>"; };
+		4781009915EAD7F2002FBC67 /* DUCollegeEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUCollegeEventsViewController.h; sourceTree = "<group>"; };
+		4781009A15EAD7F2002FBC67 /* DUCollegeEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUCollegeEventsViewController.m; sourceTree = "<group>"; };
+		4781009B15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUCollegeEventsViewController.xib; sourceTree = "<group>"; };
+		478100A115EAE4A7002FBC67 /* DUAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUAboutViewController.h; sourceTree = "<group>"; };
+		478100A215EAE4A7002FBC67 /* DUAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUAboutViewController.m; sourceTree = "<group>"; };
+		478100A315EAE4A7002FBC67 /* DUAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUAboutViewController.xib; sourceTree = "<group>"; };
 		478CCEAE15E2C3E400419CD7 /* DUDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUDashboardViewController.h; path = ../DUDashboardViewController.h; sourceTree = "<group>"; };
 		478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUDashboardViewController.m; path = ../DUDashboardViewController.m; sourceTree = "<group>"; };
-		478CCEB015E2C3E400419CD7 /* DUDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUDashboardViewController.xib; path = ../DUDashboardViewController.xib; sourceTree = "<group>"; };
+		478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUDashboardView.xib; path = ../DUDashboardView.xib; sourceTree = "<group>"; };
+		4793FDB615E4EAFC007135BA /* DURoundedBorderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DURoundedBorderLabel.h; sourceTree = "<group>"; };
+		4793FDB715E4EAFC007135BA /* DURoundedBorderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DURoundedBorderLabel.m; sourceTree = "<group>"; };
+		47FF471815E7F5F6002F10D6 /* DUDashboardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDashboardBackground.h; sourceTree = "<group>"; };
+		47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUDashboardBackground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +175,14 @@
 		2F4E632B15C6E3D9008815F9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				4713B59B15E93B6200A45687 /* bookmark_dashboard_icon.png */,
+				4713B59C15E93B6200A45687 /* browse_dashboard_icon.png */,
+				4713B59D15E93B6200A45687 /* calendar_dashboard_icon.png */,
+				4713B59E15E93B6200A45687 /* college_dashboard_icon.png */,
+				4713B59F15E93B6200A45687 /* my_society_dashboard_icon.png */,
+				4713B5A015E93B6200A45687 /* society_dashboard_icon.png */,
+				4713B59315E92F5A00A45687 /* DashboardButtonBackgroundNormal.png */,
+				4713B59415E92F5A00A45687 /* DashboardButtonBackgroundSelected.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -151,6 +192,8 @@
 			children = (
 				2F7DD69815C16CBB007BB3BE /* DUEventXMLParser.h */,
 				2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */,
+				4713B5A815E95F5A00A45687 /* DUReviewXMLParser.h */,
+				4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */,
 			);
 			name = XML;
 			sourceTree = "<group>";
@@ -200,10 +243,11 @@
 		2FE12AA215C1462100B2C6F7 /* Duchess */ = {
 			isa = PBXGroup;
 			children = (
+				47FF471715E7F56A002F10D6 /* Controller */,
 				4785266915C1D1780075AB21 /* View */,
 				2FE12AD515C1488400B2C6F7 /* Model */,
-				2FE12AAB15C1462100B2C6F7 /* DuchessAppDelegate.h */,
-				2FE12AAC15C1462100B2C6F7 /* DuchessAppDelegate.m */,
+				2FE12AAB15C1462100B2C6F7 /* DUAppDelegate.h */,
+				2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */,
 				2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */,
 				2FE12AA315C1462100B2C6F7 /* Supporting Files */,
 			);
@@ -270,21 +314,37 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				478CCEAE15E2C3E400419CD7 /* DUDashboardViewController.h */,
-				478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */,
-				478CCEB015E2C3E400419CD7 /* DUDashboardViewController.xib */,
-				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
-				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
+				478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */,
 				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
 				2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */,
-				2FCCAE2115C2E7D600CC3D61 /* DUEventDetailsViewController.h */,
-				2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */,
 				2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsViewController.xib */,
-				2F4E632615C6D552008815F9 /* DUEventDetailsTabRoot.h */,
-				2F4E632715C6D553008815F9 /* DUEventDetailsTabRoot.m */,
-				2F4E632815C6D553008815F9 /* DUEventDetailsTabRoot.xib */,
+				4793FDB615E4EAFC007135BA /* DURoundedBorderLabel.h */,
+				4793FDB715E4EAFC007135BA /* DURoundedBorderLabel.m */,
+				47FF471815E7F5F6002F10D6 /* DUDashboardBackground.h */,
+				47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */,
+				4781009B15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib */,
+				478100A315EAE4A7002FBC67 /* DUAboutViewController.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		47FF471715E7F56A002F10D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				478100A115EAE4A7002FBC67 /* DUAboutViewController.h */,
+				478100A215EAE4A7002FBC67 /* DUAboutViewController.m */,
+				478CCEAE15E2C3E400419CD7 /* DUDashboardViewController.h */,
+				478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */,
+				2FE12AB115C1462100B2C6F7 /* RootViewController.h */,
+				2FE12AB215C1462100B2C6F7 /* RootViewController.m */,
+				2FCCAE2115C2E7D600CC3D61 /* DUEventDetailsViewController.h */,
+				2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */,
+				4781009615EA8ADD002FBC67 /* DUEventListViewController.h */,
+				4781009715EA8ADD002FBC67 /* DUEventListViewController.m */,
+				4781009915EAD7F2002FBC67 /* DUCollegeEventsViewController.h */,
+				4781009A15EAD7F2002FBC67 /* DUCollegeEventsViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,8 +422,17 @@
 				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
 				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
 				2FCCAE2515C2E7D700CC3D61 /* DUEventDetailsViewController.xib in Resources */,
-				2F4E632A15C6D553008815F9 /* DUEventDetailsTabRoot.xib in Resources */,
-				478CCEB215E2C3E400419CD7 /* DUDashboardViewController.xib in Resources */,
+				478CCEB215E2C3E400419CD7 /* DUDashboardView.xib in Resources */,
+				4713B59515E92F5A00A45687 /* DashboardButtonBackgroundNormal.png in Resources */,
+				4713B59615E92F5A00A45687 /* DashboardButtonBackgroundSelected.png in Resources */,
+				4713B5A115E93B6200A45687 /* bookmark_dashboard_icon.png in Resources */,
+				4713B5A215E93B6200A45687 /* browse_dashboard_icon.png in Resources */,
+				4713B5A315E93B6200A45687 /* calendar_dashboard_icon.png in Resources */,
+				4713B5A415E93B6200A45687 /* college_dashboard_icon.png in Resources */,
+				4713B5A515E93B6200A45687 /* my_society_dashboard_icon.png in Resources */,
+				4713B5A615E93B6200A45687 /* society_dashboard_icon.png in Resources */,
+				4781009D15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib in Resources */,
+				478100A515EAE4A7002FBC67 /* DUAboutViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +471,7 @@
 				2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */,
 				2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */,
 				2FE12AAA15C1462100B2C6F7 /* main.m in Sources */,
-				2FE12AAD15C1462100B2C6F7 /* DuchessAppDelegate.m in Sources */,
+				2FE12AAD15C1462100B2C6F7 /* DUAppDelegate.m in Sources */,
 				2FE12AB315C1462100B2C6F7 /* RootViewController.m in Sources */,
 				2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */,
 				2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */,
@@ -411,11 +480,16 @@
 				2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */,
 				2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */,
 				2FCCAE2415C2E7D700CC3D61 /* DUEventDetailsViewController.m in Sources */,
-				2F4E632915C6D553008815F9 /* DUEventDetailsTabRoot.m in Sources */,
 				2FDC2FC715E237DB0026B917 /* DUReview.m in Sources */,
 				2FDC2FCA15E23D440026B917 /* DUSociety.m in Sources */,
 				2FDC2FCD15E244480026B917 /* DULocation.m in Sources */,
 				478CCEB115E2C3E400419CD7 /* DUDashboardViewController.m in Sources */,
+				4793FDB815E4EAFC007135BA /* DURoundedBorderLabel.m in Sources */,
+				47FF471A15E7F5F6002F10D6 /* DUDashboardBackground.m in Sources */,
+				4713B5AA15E95F5A00A45687 /* DUReviewXMLParser.m in Sources */,
+				4781009815EA8ADD002FBC67 /* DUEventListViewController.m in Sources */,
+				4781009C15EAD7F2002FBC67 /* DUCollegeEventsViewController.m in Sources */,
+				478100A415EAE4A7002FBC67 /* DUAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -530,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
@@ -548,6 +624,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Duchess.app/Duchess";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -571,6 +648,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Duchess.app/Duchess";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",

@@ -18,9 +18,9 @@
 }
 
 @property (nonatomic) NSInteger societyID;
-@property (nonatomic,retain) NSString *name;
-@property (nonatomic,retain) NSString *website;
-@property (nonatomic,retain) NSString *email;
-@property (nonatomic,retain) NSString *constitution;
+@property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSString *website;
+@property (nonatomic,strong) NSString *email;
+@property (nonatomic,strong) NSString *constitution;
 
 @end

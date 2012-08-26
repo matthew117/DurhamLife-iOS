@@ -12,7 +12,7 @@
 #import "DUNetworkedDataProvider.h"
 #import "Reachability.h"
 #import "DUEventDetailsViewController.h"
-#import "DuchessAppDelegate.h"
+#import "DUAppDelegate.h"
 
 @implementation RootViewController
 @synthesize customTableViewCell;
@@ -27,7 +27,7 @@
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
     
-    downloadActivityIndicator = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
+    downloadActivityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.view addSubview: downloadActivityIndicator];
     downloadActivityIndicator.center = self.view.center; 
     if (status == NotReachable)
@@ -78,11 +78,6 @@
     // For example: self.myOutlet = nil;
 }
 
-- (void)dealloc
-{
-    [customTableViewCell release];
-    [super dealloc];
-}
 
 #pragma mark - UITableViewDataSource Implementation
 
@@ -142,7 +137,7 @@
     
     UILabel *eventDateLabel;
     eventDateLabel = (UILabel *)[cell viewWithTag:3];
-    NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"d MMMM"]; 
     
     NSString *eventStartDateStr = [formatter stringFromDate:event.startDate];
@@ -217,27 +212,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DuchessAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     delegate.currentEvent = indexPath.row;
     
     DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsTabRoot" bundle:nil];
 
     [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
 }
 
 #pragma mark - Background Thread
 
 - (void)backgroundLoadEvents
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    DUNetworkedDataProvider *networkDataAccess = [[DUNetworkedDataProvider alloc] init];
-    DUDataSingleton *dataProvider = [DUDataSingleton instance];
-    dataProvider.eventList = [[NSMutableArray alloc] init];
-    NSMutableArray *eventList = dataProvider.eventList;
-    
-    [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
-    [pool release];
+    @autoreleasepool
+    {
+        DUNetworkedDataProvider *networkDataAccess = [[DUNetworkedDataProvider alloc] init];
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        dataProvider.eventList = [[NSMutableArray alloc] init];
+        NSMutableArray *eventList = dataProvider.eventList;
+        
+        [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
+    }
 }
 
 - (void)gotLoadedEvents

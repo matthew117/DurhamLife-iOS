@@ -7,6 +7,8 @@
 //
 
 #import "DUDashboardViewController.h"
+#import "DUAboutViewController.h"
+#import "RootViewController.h"
 
 @interface DUDashboardViewController ()
 
@@ -43,4 +45,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)browseButton:(UIButton *)sender
+{
+    RootViewController* eventListController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    [self.navigationController pushViewController:eventListController animated:YES];
+}
+
+- (IBAction)aboutButton:(UIButton *)sender
+{
+    DUAboutViewController *aboutView = [[DUAboutViewController alloc] init];
+    [self presentModalViewController:aboutView animated:YES];
+}
 @end

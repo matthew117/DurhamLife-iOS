@@ -192,7 +192,6 @@
     {
         _currentEvent.location = _currentLocation;
         _currentLocation = nil;
-        [_currentLocation release];
     }
     else if ([elementName isEqualToString:@"address1"])
     {
@@ -246,7 +245,6 @@
     {
         _currentEvent.categories = _currentCategories;
         _currentCategories = nil;
-        [_currentCategories release];
     }
 }
 
