@@ -9,6 +9,7 @@
 #import "DUDashboardViewController.h"
 #import "DUAboutViewController.h"
 #import "RootViewController.h"
+#import "SessionHandler.h"
 
 @interface DUDashboardViewController ()
 
@@ -21,7 +22,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        // Custom initialization
     }
     return self;
 }
@@ -30,7 +30,13 @@
 {
     [super viewDidLoad];
     self.title = @"Durham Life";
-    // Do any additional setup after loading the view from its nib.
+    
+    [SessionHandler setDefaults];
+    if ([SessionHandler appOpenedForFirstTime])
+    {
+        NSLog(@"This is a first time run.");
+        NSLog(@"%@",[SessionHandler userDefaultsToString]);
+    }
 }
 
 - (void)viewDidUnload

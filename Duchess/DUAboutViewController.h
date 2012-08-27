@@ -10,4 +10,6 @@
 
 @interface DUAboutViewController : UIViewController
 
+- (IBAction)dismissAbout:(UIButton *)sender;
+
 @end

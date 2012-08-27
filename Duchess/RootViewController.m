@@ -215,7 +215,7 @@
     DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     delegate.currentEvent = indexPath.row;
     
-    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsTabRoot" bundle:nil];
+    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsView" bundle:nil];
 
     [self.navigationController pushViewController:detailViewController animated:YES];
 }

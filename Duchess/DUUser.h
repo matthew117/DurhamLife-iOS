@@ -8,26 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface DUUser : NSObject
+typedef enum userAffiliation
 {
-    NSInteger  _userID;
-    NSString  *_forename;
-    NSString  *_surname;
-    NSString  *_email;
-    NSString  *_department;
+    USER,
+    STUDENT,
+    STAFF,
+} UserAffiliation;
+
+@interface DUUser : NSObject <NSCoding>
+{
+    UserAffiliation _userAffiliation;
     NSString  *_college;
     NSMutableArray *_categoryPreferences;
     NSMutableArray *_subscribedSocities;
+    NSMutableArray *_bookmarkedEvents;
 }
 
-@property (nonatomic)        NSInteger  userID;
-@property (nonatomic,strong) NSString  *forename;
-@property (nonatomic,strong) NSString  *surname;
-@property (nonatomic,strong) NSString  *email;
-@property (nonatomic,strong) NSString  *department;
+@property (nonatomic) UserAffiliation userAffiliation;
 @property (nonatomic,strong) NSString  *college;
 @property (nonatomic,strong) NSMutableArray *categoryPreferences;
 @property (nonatomic,strong) NSMutableArray *subscribedSocities;
+@property (nonatomic,strong) NSMutableArray *bookmarkedEvents;
+
++ (NSInteger)affiliationToInteger:(UserAffiliation)affiliation;
++ (UserAffiliation)integerToAffiliation:(NSInteger)integer;
 
 @end
