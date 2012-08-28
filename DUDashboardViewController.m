@@ -10,6 +10,7 @@
 #import "DUAboutViewController.h"
 #import "RootViewController.h"
 #import "DUCollegeEventsViewController.h"
+#import "DUSocietyListViewController.h"
 #import "SessionHandler.h"
 
 @interface DUDashboardViewController ()
@@ -69,5 +70,11 @@
     DUCollegeEventsViewController* collegeListController = [[DUCollegeEventsViewController alloc] initWithNibName:@"DUCollegeEventsViewController" bundle:nil];
     [self.navigationController pushViewController:collegeListController animated:YES];
 
+}
+
+- (IBAction)societiesButton:(UIButton *)sender
+{
+    DUSocietyListViewController* societyListController = [[DUSocietyListViewController alloc] initWithNibName:@"DUSocietyListViewController" bundle:nil];
+    [self.navigationController pushViewController:societyListController animated:YES];
 }
 @end

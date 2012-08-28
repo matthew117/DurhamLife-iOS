@@ -11,6 +11,7 @@
 @interface DUDataSingleton : NSObject
 {
     NSMutableArray *_eventList;
+    NSMutableArray *_societyList;
 }
 
 @property (nonatomic, strong) NSMutableArray *eventList;

@@ -13,5 +13,6 @@
 - (IBAction)browseButton:(UIButton *)sender;
 - (IBAction)aboutButton:(UIButton *)sender;
 - (IBAction)collegeEvents:(UIButton *)sender;
+- (IBAction)societiesButton:(UIButton *)sender;
 
 @end

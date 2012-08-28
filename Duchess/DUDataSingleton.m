@@ -8,6 +8,7 @@
 
 #import "DUDataSingleton.h"
 #import "DUEvent.h"
+#import "DUSocietyXMLParser.h"
 
 @implementation DUDataSingleton
 
@@ -60,7 +61,45 @@
 
 - (NSArray*)getSocieties
 {
-    return nil;
+    if (_societyList == nil)
+    {
+    NSMutableArray* societyList = [NSMutableArray new];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.dur.ac.uk/cs.seg01/duchess/api/v1/societies.php"]];
+    NSData *loadedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    if (error == nil)
+    {
+        NSLog(@"Loaded page from: %@", @"https://www.dur.ac.uk/cs.seg01/duchess/api/v1/societies.php");
+        
+        DUSocietyXMLParser *xmlHandler = [[DUSocietyXMLParser alloc] init];
+        xmlHandler.societyList = societyList;
+        
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:loadedData];
+        [parser setDelegate:xmlHandler];
+        
+        if ([parser parse])
+        {
+            NSLog(@"XML successfully parsed. eventList should now be populated.");
+        }
+        else
+        {
+            NSLog(@"XML Parser Error.");
+        }
+    }
+    else
+    {
+        NSLog(@"ERROR: %@", error);
+    }
+        _societyList = societyList;
+    return societyList;
+    }
+    else{
+        return _societyList;
+    }
 }
 
 - (NSArray*)getReviews

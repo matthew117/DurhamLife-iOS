@@ -266,13 +266,13 @@
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        _currentEvent.endDate = [dateFormatter dateFromString:string];
+        _currentEvent.startDate = [dateFormatter dateFromString:string];
     }
     else if (_isEndDateTag)
     {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-        _currentEvent.startDate = [dateFormatter dateFromString:string];
+        _currentEvent.endDate = [dateFormatter dateFromString:string];
     }
     else if (_isContactTelephoneNumberTag)
     {
