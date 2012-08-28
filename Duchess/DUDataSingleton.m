@@ -7,6 +7,7 @@
 //
 
 #import "DUDataSingleton.h"
+#import "DUEvent.h"
 
 @implementation DUDataSingleton
 
@@ -31,7 +32,18 @@
 }
 - (NSArray*)getEventsByCollege:(NSString*)college
 {
-    return nil;
+    NSMutableArray* collegeEvents = [NSMutableArray new];
+    for (NSObject* o in self.eventList)
+    {
+        DUEvent* event = (DUEvent*)o;
+        NSLog(@"college: %@\nexpected:%@\n",event.associatedCollege, college);
+        if ([event.associatedCollege isEqualToString:college])
+        {
+            NSLog(@"Found a college event");
+            [collegeEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:collegeEvents];
 }
 - (NSArray*)getEventsByColleges:(NSArray*)collegeList
 {

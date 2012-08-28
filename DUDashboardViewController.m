@@ -9,6 +9,7 @@
 #import "DUDashboardViewController.h"
 #import "DUAboutViewController.h"
 #import "RootViewController.h"
+#import "DUCollegeEventsViewController.h"
 #import "SessionHandler.h"
 
 @interface DUDashboardViewController ()
@@ -61,5 +62,12 @@
 {
     DUAboutViewController *aboutView = [[DUAboutViewController alloc] init];
     [self presentModalViewController:aboutView animated:YES];
+}
+
+- (IBAction)collegeEvents:(UIButton *)sender
+{
+    DUCollegeEventsViewController* collegeListController = [[DUCollegeEventsViewController alloc] initWithNibName:@"DUCollegeEventsViewController" bundle:nil];
+    [self.navigationController pushViewController:collegeListController animated:YES];
+
 }
 @end
