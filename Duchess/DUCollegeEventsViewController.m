@@ -74,7 +74,7 @@
 {
     DUUser* user = [SessionHandler getUser];
     DUDataSingleton* dataProvider = [DUDataSingleton instance];
-    NSArray* eventList = [dataProvider getEventsByCollege:@"St. Adian's"];
+    NSArray* eventList = [dataProvider getEventsByCollege:@"St. Aidan's"];
     //NSArray* eventList = [dataProvider getEventsByCollege:user.college];
     
     if (eventList == nil)
@@ -100,7 +100,7 @@
     }
     
     DUDataSingleton *dataProvider = [DUDataSingleton instance];
-    NSArray *eventList = [dataProvider getEventsByCollege:@"St. Adian's"];
+    NSArray *eventList = [dataProvider getEventsByCollege:@"St. Aidan's"];
     DUEvent *event = [eventList objectAtIndex:indexPath.row];
     
     UILabel *eventNameLabel;
