@@ -58,6 +58,8 @@
 		478CCEB115E2C3E400419CD7 /* DUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478CCEAF15E2C3E400419CD7 /* DUDashboardViewController.m */; };
 		478CCEB215E2C3E400419CD7 /* DUDashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */; };
 		4793FDB815E4EAFC007135BA /* DURoundedBorderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793FDB715E4EAFC007135BA /* DURoundedBorderLabel.m */; };
+		47D10EA915ED310300AE3450 /* DUSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D10EA715ED310300AE3450 /* DUSettingsViewController.m */; };
+		47D10EAA15ED310300AE3450 /* DUSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D10EA815ED310300AE3450 /* DUSettingsViewController.xib */; };
 		47E03FC815EB754300DC2250 /* DUEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */; };
 		47E03FC915EB771500DC2250 /* DUEventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsView.xib */; };
 		47E03FCC15EB7C0700DC2250 /* SessionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E03FCB15EB7C0700DC2250 /* SessionHandler.m */; };
@@ -151,6 +153,9 @@
 		478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUDashboardView.xib; path = ../DUDashboardView.xib; sourceTree = "<group>"; };
 		4793FDB615E4EAFC007135BA /* DURoundedBorderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DURoundedBorderLabel.h; sourceTree = "<group>"; };
 		4793FDB715E4EAFC007135BA /* DURoundedBorderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DURoundedBorderLabel.m; sourceTree = "<group>"; };
+		47D10EA615ED310300AE3450 /* DUSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUSettingsViewController.h; sourceTree = "<group>"; };
+		47D10EA715ED310300AE3450 /* DUSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUSettingsViewController.m; sourceTree = "<group>"; };
+		47D10EA815ED310300AE3450 /* DUSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUSettingsViewController.xib; sourceTree = "<group>"; };
 		47E03FCA15EB7C0700DC2250 /* SessionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionHandler.h; sourceTree = "<group>"; };
 		47E03FCB15EB7C0700DC2250 /* SessionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHandler.m; sourceTree = "<group>"; };
 		47FF471815E7F5F6002F10D6 /* DUDashboardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDashboardBackground.h; sourceTree = "<group>"; };
@@ -329,6 +334,7 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				47D10EA815ED310300AE3450 /* DUSettingsViewController.xib */,
 				478100A315EAE4A7002FBC67 /* DUAboutViewController.xib */,
 				478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */,
 				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
@@ -359,8 +365,13 @@
 				4781009715EA8ADD002FBC67 /* DUEventListViewController.m */,
 				4781009915EAD7F2002FBC67 /* DUCollegeEventsViewController.h */,
 				4781009A15EAD7F2002FBC67 /* DUCollegeEventsViewController.m */,
+<<<<<<< HEAD
 				2FD405F315ECF14700F5B8A6 /* DUSocietyListViewController.h */,
 				2FD405F415ECF14700F5B8A6 /* DUSocietyListViewController.m */,
+=======
+				47D10EA615ED310300AE3450 /* DUSettingsViewController.h */,
+				47D10EA715ED310300AE3450 /* DUSettingsViewController.m */,
+>>>>>>> Committing changes before update.
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -451,7 +462,11 @@
 				4713B5A615E93B6200A45687 /* society_dashboard_icon.png in Resources */,
 				4781009D15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib in Resources */,
 				478100A515EAE4A7002FBC67 /* DUAboutViewController.xib in Resources */,
+<<<<<<< HEAD
 				2FD405F715ECF14700F5B8A6 /* DUSocietyListViewController.xib in Resources */,
+=======
+				47D10EAA15ED310300AE3450 /* DUSettingsViewController.xib in Resources */,
+>>>>>>> Committing changes before update.
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,8 +525,12 @@
 				4781009C15EAD7F2002FBC67 /* DUCollegeEventsViewController.m in Sources */,
 				478100A415EAE4A7002FBC67 /* DUAboutViewController.m in Sources */,
 				47E03FCC15EB7C0700DC2250 /* SessionHandler.m in Sources */,
+<<<<<<< HEAD
 				2FD405F115ECEABC00F5B8A6 /* DUSocietyXMLParser.m in Sources */,
 				2FD405F615ECF14700F5B8A6 /* DUSocietyListViewController.m in Sources */,
+=======
+				47D10EA915ED310300AE3450 /* DUSettingsViewController.m in Sources */,
+>>>>>>> Committing changes before update.
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
