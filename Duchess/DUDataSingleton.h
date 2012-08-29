@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DUUser.h"
 
 @interface DUDataSingleton : NSObject
 {
@@ -23,6 +24,7 @@
 - (NSArray*)getEventsByColleges:(NSArray*)collegeList;
 - (NSArray*)getEventsBySociety:(NSString*)society;
 - (NSArray*)getEventsBySocieties:(NSArray*)societyList;
+- (NSArray*)getUsersBookmarkedEvents:(DUUser*)user;
 
 - (NSArray*)getSocieties;
 

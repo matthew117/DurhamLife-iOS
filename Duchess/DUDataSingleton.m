@@ -10,6 +10,7 @@
 #import "DUEvent.h"
 #import "DUSocietyXMLParser.h"
 #import "DUNetworkedDataProvider.h"
+#import "SessionHandler.h"
 
 @implementation DUDataSingleton
 
@@ -49,10 +50,8 @@
     for (NSObject* o in eventList)
     {
         DUEvent* event = (DUEvent*)o;
-        NSLog(@"college: %@\nexpected:%@\n",event.associatedCollege, college);
         if ([event.associatedCollege isEqualToString:college])
         {
-            NSLog(@"Found a college event");
             [collegeEvents addObject:event];
         }
     }
@@ -69,6 +68,35 @@
 - (NSArray*)getEventsBySocieties:(NSArray*)societyList
 {
     return nil;
+}
+- (NSArray*)getUsersBookmarkedEvents:(DUUser*)user
+{
+    NSMutableArray* bookmarkedEvents = [NSMutableArray new];
+    NSArray* eventList = [self getAllEvents];
+    NSArray* userBookmarks = [SessionHandler getUser].bookmarkedEvents;
+    for (NSObject* o in eventList)
+    {
+        DUEvent* event = (DUEvent*)o;
+        if ([DUDataSingleton arrayContainsEventID:userBookmarks :event.eventID])
+        {
+            [bookmarkedEvents addObject:event];
+        }
+        
+        if (event.eventID == 5 || event.eventID == 8)
+        {
+            [bookmarkedEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:bookmarkedEvents];
+}
+
++ (BOOL)arrayContainsEventID:(NSArray*)array: (NSInteger)eventID
+{
+    for (DUEvent* event in array)
+    {
+        if (event.eventID == eventID) return true;
+    }
+    return false;
 }
 
 - (NSArray*)getSocieties

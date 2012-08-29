@@ -8,6 +8,7 @@
 
 #import "DUBookmarkedViewController.h"
 #import "DUDataSingleton.h"
+#import "SessionHandler.h"
 
 @implementation DUBookmarkedViewController
 
@@ -29,7 +30,6 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    _backingArray = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -37,45 +37,27 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
+#pragma mark - Customize Data Set
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSArray*)getDataSet
 {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    DUDataSingleton *dataProvider = [DUDataSingleton instance];
-    NSMutableArray *eventList = dataProvider.eventList;
-    
-    if (eventList == nil)
-    {
-        return 0;
-    }
-    else
-    {
-        return [eventList count];
-    }
+    return backingArray;
 }
 
 #pragma mark - Background Thread
 
-- (void)loadEventsOnBackgroundThread
+- (void)loadDataSet
 {
     @autoreleasepool
-    { /*
-        DUNetworkedDataProvider *networkDataAccess = [[DUNetworkedDataProvider alloc] init];
+    {
+        DUUser* user = [SessionHandler getUser];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        dataProvider.eventList = [[NSMutableArray alloc] init];
-        NSMutableArray *eventList = dataProvider.eventList;
-        
-        [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
-    */
+        backingArray = [dataProvider getUsersBookmarkedEvents:user];
+        [self dataHasLoaded];
     }
 }
 
-- (void)gotLoadedEvents
+- (void)dataHasLoaded
 {
     [downloadActivityIndicator stopAnimating];
     [self.tableView reloadData];

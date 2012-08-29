@@ -21,6 +21,7 @@
     if ([elementName isEqualToString:@"event"])
     {
         _currentEvent = [[DUEvent alloc] init];
+        _currentEvent.eventID = [[attributeDict objectForKey:@"id"] integerValue];
     }
     else if ([elementName isEqualToString:@"name"]) 
     {

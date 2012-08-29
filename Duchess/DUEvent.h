@@ -27,6 +27,7 @@ typedef enum eventPrivacyEnum
 {
     // Instance variables
     
+    NSInteger    _eventID;
     NSString    *_name;
     NSString    *_descriptionHeader;
     NSString    *_descriptionBody;
@@ -49,6 +50,7 @@ typedef enum eventPrivacyEnum
     NSArray     *_categories;
 }
 
+@property (nonatomic)        NSInteger    eventID;
 @property (nonatomic,strong) NSString    *name;
 @property (nonatomic,strong) NSString    *descriptionHeader;
 @property (nonatomic,strong) NSString    *descriptionBody;

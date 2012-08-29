@@ -13,6 +13,7 @@
 #import "SessionHandler.h"
 #import "DUEventListViewController.h"
 #import "DUSettingsViewController.h"
+#import "DUBookmarkedViewController.h"
 
 @interface DUDashboardViewController ()
 
@@ -83,5 +84,11 @@
 {
     DUSettingsViewController* settingsController = [[DUSettingsViewController alloc] initWithNibName:@"DUSettingsViewController" bundle:nil];
     [self.navigationController pushViewController:settingsController animated:YES];
+}
+
+- (IBAction)bookmarkedButton:(UIButton *)sender
+{
+    DUBookmarkedViewController* bookmarkController = [[DUBookmarkedViewController alloc] initWithNibName:@"DUBookmarkedViewController" bundle:nil];
+    [self.navigationController pushViewController:bookmarkController animated:YES];
 }
 @end
