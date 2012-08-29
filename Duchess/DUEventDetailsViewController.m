@@ -45,10 +45,7 @@
     // Do any additional setup after loading the view from its nib.
     
     DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
-    DUDataSingleton *dataProvider = [DUDataSingleton instance];
-    NSMutableArray *eventList = dataProvider.eventList;
-    DUEvent *event = [eventList objectAtIndex:delegate.currentEvent];
+    DUEvent *event = delegate.currentEvent;
     
     // create the linear layout view
     CSLinearLayoutView *linearLayoutView = [[CSLinearLayoutView alloc] initWithFrame:self.view.bounds];

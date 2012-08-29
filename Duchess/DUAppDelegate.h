@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DUEvent.h"
 
 @interface DUAppDelegate : NSObject <UIApplicationDelegate>
 {
@@ -15,6 +16,6 @@
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;
-@property (nonatomic) NSInteger currentEvent;
+@property (nonatomic) DUEvent* currentEvent;
 
 @end

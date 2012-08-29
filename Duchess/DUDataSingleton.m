@@ -36,15 +36,17 @@
     }
     else
     {
+        _eventList = [NSMutableArray new];
         DUNetworkedDataProvider* apiProvider = [DUNetworkedDataProvider new];
-        [apiProvider downloadAndParseEvents:_eventList fromURL:@""];
+        [apiProvider downloadAndParseEvents:_eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php"];
         return [NSArray arrayWithArray:_eventList];
     }
 }
 - (NSArray*)getEventsByCollege:(NSString*)college
 {
     NSMutableArray* collegeEvents = [NSMutableArray new];
-    for (NSObject* o in self.eventList)
+    NSArray* eventList = [self getAllEvents];
+    for (NSObject* o in eventList)
     {
         DUEvent* event = (DUEvent*)o;
         NSLog(@"college: %@\nexpected:%@\n",event.associatedCollege, college);
