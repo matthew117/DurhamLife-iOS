@@ -61,6 +61,8 @@
 		4793FDB815E4EAFC007135BA /* DURoundedBorderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4793FDB715E4EAFC007135BA /* DURoundedBorderLabel.m */; };
 		47D8F15615EE09AA00F44AB3 /* DUBookmarkedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D8F15415EE09AA00F44AB3 /* DUBookmarkedViewController.m */; };
 		47D8F15715EE09AA00F44AB3 /* DUBookmarkedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D8F15515EE09AA00F44AB3 /* DUBookmarkedViewController.xib */; };
+		47D8F16215EE4E9000F44AB3 /* clear_bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D8F16015EE4E9000F44AB3 /* clear_bookmark.png */; };
+		47D8F16315EE4E9000F44AB3 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D8F16115EE4E9000F44AB3 /* bookmark.png */; };
 		47E03FC815EB754300DC2250 /* DUEventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */; };
 		47E03FC915EB771500DC2250 /* DUEventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsView.xib */; };
 		47E03FCC15EB7C0700DC2250 /* SessionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E03FCB15EB7C0700DC2250 /* SessionHandler.m */; };
@@ -158,6 +160,8 @@
 		47D8F15315EE09AA00F44AB3 /* DUBookmarkedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUBookmarkedViewController.h; path = ../DUBookmarkedViewController.h; sourceTree = "<group>"; };
 		47D8F15415EE09AA00F44AB3 /* DUBookmarkedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUBookmarkedViewController.m; path = ../DUBookmarkedViewController.m; sourceTree = "<group>"; };
 		47D8F15515EE09AA00F44AB3 /* DUBookmarkedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DUBookmarkedViewController.xib; path = ../DUBookmarkedViewController.xib; sourceTree = "<group>"; };
+		47D8F16015EE4E9000F44AB3 /* clear_bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clear_bookmark.png; sourceTree = "<group>"; };
+		47D8F16115EE4E9000F44AB3 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
 		47E03FCA15EB7C0700DC2250 /* SessionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionHandler.h; sourceTree = "<group>"; };
 		47E03FCB15EB7C0700DC2250 /* SessionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionHandler.m; sourceTree = "<group>"; };
 		47FF471815E7F5F6002F10D6 /* DUDashboardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDashboardBackground.h; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		2F4E632B15C6E3D9008815F9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				47D8F16015EE4E9000F44AB3 /* clear_bookmark.png */,
+				47D8F16115EE4E9000F44AB3 /* bookmark.png */,
 				4713B59B15E93B6200A45687 /* bookmark_dashboard_icon.png */,
 				4713B59C15E93B6200A45687 /* browse_dashboard_icon.png */,
 				4713B59D15E93B6200A45687 /* calendar_dashboard_icon.png */,
@@ -465,6 +471,8 @@
 				2FD405F715ECF14700F5B8A6 /* DUSocietyListViewController.xib in Resources */,
 				47865BD315ED3D4F00D023A1 /* DUSettingsViewController.xib in Resources */,
 				47D8F15715EE09AA00F44AB3 /* DUBookmarkedViewController.xib in Resources */,
+				47D8F16215EE4E9000F44AB3 /* clear_bookmark.png in Resources */,
+				47D8F16315EE4E9000F44AB3 /* bookmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
