@@ -119,7 +119,43 @@
     }
     eventReviewsLabel.text = [NSString stringWithFormat:@"%@", stars];
     
+    UIButton *bookmarkButton;
+    bookmarkButton = (UIButton *)[cell viewWithTag:6];
+    bookmarkButton.selected = (event.eventID == 5);
+    [bookmarkButton addTarget:self action:@selector(bookmarkButtonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
+}
+
+- (void)bookmarkButtonTapped:(id)sender event:(id)event
+{
+    NSSet *touches = [event allTouches];
+    UITouch *touch = [touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint: currentTouchPosition];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    if (indexPath != nil)
+    {
+        NSLog(@"eventBookmarked: %@", [(DUEvent*)[backingArray objectAtIndex:indexPath.row] name]);
+        UIButton *bookmarkButton = (UIButton*)[cell viewWithTag:6];
+        UILabel *label = (UILabel*)[cell viewWithTag:2];
+        NSLog(@"eventLabl: %@", label.text);
+        if ([bookmarkButton isSelected])
+        {
+            NSLog(@"BookmarkedUnselected");
+            //bookmarkButton.imageView.image = [UIImage imageNamed:@"clear_bookmark.png"];
+            //[bookmarkButton setBackgroundImage:[UIImage imageNamed:@"clear_bookmark.png"] forState:UIControlStateNormal];
+            //bookmarkButton.selected = false;
+            //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        }
+        else
+        {
+            NSLog(@"BookmarkedSelected");
+            //bookmarkButton.imageView.image = [UIImage imageNamed:@"bookmark.png"];
+            //[bookmarkButton setBackgroundImage:[UIImage imageNamed:@"bookmark.png"] forState:UIControlStateSelected];
+            //bookmarkButton.selected = true;
+            //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        }
+    }
 }
 
 #pragma mark - UITableViewDelegate Implementation
