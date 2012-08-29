@@ -14,5 +14,6 @@
 - (IBAction)aboutButton:(UIButton *)sender;
 - (IBAction)collegeEvents:(UIButton *)sender;
 - (IBAction)societiesButton:(UIButton *)sender;
+- (IBAction)settingsButton:(UIButton *)sender;
 
 @end

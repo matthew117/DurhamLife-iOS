@@ -11,24 +11,39 @@
 #import "DUEvent.h"
 #import "DUAppDelegate.h"
 #import "DUEventDetailsViewController.h"
-#import "DUNetworkedDataProvider.h"
-
-@interface DUEventListViewController ()
-
-@end
+#import "Reachability.h"
 
 @implementation DUEventListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self){}
+    if (self)
+    {
+    
+    }
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    
+    downloadActivityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.view addSubview: downloadActivityIndicator];
+    downloadActivityIndicator.center = self.view.center;
+    if (status == NotReachable)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Network Problem" message:@"Could not connect to the Internet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    else
+    {
+        [downloadActivityIndicator startAnimating];
+        [self performSelectorInBackground:@selector(loadDataSet) withObject:nil];
+    }
 }
 
 - (void)viewDidUnload
@@ -50,16 +65,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    DUDataSingleton *dataProvider = [DUDataSingleton instance];
-    NSMutableArray *eventList = dataProvider.eventList;
-    
-    if (eventList == nil)
+    if ([self getDataSet] == nil)
     {
         return 0;
     }
     else
     {
-        return [eventList count];
+        return [[self getDataSet] count];
     }
 }
 
@@ -75,9 +87,7 @@
         customTableViewCell = nil;
     }
     
-    DUDataSingleton *dataProvider = [DUDataSingleton instance];
-    NSMutableArray *eventList = dataProvider.eventList;
-    DUEvent *event = [eventList objectAtIndex:indexPath.row];
+    DUEvent *event = [[self getDataSet] objectAtIndex:indexPath.row];
     
     UILabel *eventNameLabel;
     eventNameLabel = (UILabel *)[cell viewWithTag:1];
@@ -126,27 +136,31 @@
     DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     delegate.currentEvent = indexPath.row;
     
-    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsTabRoot" bundle:nil];
+    DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsViewController" bundle:nil];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
+#pragma mark - Customize Data Set
+
+- (NSArray*)getDataSet
+{
+    return backingArray;
+}
+
 #pragma mark - Background Thread
 
-- (void)loadEventsOnBackgroundThread
+- (void)loadDataSet
 {
     @autoreleasepool
     {
-        DUNetworkedDataProvider *networkDataAccess = [[DUNetworkedDataProvider alloc] init];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        dataProvider.eventList = [[NSMutableArray alloc] init];
-        NSMutableArray *eventList = dataProvider.eventList;
-        
-        [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
+        backingArray = [dataProvider getAllEvents];
+        [self dataHasLoaded];
     }
 }
 
-- (void)gotLoadedEvents
+- (void)dataHasLoaded
 {
     [downloadActivityIndicator stopAnimating];
     [self.tableView reloadData];

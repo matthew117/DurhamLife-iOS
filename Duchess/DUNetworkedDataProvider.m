@@ -11,7 +11,7 @@
 
 @implementation DUNetworkedDataProvider
 
-- (void)downloadAndParseEvents:(NSMutableArray *)eventList fromURL:(NSString *)URL target:(id)target selector:(SEL)selector
+- (void)downloadAndParseEvents:(NSMutableArray *)eventList fromURL:(NSString *)URL
 {
     // Should be called on the background thread
     // Caller should check to see whether network access is available before calling this function
@@ -34,7 +34,7 @@
         
         if ([parser parse])
         {
-            NSLog(@"XML successfully parsed. eventList should now be populated.");
+            NSLog(@"XML successfully parsed. List should now be populated.");
         }
         else
         {
@@ -45,8 +45,6 @@
     {
         NSLog(@"ERROR: %@", error);
     }
-    
-    [target performSelectorOnMainThread:selector withObject:eventList waitUntilDone:YES];
 }
 
 @end

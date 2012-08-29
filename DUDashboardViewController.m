@@ -8,10 +8,11 @@
 
 #import "DUDashboardViewController.h"
 #import "DUAboutViewController.h"
-#import "RootViewController.h"
 #import "DUCollegeEventsViewController.h"
 #import "DUSocietyListViewController.h"
 #import "SessionHandler.h"
+#import "DUEventListViewController.h"
+#import "DUSettingsViewController.h"
 
 @interface DUDashboardViewController ()
 
@@ -55,7 +56,7 @@
 
 - (IBAction)browseButton:(UIButton *)sender
 {
-    RootViewController* eventListController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    DUEventListViewController* eventListController = [[DUEventListViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
     [self.navigationController pushViewController:eventListController animated:YES];
 }
 
@@ -76,5 +77,11 @@
 {
     DUSocietyListViewController* societyListController = [[DUSocietyListViewController alloc] initWithNibName:@"DUSocietyListViewController" bundle:nil];
     [self.navigationController pushViewController:societyListController animated:YES];
+}
+
+- (IBAction)settingsButton:(UIButton *)sender
+{
+    DUSettingsViewController* settingsController = [[DUSettingsViewController alloc] initWithNibName:@"DUSettingsViewController" bundle:nil];
+    [self.navigationController pushViewController:settingsController animated:YES];
 }
 @end

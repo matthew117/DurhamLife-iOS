@@ -9,6 +9,7 @@
 #import "DUDataSingleton.h"
 #import "DUEvent.h"
 #import "DUSocietyXMLParser.h"
+#import "DUNetworkedDataProvider.h"
 
 @implementation DUDataSingleton
 
@@ -29,7 +30,16 @@
 
 - (NSArray*)getAllEvents
 {
-    return nil;
+    if (_eventList)
+    {
+        return _eventList;
+    }
+    else
+    {
+        DUNetworkedDataProvider* apiProvider = [DUNetworkedDataProvider new];
+        [apiProvider downloadAndParseEvents:_eventList fromURL:@""];
+        return [NSArray arrayWithArray:_eventList];
+    }
 }
 - (NSArray*)getEventsByCollege:(NSString*)college
 {

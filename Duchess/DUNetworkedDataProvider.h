@@ -13,6 +13,6 @@
     
 }
 
-- (void)downloadAndParseEvents:(NSMutableArray *)eventList fromURL:(NSString *)URL target:(id)target selector:(SEL)selector;
+- (void)downloadAndParseEvents:(NSMutableArray *)eventList fromURL:(NSString *)URL;
 
 @end

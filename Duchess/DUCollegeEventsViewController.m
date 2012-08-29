@@ -166,7 +166,7 @@
         dataProvider.eventList = [[NSMutableArray alloc] init];
         NSMutableArray *eventList = dataProvider.eventList;
         
-        [networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
+        //[networkDataAccess downloadAndParseEvents:eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php" target:self selector:@selector(gotLoadedEvents)];
     }
 }
 
