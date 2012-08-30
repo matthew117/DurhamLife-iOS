@@ -14,6 +14,7 @@
 #import "DUEventListViewController.h"
 #import "DUSettingsViewController.h"
 #import "DUBookmarkedViewController.h"
+#import "DUMySocietiesListViewController.h"
 
 @interface DUDashboardViewController ()
 
@@ -90,6 +91,12 @@
 {
     DUBookmarkedViewController* bookmarkController = [[DUBookmarkedViewController alloc] initWithNibName:@"DUBookmarkedViewController" bundle:nil];
     [self.navigationController pushViewController:bookmarkController animated:YES];
+}
+
+- (IBAction)mySocietiesButton:(UIButton *)sender
+{
+    DUMySocietiesListViewController* mySocietiesController = [[DUMySocietiesListViewController alloc] initWithNibName:@"DUMySocietiesListViewController" bundle:nil];
+    [self.navigationController pushViewController:mySocietiesController animated:YES];
 }
 
 - (IBAction)showUserDefaults:(UIButton *)sender

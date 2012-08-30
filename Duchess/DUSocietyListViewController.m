@@ -7,8 +7,6 @@
 //
 
 #import "DUSocietyListViewController.h"
-#import "DUDataSingleton.h"
-#import "DUSociety.h"
 #import "Reachability.h"
 
 @interface DUSocietyListViewController ()

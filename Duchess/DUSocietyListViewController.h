@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DUDataSingleton.h"
+#import "DUSociety.h"
 
 @interface DUSocietyListViewController : UITableViewController
 {

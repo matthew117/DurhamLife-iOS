@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.title = @"Events";
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
     

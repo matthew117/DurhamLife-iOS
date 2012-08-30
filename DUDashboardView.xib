@@ -61,7 +61,7 @@
 								<double key="IBUIImageEdgeInsets.bottom">0.0</double>
 								<double key="IBUIImageEdgeInsets.left">56</double>
 								<double key="IBUIImageEdgeInsets.right">0.0</double>
-								<string key="IBUINormalTitle">Browse</string>
+								<string key="IBUINormalTitle">Events</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor" id="75558340">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
@@ -170,11 +170,9 @@
 								<string key="NSFrame">{{162, 159}, {149, 72}}</string>
 								<reference key="NSSuperview" ref="780904625"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<bool key="IBUIEnabled">NO</bool>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<int key="IBUIButtonType">1</int>
@@ -419,6 +417,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">mySocietiesButton:</string>
+						<reference key="source" ref="155656305"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">aboutButton:</string>
 						<reference key="source" ref="456882752"/>
 						<reference key="destination" ref="372490531"/>
@@ -569,7 +576,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">22</int>
+			<int key="maxID">23</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -589,6 +596,7 @@
 						<string key="bookmarkedButton:">UIButton</string>
 						<string key="browseButton:">UIButton</string>
 						<string key="collegeEvents:">UIButton</string>
+						<string key="mySocietiesButton:">UIButton</string>
 						<string key="settingsButton:">UIButton</string>
 						<string key="showUserDefaults:">UIButton</string>
 						<string key="societiesButton:">UIButton</string>
@@ -608,6 +616,10 @@
 						</object>
 						<object class="IBActionInfo" key="collegeEvents:">
 							<string key="name">collegeEvents:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBActionInfo" key="mySocietiesButton:">
+							<string key="name">mySocietiesButton:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBActionInfo" key="settingsButton:">
