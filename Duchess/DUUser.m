@@ -58,6 +58,16 @@
     }
 }
 
+- (BOOL)isSubscribedToCategory:(NSString *)category
+{
+    for(int i = 0; i < _categoryPreferences.count; i++)
+    {
+        if ([category isEqualToString:[_categoryPreferences objectAtIndex:i]]) return YES;
+    }
+    
+    return NO;
+}
+
 - (NSString*)description
 {
     return [NSString stringWithFormat:@"Affiliation:%@\nCollege:%@\nCategoryPreferences:%@\nSubscribedEvents:%@\nBookmarkedEvents%@",

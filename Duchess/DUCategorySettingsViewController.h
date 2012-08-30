@@ -2,7 +2,7 @@
 //  DUCategorySettingsViewController.h
 //  Duchess
 //
-//  Created by App Dev on 30/08/2012.
+//  Created by Jamie Bates on 30/08/2012.
 //
 //
 
