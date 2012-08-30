@@ -12,6 +12,8 @@
 #import "DUAppDelegate.h"
 #import "DUEventDetailsViewController.h"
 #import "Reachability.h"
+#import "DUUser.h"
+#import "SessionHandler.h"
 
 @implementation DUEventListViewController
 
@@ -119,9 +121,22 @@
     }
     eventReviewsLabel.text = [NSString stringWithFormat:@"%@", stars];
     
+    DUUser* user = [SessionHandler getUser];
+    
     UIButton *bookmarkButton;
     bookmarkButton = (UIButton *)[cell viewWithTag:6];
-    bookmarkButton.selected = (event.eventID == 5);
+    NSMutableDictionary* userBookmarks = user.bookmarkedEvents;
+    
+    [SessionHandler saveUser:user];
+    
+    if ([[userBookmarks objectForKey:[NSString stringWithFormat:@"%d",event.eventID]] boolValue])
+    {
+        [bookmarkButton setImage:[UIImage imageNamed:@"bookmark.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [bookmarkButton setImage:[UIImage imageNamed:@"clear_bookmark.png"] forState:UIControlStateNormal];
+    }    
     [bookmarkButton addTarget:self action:@selector(bookmarkButtonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
@@ -137,21 +152,21 @@
     {
         DUEvent* event = [backingArray objectAtIndex:indexPath.row];
         UIButton *bookmarkButton = (UIButton*)[cell viewWithTag:6];
-        if (event.eventID)
+        
+        DUUser* user = [SessionHandler getUser];
+        NSMutableDictionary* userBookmarks = user.bookmarkedEvents;
+        
+        if ([[userBookmarks objectForKey:[NSString stringWithFormat:@"%d",event.eventID]] boolValue])
         {
-            NSLog(@"BookmarkedUnselected");
-            //bookmarkButton.imageView.image = [UIImage imageNamed:@"clear_bookmark.png"];
-            //[bookmarkButton setBackgroundImage:[UIImage imageNamed:@"clear_bookmark.png"] forState:UIControlStateNormal];
-            //bookmarkButton.selected = false;
-            //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+            [bookmarkButton setImage:[UIImage imageNamed:@"clear_bookmark.png"] forState:UIControlStateNormal];
+            [userBookmarks setObject:[NSNumber numberWithBool:NO] forKey:[NSString stringWithFormat:@"%d", event.eventID]];
+            [SessionHandler saveUser:user];
         }
         else
         {
-            NSLog(@"BookmarkedSelected");
-            //bookmarkButton.imageView.image = [UIImage imageNamed:@"bookmark.png"];
-            //[bookmarkButton setBackgroundImage:[UIImage imageNamed:@"bookmark.png"] forState:UIControlStateSelected];
-            //bookmarkButton.selected = true;
-            //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+            [bookmarkButton setImage:[UIImage imageNamed:@"bookmark.png"] forState:UIControlStateNormal];
+            [userBookmarks setObject:[NSNumber numberWithBool:YES] forKey:[NSString stringWithFormat:@"%d", event.eventID]];
+            [SessionHandler saveUser:user];
         }
     }
 }

@@ -43,7 +43,7 @@ static NSString* const FIRST_USE_KEY = @"first_use";
                                 @"Community",
                                 nil];
     user.subscribedSocities = [NSMutableArray new];
-    user.bookmarkedEvents = [NSMutableArray new];
+    user.bookmarkedEvents = [NSMutableDictionary new];
     
     NSData* userData = [NSKeyedArchiver archivedDataWithRootObject:user];
     
