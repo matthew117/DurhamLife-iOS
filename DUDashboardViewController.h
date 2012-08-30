@@ -11,11 +11,12 @@
 @interface DUDashboardViewController : UIViewController
 
 - (IBAction)browseButton:(UIButton *)sender;
-- (IBAction)aboutButton:(UIButton *)sender;
 - (IBAction)collegeEvents:(UIButton *)sender;
 - (IBAction)societiesButton:(UIButton *)sender;
-- (IBAction)settingsButton:(UIButton *)sender;
 - (IBAction)bookmarkedButton:(UIButton *)sender;
 - (IBAction)mySocietiesButton:(UIButton *)sender;
+
+- (void)settingsButton:(UIButton *)sender;
+- (void)aboutButton:(UIButton *)sender;
 
 @end

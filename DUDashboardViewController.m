@@ -36,6 +36,14 @@
     [super viewDidLoad];
     self.title = @"Durham Life";
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(settingsButton:)];
+    
+    UIButton* aboutButtonItem = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [aboutButtonItem addTarget:self action:@selector(aboutButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:aboutButtonItem];
+
+    
     [SessionHandler setDefaults];
     if ([SessionHandler appOpenedForFirstTime])
     {
@@ -62,7 +70,7 @@
     [self.navigationController pushViewController:eventListController animated:YES];
 }
 
-- (IBAction)aboutButton:(UIButton *)sender
+- (void)aboutButton:(UIButton *)sender
 {
     DUAboutViewController *aboutView = [[DUAboutViewController alloc] init];
     [self presentModalViewController:aboutView animated:YES];
@@ -81,7 +89,7 @@
     [self.navigationController pushViewController:societyListController animated:YES];
 }
 
-- (IBAction)settingsButton:(UIButton *)sender
+- (void)settingsButton:(UIButton *)sender
 {
     DUSettingsViewController* settingsController = [[DUSettingsViewController alloc] initWithNibName:@"DUSettingsViewController" bundle:nil];
     [self.navigationController pushViewController:settingsController animated:YES];
