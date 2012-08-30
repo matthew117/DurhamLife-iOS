@@ -19,7 +19,7 @@ static NSArray *affiliation;
 
 + (void)initialize
 {
-    affiliation = [NSArray arrayWithObjects: @"Guest", @"Student", @"Staff" nil];
+    affiliation = [NSArray arrayWithObjects: @"Guest", @"Student", @"Staff", nil];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -76,7 +76,7 @@ static NSArray *affiliation;
     
     DUUser *user = [SessionHandler getUser];
     
-    if ([user.college isEqualToString:[affiliation objectAtIndex:indexPath.row]])
+    if ([DUUser affiliationToInteger:(user.userAffiliation)] == (indexPath.row + 1))
     {
         lastIndexPath = indexPath;
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -97,7 +97,7 @@ NSIndexPath* lastIndexPath;
 {
     DUUser *user = [SessionHandler getUser];
     
-    user.college = [affiliation objectAtIndex:indexPath.row];
+    user.userAffiliation = [DUUser affiliationToInteger:(indexPath.row)];
     
     [SessionHandler saveUser:user];
     

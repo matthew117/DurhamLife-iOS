@@ -8,6 +8,7 @@
 
 #import "DUSettingsViewController.h"
 #import "DUCollegeSettingsViewController.h"
+#import "DUAffiliationSettingsViewController.h"
 
 @interface DUSettingsViewController ()
 
@@ -114,7 +115,8 @@
             {
                 case 0:
                 {
-                    
+                    DUAffiliationSettingsViewController *affiliationViewController = [[DUAffiliationSettingsViewController alloc] initWithNibName:@"DUAffiliationSettingsViewController" bundle:nil];
+                    [self.navigationController pushViewController:affiliationViewController animated:YES];
                 }
                 break;
                     
