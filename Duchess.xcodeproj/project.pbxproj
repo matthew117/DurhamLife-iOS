@@ -10,6 +10,8 @@
 		2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */; };
 		2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
+		2F69414315EFA861005B23E4 /* DUCollegesSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F69414115EFA861005B23E4 /* DUCollegesSettingsViewController.m */; };
+		2F69414415EFA861005B23E4 /* DUCollegesSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F69414215EFA861005B23E4 /* DUCollegesSettingsViewController.xib */; };
 		2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD68C15C15E30007BB3BE /* DUUser.m */; };
 		2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */; };
 		2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */; };
@@ -89,6 +91,9 @@
 
 /* Begin PBXFileReference section */
 		2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2F69414015EFA861005B23E4 /* DUCollegesSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUCollegesSettingsViewController.h; sourceTree = "<group>"; };
+		2F69414115EFA861005B23E4 /* DUCollegesSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUCollegesSettingsViewController.m; sourceTree = "<group>"; };
+		2F69414215EFA861005B23E4 /* DUCollegesSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUCollegesSettingsViewController.xib; sourceTree = "<group>"; };
 		2F7DD68B15C15E30007BB3BE /* DUUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUUser.h; sourceTree = "<group>"; };
 		2F7DD68C15C15E30007BB3BE /* DUUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUUser.m; sourceTree = "<group>"; };
 		2F7DD69815C16CBB007BB3BE /* DUEventXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventXMLParser.h; sourceTree = "<group>"; };
@@ -362,6 +367,7 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F69414215EFA861005B23E4 /* DUCollegesSettingsViewController.xib */,
 				470B561615EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib */,
 				2FB177FE15EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib */,
 				47B0C90E15EEC0F8006615CD /* DUAffiliationSettingsViewController.xib */,
@@ -410,6 +416,8 @@
 				2FB177FD15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m */,
 				470B561415EFA12F00FF8DF8 /* DUMySocietiesListViewController.h */,
 				470B561515EFA12F00FF8DF8 /* DUMySocietiesListViewController.m */,
+				2F69414015EFA861005B23E4 /* DUCollegesSettingsViewController.h */,
+				2F69414115EFA861005B23E4 /* DUCollegesSettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -509,6 +517,7 @@
 				47B0C91015EEC0F8006615CD /* DUAffiliationSettingsViewController.xib in Resources */,
 				2FB1780015EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib in Resources */,
 				470B561815EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib in Resources */,
+				2F69414415EFA861005B23E4 /* DUCollegesSettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +583,7 @@
 				47B0C90F15EEC0F8006615CD /* DUAffiliationSettingsViewController.m in Sources */,
 				2FB177FF15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m in Sources */,
 				470B561715EFA12F00FF8DF8 /* DUMySocietiesListViewController.m in Sources */,
+				2F69414315EFA861005B23E4 /* DUCollegesSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
