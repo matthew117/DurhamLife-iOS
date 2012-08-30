@@ -30,7 +30,7 @@ static NSString* const FIRST_USE_KEY = @"first_use";
 + (void)setDefaults
 {
     DUUser* user = [DUUser new];
-    user.userAffiliation = USER;
+    user.userAffiliation = GUEST;
     user.college = @"";
     user.categoryPreferences = [NSMutableArray arrayWithObjects:
                                 @"University",

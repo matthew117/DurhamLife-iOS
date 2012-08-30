@@ -40,7 +40,7 @@
 {
     switch (affiliation)
     {
-        case USER: return 1;
+        case GUEST: return 1;
         case STUDENT: return 2;
         case STAFF: return 3;
         default: return 1;
@@ -51,10 +51,10 @@
 {
     switch (integer)
     {
-        case 1: return USER;
+        case 1: return GUEST;
         case 2: return STUDENT;
         case 3: return STAFF;
-        default:return USER;
+        default:return GUEST;
     }
 }
 
@@ -62,7 +62,7 @@
 {
     switch (affiliation)
     {
-        case USER: return @"Guest";
+        case GUEST: return @"Guest";
         case STUDENT: return @"Student";
         case STAFF: return @"Staff";
         default:return @"Guest";
@@ -71,7 +71,12 @@
 
 - (BOOL)isStaff
 {
-    
+    return _userAffiliation == STAFF;
+}
+
+- (BOOL)isGuest
+{
+    return _userAffiliation == GUEST;
 }
 
 - (BOOL)isSubscribedToCategory:(NSString *)category

@@ -69,7 +69,8 @@
         {
             DUUser *user = [SessionHandler getUser];
             
-            return 2; 
+            if ([user isGuest]) return 2;
+            else return 2;
         }
         case  1: return 1;
             
@@ -153,6 +154,8 @@ NSIndexPath *pressedIndexPath;
     {
         case 0:
         {
+            pressedIndexPath = indexPath;
+            
             switch (indexPath.row)
             {
                 case 0:
@@ -190,8 +193,6 @@ NSIndexPath *pressedIndexPath;
             break;
         }
     }
-    
-    pressedIndexPath = indexPath;
 }
 
 @end
