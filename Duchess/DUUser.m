@@ -69,6 +69,11 @@
     }
 }
 
+- (BOOL)isStudent
+{
+    return _userAffiliation == STUDENT;
+}
+
 - (BOOL)isStaff
 {
     return _userAffiliation == STAFF;
@@ -97,6 +102,21 @@
 - (void)unsubcribeFromCategory:(NSString *)category
 {
     if ([self isSubscribedToCategory:category]) [_categoryPreferences removeObject:category];
+}
+
+- (BOOL)isSubscribedToCollege:(NSString*)college
+{
+    return NO;
+}
+
+- (void)subcribeToCollege:(NSString*)college
+{
+    
+}
+
+- (void)unsubcribeFromCollege:(NSString*)college
+{
+    
 }
 
 - (NSString*)description

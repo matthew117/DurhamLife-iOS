@@ -2,10 +2,11 @@
 //  DUCollegesSettingsViewController.m
 //  Duchess
 //
-//  Created by App Dev on 30/08/2012.
+//  Created by Jamie Bates on 30/08/2012.
 //
 //
 
+#import "SessionHandler.h"
 #import "DUCollegesSettingsViewController.h"
 
 @interface DUCollegesSettingsViewController ()
@@ -13,6 +14,17 @@
 @end
 
 @implementation DUCollegesSettingsViewController
+
+static NSArray *colleges;
+
++ (void)initialize
+{
+    colleges = [NSArray arrayWithObjects:
+                @"Collingwood", @"Grey", @"Hatfield", @"Hild Bede",
+                @"John Snow", @"Josephine Butler", @"St. Aidan's", @"St. Chad's",
+                @"St. Cuthbert's", @"St. John's", @"St. Mary's", @"Stephenson",
+                @"Trevelyan", @"University", @"Ustinov", @"Van Mildert", nil];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,12 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.title = @"Colleges";
 }
 
 - (void)viewDidUnload
@@ -50,16 +58,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [colleges count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,61 +71,50 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [colleges objectAtIndex:indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    DUUser *user = [SessionHandler getUser];
+    
+    UISwitch *collegeSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(1.0, 1.0, 20.0, 20.0)];
+    collegeSwitch.on = [user isSubscribedToCollege:[colleges objectAtIndex:indexPath.row]];
+    [collegeSwitch addTarget:self action:@selector(toggleCategory:event:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.accessoryView = collegeSwitch;
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)toggleCategory:(UISwitch *)sender event:(id)event
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    UITableViewCell *cell = (UITableViewCell *)sender.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    if (indexPath != nil)
+    {
+        DUUser *user = [SessionHandler getUser];
+        
+        if ([(UISwitch *)sender isOn]) [user subcribeToCollege:[colleges objectAtIndex:indexPath.row]];
+        else [user unsubcribeFromCollege:[colleges objectAtIndex:indexPath.row]];
+        
+        NSLog(@"%@", [colleges objectAtIndex:indexPath.row]);
+        
+        [SessionHandler saveUser:user];
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
+NSIndexPath* lastIndexPath;
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
 }
 
 @end

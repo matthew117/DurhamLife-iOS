@@ -8,6 +8,7 @@
 
 #import "DUSettingsViewController.h"
 #import "DUCollegeSettingsViewController.h"
+#import "DUCollegesSettingsViewController.h"
 #import "DUAffiliationSettingsViewController.h"
 #import "DUCategorySettingsViewController.h"
 #import "SessionHandler.h"
@@ -54,6 +55,36 @@
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:pressedIndexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+- (void)deleteDurhamAffiliateRows
+{
+    NSArray *deleteIndexPaths = [NSArray arrayWithObjects:
+                                 [NSIndexPath indexPathForRow:1 inSection:0], nil];
+    
+    UITableView *tableView = (UITableView *)self.view;
+    
+    [tableView beginUpdates];
+
+    [tableView deleteRowsAtIndexPaths:deleteIndexPaths
+              withRowAnimation:UITableViewRowAnimationFade];
+    
+    [tableView endUpdates];
+}
+
+- (void)insertDurhamAffiliateRows
+{
+    NSArray *deleteIndexPaths = [NSArray arrayWithObjects:
+                                 [NSIndexPath indexPathForRow:1 inSection:0], nil];
+    
+    UITableView *tableView = (UITableView *)self.view;
+    
+    [tableView beginUpdates];
+    
+    [tableView deleteRowsAtIndexPaths:deleteIndexPaths
+                     withRowAnimation:UITableViewRowAnimationFade];
+    
+    [tableView endUpdates];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -65,13 +96,7 @@
 {
     switch (section)
     {
-        case  0:
-        {
-            DUUser *user = [SessionHandler getUser];
-            
-            if ([user isGuest]) return 2;
-            else return 2;
-        }
+        case  0: return 2;
         case  1: return 1;
             
         default: return 0;
@@ -167,8 +192,18 @@ NSIndexPath *pressedIndexPath;
                     
                 case 1:
                 {
-                    DUCollegeSettingsViewController *collegeViewController = [[DUCollegeSettingsViewController alloc] initWithNibName:@"DUCollegeSettingsViewController" bundle:nil];
-                    [self.navigationController pushViewController:collegeViewController animated:YES];
+                    DUUser *user = [SessionHandler getUser];
+                    
+                    if ([user isStaff])
+                    {
+                        DUCollegesSettingsViewController *collegesViewController = [[DUCollegesSettingsViewController alloc] initWithNibName:@"DUCollegesSettingsViewController" bundle:nil];
+                        [self.navigationController pushViewController:collegesViewController animated:YES];
+                    }
+                    else
+                    {
+                        DUCollegeSettingsViewController *collegeViewController = [[DUCollegeSettingsViewController alloc] initWithNibName:@"DUCollegeSettingsViewController" bundle:nil];
+                        [self.navigationController pushViewController:collegeViewController animated:YES];
+                    }
                 }
                 break;
                     
