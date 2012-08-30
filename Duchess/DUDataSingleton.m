@@ -73,16 +73,11 @@
 {
     NSMutableArray* bookmarkedEvents = [NSMutableArray new];
     NSArray* eventList = [self getAllEvents];
-    NSArray* userBookmarks = [SessionHandler getUser].bookmarkedEvents;
-    for (NSObject* o in eventList)
+    NSMutableDictionary* userBookmarks = [SessionHandler getUser].bookmarkedEvents;
+    
+    for (DUEvent* event in eventList)
     {
-        DUEvent* event = (DUEvent*)o;
-        if ([DUDataSingleton arrayContainsEventID:userBookmarks :event.eventID])
-        {
-            [bookmarkedEvents addObject:event];
-        }
-        
-        if (event.eventID == 5 || event.eventID == 8)
+        if ([[userBookmarks objectForKey:[NSString stringWithFormat:@"%d",event.eventID]] boolValue])
         {
             [bookmarkedEvents addObject:event];
         }
