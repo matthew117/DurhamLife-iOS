@@ -135,11 +135,9 @@
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     if (indexPath != nil)
     {
-        NSLog(@"eventBookmarked: %@", [(DUEvent*)[backingArray objectAtIndex:indexPath.row] name]);
+        DUEvent* event = [backingArray objectAtIndex:indexPath.row];
         UIButton *bookmarkButton = (UIButton*)[cell viewWithTag:6];
-        UILabel *label = (UILabel*)[cell viewWithTag:2];
-        NSLog(@"eventLabl: %@", label.text);
-        if ([bookmarkButton isSelected])
+        if (event.eventID)
         {
             NSLog(@"BookmarkedUnselected");
             //bookmarkButton.imageView.image = [UIImage imageNamed:@"clear_bookmark.png"];
