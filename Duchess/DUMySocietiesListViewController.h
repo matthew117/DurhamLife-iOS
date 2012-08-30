@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DUSocietyListViewController.h"
 
-@interface MySocietiesListViewController : DUSocietyListViewController
+@interface DUMySocietiesListViewController : DUSocietyListViewController
 
 @end

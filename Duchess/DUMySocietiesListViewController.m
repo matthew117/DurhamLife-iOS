@@ -6,13 +6,13 @@
 //
 //
 
-#import "MySocietiesListViewController.h"
+#import "DUMySocietiesListViewController.h"
 
-@interface MySocietiesListViewController ()
+@interface DUMySocietiesListViewController ()
 
 @end
 
-@implementation MySocietiesListViewController
+@implementation DUMySocietiesListViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
