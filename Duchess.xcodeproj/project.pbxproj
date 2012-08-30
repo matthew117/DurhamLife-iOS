@@ -14,6 +14,8 @@
 		2F7DD69A15C16CBB007BB3BE /* DUEventXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69915C16CBB007BB3BE /* DUEventXMLParser.m */; };
 		2F7DD69E15C1757D007BB3BE /* DUNetworkedDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */; };
 		2F7DD6A115C193C6007BB3BE /* DUDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */; };
+		2FB177FF15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB177FD15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m */; };
+		2FB1780015EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FB177FE15EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib */; };
 		2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */; };
 		2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */; };
@@ -93,6 +95,9 @@
 		2F7DD69D15C1757D007BB3BE /* DUNetworkedDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNetworkedDataProvider.m; sourceTree = "<group>"; };
 		2F7DD69F15C193C6007BB3BE /* DUDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDataSingleton.h; sourceTree = "<group>"; };
 		2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUDataSingleton.m; sourceTree = "<group>"; };
+		2FB177FC15EF66DE00CA3FF7 /* DUCategorySettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUCategorySettingsViewController.h; sourceTree = "<group>"; };
+		2FB177FD15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUCategorySettingsViewController.m; sourceTree = "<group>"; };
+		2FB177FE15EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUCategorySettingsViewController.xib; sourceTree = "<group>"; };
 		2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUCustomEventTableViewCell.xib; sourceTree = "<group>"; };
 		2FCCAE1A15C2DA9E00CC3D61 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -352,6 +357,7 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2FB177FE15EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib */,
 				47B0C90E15EEC0F8006615CD /* DUAffiliationSettingsViewController.xib */,
 				47B0C90815EE836E006615CD /* DUCollegeSettingsViewController.xib */,
 				47D8F15515EE09AA00F44AB3 /* DUBookmarkedViewController.xib */,
@@ -394,6 +400,8 @@
 				47B0C90715EE836E006615CD /* DUCollegeSettingsViewController.m */,
 				47B0C90C15EEC0F7006615CD /* DUAffiliationSettingsViewController.h */,
 				47B0C90D15EEC0F7006615CD /* DUAffiliationSettingsViewController.m */,
+				2FB177FC15EF66DE00CA3FF7 /* DUCategorySettingsViewController.h */,
+				2FB177FD15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -491,6 +499,7 @@
 				47D8F16315EE4E9000F44AB3 /* bookmark.png in Resources */,
 				47B0C90A15EE836E006615CD /* DUCollegeSettingsViewController.xib in Resources */,
 				47B0C91015EEC0F8006615CD /* DUAffiliationSettingsViewController.xib in Resources */,
+				2FB1780015EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +563,7 @@
 				47D8F15615EE09AA00F44AB3 /* DUBookmarkedViewController.m in Sources */,
 				47B0C90915EE836E006615CD /* DUCollegeSettingsViewController.m in Sources */,
 				47B0C90F15EEC0F8006615CD /* DUAffiliationSettingsViewController.m in Sources */,
+				2FB177FF15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
