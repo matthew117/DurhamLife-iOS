@@ -75,20 +75,22 @@ static NSArray *categories;
     }
     
     cell.textLabel.text = [categories objectAtIndex:indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     DUUser *user = [SessionHandler getUser];
+
+    UISwitch *categorySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(1.0, 1.0, 20.0, 20.0)];
+    categorySwitch.on = [user isSubscribedToCategory:[categories objectAtIndex:indexPath.row]];
+    [categorySwitch addTarget:self action:@selector(toggleCategory:) forControlEvents:UIControlEventValueChanged];
     
-    if ([user.college isEqualToString:[categories objectAtIndex:indexPath.row]])
-    {
-        lastIndexPath = indexPath;
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else
-    {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    cell.accessoryView = categorySwitch;
     
     return cell;
+}
+
+- (void)toggleCategory:(id)sender
+{
+    [(UISwitch *)sender isOn];
 }
 
 #pragma mark - Table view delegate
@@ -99,23 +101,7 @@ NSIndexPath* lastIndexPath;
 {
     DUUser *user = [SessionHandler getUser];
     
-    user.college = [categories objectAtIndex:indexPath.row];
-    
     [SessionHandler saveUser:user];
-    
-    UITableViewCell* newCell = [tableView cellForRowAtIndexPath:indexPath];
-    int newRow = [indexPath row];
-    int oldRow = (lastIndexPath != nil) ? [lastIndexPath row] : -1;
-    
-    if(newRow != oldRow)
-    {
-        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        UITableViewCell* oldCell = [tableView cellForRowAtIndexPath:lastIndexPath];
-        oldCell.accessoryType = UITableViewCellAccessoryNone;
-        lastIndexPath = indexPath;
-    }
-    
-    [tableView deselectRowAtIndexPath:(NSIndexPath *)indexPath animated:YES];
 }
 
 @end

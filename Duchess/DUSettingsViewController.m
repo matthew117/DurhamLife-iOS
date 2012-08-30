@@ -9,6 +9,7 @@
 #import "DUSettingsViewController.h"
 #import "DUCollegeSettingsViewController.h"
 #import "DUAffiliationSettingsViewController.h"
+#import "DUCategorySettingsViewController.h"
 
 @interface DUSettingsViewController ()
 
@@ -130,7 +131,7 @@
                 default: break;
             }
         }
-            break;
+        break;
             
         case 1:
         {
@@ -138,7 +139,8 @@
             {
                 case 0:
                 {
-                    
+                    DUCategorySettingsViewController *categoryViewController = [[DUCategorySettingsViewController alloc] initWithNibName:@"DUCategorySettingsViewController" bundle:nil];
+                    [self.navigationController pushViewController:categoryViewController animated:YES];
                 }
                 break;
                     
