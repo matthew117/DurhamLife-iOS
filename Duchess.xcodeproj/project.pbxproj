@@ -40,6 +40,8 @@
 		2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC915C1462100B2C6F7 /* DuchessTests.h */; };
 		2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */; };
 		2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */; };
+		470B561715EFA12F00FF8DF8 /* MySocietiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470B561515EFA12F00FF8DF8 /* MySocietiesListViewController.m */; };
+		470B561815EFA12F00FF8DF8 /* MySocietiesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470B561615EFA12F00FF8DF8 /* MySocietiesListViewController.xib */; };
 		470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
 		4713B59515E92F5A00A45687 /* DashboardButtonBackgroundNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4713B59315E92F5A00A45687 /* DashboardButtonBackgroundNormal.png */; };
@@ -136,6 +138,9 @@
 		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
 		2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEvent.h; sourceTree = "<group>"; };
 		2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEvent.m; sourceTree = "<group>"; };
+		470B561415EFA12F00FF8DF8 /* MySocietiesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySocietiesListViewController.h; sourceTree = "<group>"; };
+		470B561515EFA12F00FF8DF8 /* MySocietiesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySocietiesListViewController.m; sourceTree = "<group>"; };
+		470B561615EFA12F00FF8DF8 /* MySocietiesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MySocietiesListViewController.xib; sourceTree = "<group>"; };
 		470F860715C5D87B0073AD88 /* CSLinearLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutItem.h; sourceTree = "<group>"; };
 		470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutItem.m; sourceTree = "<group>"; };
 		470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutView.h; sourceTree = "<group>"; };
@@ -357,6 +362,7 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				470B561615EFA12F00FF8DF8 /* MySocietiesListViewController.xib */,
 				2FB177FE15EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib */,
 				47B0C90E15EEC0F8006615CD /* DUAffiliationSettingsViewController.xib */,
 				47B0C90815EE836E006615CD /* DUCollegeSettingsViewController.xib */,
@@ -402,6 +408,8 @@
 				47B0C90D15EEC0F7006615CD /* DUAffiliationSettingsViewController.m */,
 				2FB177FC15EF66DE00CA3FF7 /* DUCategorySettingsViewController.h */,
 				2FB177FD15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m */,
+				470B561415EFA12F00FF8DF8 /* MySocietiesListViewController.h */,
+				470B561515EFA12F00FF8DF8 /* MySocietiesListViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 				47B0C90A15EE836E006615CD /* DUCollegeSettingsViewController.xib in Resources */,
 				47B0C91015EEC0F8006615CD /* DUAffiliationSettingsViewController.xib in Resources */,
 				2FB1780015EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib in Resources */,
+				470B561815EFA12F00FF8DF8 /* MySocietiesListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +573,7 @@
 				47B0C90915EE836E006615CD /* DUCollegeSettingsViewController.m in Sources */,
 				47B0C90F15EEC0F8006615CD /* DUAffiliationSettingsViewController.m in Sources */,
 				2FB177FF15EF66DE00CA3FF7 /* DUCategorySettingsViewController.m in Sources */,
+				470B561715EFA12F00FF8DF8 /* MySocietiesListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
