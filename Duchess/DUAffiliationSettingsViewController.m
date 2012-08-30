@@ -97,7 +97,7 @@ NSIndexPath* lastIndexPath;
 {
     DUUser *user = [SessionHandler getUser];
     
-    user.userAffiliation = [DUUser affiliationToInteger:(indexPath.row)];
+    user.userAffiliation = [DUUser integerToAffiliation:(indexPath.row + 1)];
     
     [SessionHandler saveUser:user];
     

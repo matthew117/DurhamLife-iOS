@@ -37,7 +37,7 @@ static NSArray *categories;
 {
     [super viewDidLoad];
     
-    self.title = @"Select a college";
+    self.title = @"Categories";
 }
 
 - (void)viewDidUnload

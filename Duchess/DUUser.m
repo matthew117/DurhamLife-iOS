@@ -58,6 +58,22 @@
     }
 }
 
++ (NSString*)affiliationToString:(UserAffiliation)affiliation
+{
+    switch (affiliation)
+    {
+        case USER: return @"Guest";
+        case STUDENT: return @"Student";
+        case STAFF: return @"Staff";
+        default:return @"Guest";
+    }
+}
+
+- (BOOL)isStaff
+{
+    
+}
+
 - (BOOL)isSubscribedToCategory:(NSString *)category
 {
     for(int i = 0; i < _categoryPreferences.count; i++)
