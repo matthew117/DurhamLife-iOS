@@ -81,16 +81,29 @@ static NSArray *categories;
 
     UISwitch *categorySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(1.0, 1.0, 20.0, 20.0)];
     categorySwitch.on = [user isSubscribedToCategory:[categories objectAtIndex:indexPath.row]];
-    [categorySwitch addTarget:self action:@selector(toggleCategory:) forControlEvents:UIControlEventValueChanged];
+    [categorySwitch addTarget:self action:@selector(toggleCategory:event:) forControlEvents:UIControlEventTouchUpInside];
     
     cell.accessoryView = categorySwitch;
     
     return cell;
 }
 
-- (void)toggleCategory:(id)sender
+- (void)toggleCategory:(UISwitch *)sender event:(id)event
 {
-    [(UISwitch *)sender isOn];
+    UITableViewCell *cell = (UITableViewCell *)sender.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    if (indexPath != nil)
+    {
+        DUUser *user = [SessionHandler getUser];
+    
+        if ([(UISwitch *)sender isOn]) [user subcribeToCategory:[categories objectAtIndex:indexPath.row]];
+        else [user unsubcribeFromCategory:[categories objectAtIndex:indexPath.row]];
+        
+        NSLog(@"%@", [categories objectAtIndex:indexPath.row]);
+        
+        [SessionHandler saveUser:user];
+    }
 }
 
 #pragma mark - Table view delegate
@@ -99,9 +112,7 @@ NSIndexPath* lastIndexPath;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DUUser *user = [SessionHandler getUser];
     
-    [SessionHandler saveUser:user];
 }
 
 @end

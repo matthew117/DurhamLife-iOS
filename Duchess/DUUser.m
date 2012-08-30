@@ -68,6 +68,16 @@
     return NO;
 }
 
+- (void)subcribeToCategory:(NSString *)category
+{
+    if (![self isSubscribedToCategory:category]) [_categoryPreferences addObject:category];
+}
+
+- (void)unsubcribeFromCategory:(NSString *)category
+{
+    if ([self isSubscribedToCategory:category]) [_categoryPreferences removeObject:category];
+}
+
 - (NSString*)description
 {
     return [NSString stringWithFormat:@"Affiliation:%@\nCollege:%@\nCategoryPreferences:%@\nSubscribedEvents:%@\nBookmarkedEvents%@",

@@ -33,5 +33,7 @@ typedef enum userAffiliation
 + (NSInteger)affiliationToInteger:(UserAffiliation)affiliation;
 + (UserAffiliation)integerToAffiliation:(NSInteger)integer;
 - (BOOL)isSubscribedToCategory:(NSString*)category;
+- (void)subcribeToCategory:(NSString*)category;
+- (void)unsubcribeFromCategory:(NSString*)category;
 
 @end
