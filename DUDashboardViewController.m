@@ -91,4 +91,9 @@
     DUBookmarkedViewController* bookmarkController = [[DUBookmarkedViewController alloc] initWithNibName:@"DUBookmarkedViewController" bundle:nil];
     [self.navigationController pushViewController:bookmarkController animated:YES];
 }
+
+- (IBAction)showUserDefaults:(UIButton *)sender
+{
+    NSLog(@"%@", [SessionHandler getUser]);
+}
 @end
