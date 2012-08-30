@@ -21,14 +21,14 @@ typedef enum userAffiliation
     NSString  *_college;
     NSMutableArray *_categoryPreferences;
     NSMutableArray *_subscribedSocities;
-    NSMutableArray *_bookmarkedEvents;
+    NSMutableDictionary *_bookmarkedEvents;
 }
 
 @property (nonatomic) UserAffiliation userAffiliation;
 @property (nonatomic,strong) NSString  *college;
 @property (nonatomic,strong) NSMutableArray *categoryPreferences;
 @property (nonatomic,strong) NSMutableArray *subscribedSocities;
-@property (nonatomic,strong) NSMutableArray *bookmarkedEvents;
+@property (nonatomic,strong) NSMutableDictionary *bookmarkedEvents;
 
 + (NSInteger)affiliationToInteger:(UserAffiliation)affiliation;
 + (UserAffiliation)integerToAffiliation:(NSInteger)integer;
