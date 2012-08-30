@@ -18,17 +18,19 @@ typedef enum userAffiliation
 @interface DUUser : NSObject <NSCoding>
 {
     UserAffiliation _userAffiliation;
-    NSString  *_college;
+    NSMutableSet *_colleges;
     NSMutableArray *_categoryPreferences;
     NSMutableArray *_subscribedSocities;
     NSMutableDictionary *_bookmarkedEvents;
 }
 
 @property (nonatomic) UserAffiliation userAffiliation;
-@property (nonatomic,strong) NSString  *college;
+@property (nonatomic,strong) NSMutableSet *colleges;
 @property (nonatomic,strong) NSMutableArray *categoryPreferences;
 @property (nonatomic,strong) NSMutableArray *subscribedSocities;
 @property (nonatomic,strong) NSMutableDictionary *bookmarkedEvents;
+
+- (NSString*)getPrimaryCollege;
 
 + (NSInteger)affiliationToInteger:(UserAffiliation)affiliation;
 + (UserAffiliation)integerToAffiliation:(NSInteger)integer;

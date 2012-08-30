@@ -11,7 +11,7 @@
 @implementation DUUser
 
 @synthesize userAffiliation = _userAffiliation;
-@synthesize college = _college;
+@synthesize colleges = _colleges;
 @synthesize categoryPreferences = _categoryPreferences;
 @synthesize subscribedSocities = _subscribedSocities;
 @synthesize bookmarkedEvents = _bookmarkedEvents;
@@ -20,7 +20,7 @@
 {
     self = [super init];
     self->_userAffiliation = [DUUser integerToAffiliation:[decoder decodeIntegerForKey:@"affiliation"]];
-    self->_college = [decoder decodeObjectForKey:@"college"];
+    self->_colleges = [decoder decodeObjectForKey:@"college"];
     self->_categoryPreferences = [decoder decodeObjectForKey:@"categoryPreferences"];
     self->_subscribedSocities = [decoder decodeObjectForKey:@"subscribedSocieties"];
     self->_bookmarkedEvents = [decoder decodeObjectForKey:@"bookmarkedEvents"];
@@ -30,10 +30,19 @@
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeInteger:[DUUser affiliationToInteger:self->_userAffiliation] forKey:@"affiliation"];
-    [encoder encodeObject:self->_college forKey:@"college"];
+    [encoder encodeObject:self->_colleges forKey:@"college"];
     [encoder encodeObject:self->_categoryPreferences forKey:@"categoryPreferences"];
     [encoder encodeObject:self->_subscribedSocities forKey:@"subscribedSocieties"];
     [encoder encodeObject:self->_bookmarkedEvents forKey:@"bookmarkedEvents"];
+}
+
+- (NSString*)getPrimaryCollege
+{
+    if ([_colleges count] > 0)
+    {
+        return [_colleges anyObject];
+    }
+    else return nil;
 }
 
 + (NSInteger)affiliationToInteger:(UserAffiliation)affiliation
@@ -122,8 +131,8 @@
 - (NSString*)description
 {
     return [NSString stringWithFormat:@"Affiliation:%@\nCollege:%@\nCategoryPreferences:%@\nSubscribedEvents:%@\nBookmarkedEvents%@",
-            (self->_userAffiliation == STAFF || self->_userAffiliation == STUDENT) ? @"Staff/Student" : @"User",
-            self->_college,
+            [DUUser affiliationToString:self->_userAffiliation],
+            self->_colleges,
             self->_categoryPreferences,
             self->_subscribedSocities,
             self->_bookmarkedEvents];

@@ -59,7 +59,7 @@
     {
         DUUser* user = [SessionHandler getUser];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        backingArray = [dataProvider getEventsByCollege:user.college];
+        backingArray = [dataProvider getEventsByCollege:[user getPrimaryCollege]];
         [self dataHasLoaded];
     }
 }

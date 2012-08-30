@@ -144,7 +144,7 @@ NSIndexPath *pressedIndexPath;
                 case 1:
                 {
                     cell.textLabel.text = @"College";
-                    cell.detailTextLabel.text = user.college;
+                    cell.detailTextLabel.text = [user getPrimaryCollege];
                     break;
                 }
                     

@@ -81,7 +81,7 @@ static NSArray *colleges;
     
     DUUser *user = [SessionHandler getUser];
     
-    if ([user.college isEqualToString:[colleges objectAtIndex:indexPath.row]])
+    if ([[user getPrimaryCollege] isEqualToString:[colleges objectAtIndex:indexPath.row]])
     {
         lastIndexPath = indexPath;
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -102,7 +102,7 @@ NSIndexPath* lastIndexPath;
 {
     DUUser *user = [SessionHandler getUser];
     
-    user.college = [colleges objectAtIndex:indexPath.row];
+    [user.colleges addObject:[colleges objectAtIndex:indexPath.row]];
     
     [SessionHandler saveUser:user];
     
