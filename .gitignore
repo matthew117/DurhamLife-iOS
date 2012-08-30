@@ -1,8 +1,2 @@
 *.xcuserstate
-<<<<<<< HEAD
-=======
-
-*.pbxproj
-
 .DS_Store
->>>>>>> Updated gitignore
