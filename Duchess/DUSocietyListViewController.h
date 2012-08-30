@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DUSocietyListViewController : UITableViewController
-
+{
+    NSArray* backingArray;
+    UIActivityIndicatorView* downloadActivityIndicator;
+}
 @end

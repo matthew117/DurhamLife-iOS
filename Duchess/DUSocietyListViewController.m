@@ -9,6 +9,7 @@
 #import "DUSocietyListViewController.h"
 #import "DUDataSingleton.h"
 #import "DUSociety.h"
+#import "Reachability.h"
 
 @interface DUSocietyListViewController ()
 
@@ -30,18 +31,29 @@
     [super viewDidLoad];
 
     self.title = @"Societies";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    
+    downloadActivityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.view addSubview: downloadActivityIndicator];
+    downloadActivityIndicator.center = self.view.center;
+    if (status == NotReachable)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Network Problem" message:@"Could not connect to the Internet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    else
+    {
+        [downloadActivityIndicator startAnimating];
+        [self performSelectorInBackground:@selector(loadDataSet) withObject:nil];
+    }
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    backingArray = nil;
+    downloadActivityIndicator = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -58,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self getCustomList] count];
+    return [[self getDataSet] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,7 +82,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    DUSociety* society = [[self getCustomList] objectAtIndex:indexPath.row];
+    DUSociety* society = [[self getDataSet] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = society.name;
     
@@ -81,7 +93,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DUSociety* society = [[self getCustomList] objectAtIndex:indexPath.row];
+    DUSociety* society = [[self getDataSet] objectAtIndex:indexPath.row];
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:society.name message:society.constitution
                           delegate:nil cancelButtonTitle:nil
@@ -90,32 +102,30 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (NSArray*)getCustomList
+#pragma mark - Customize Data Set
+
+- (NSArray*)getDataSet
 {
-    DUDataSingleton* data = [DUDataSingleton instance];
-    return [data getSocieties];
+    return backingArray;
 }
 
-/* A-Z Index Methods
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
-}
+#pragma mark - Background Thread
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (void)loadDataSet
 {
-    NSArray* alpha = [NSArray arrayWithObjects:@"A", @"B", nil];
-    if ([alpha objectAtIndex:section])
+    @autoreleasepool
     {
-        return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section];
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        backingArray = [dataProvider getSocieties];
+        [self dataHasLoaded];
     }
-    return nil;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+- (void)dataHasLoaded
 {
-    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
+    [downloadActivityIndicator stopAnimating];
+    [self.tableView reloadData];
 }
- */
+
 
 @end

@@ -118,7 +118,7 @@
         
         if ([parser parse])
         {
-            NSLog(@"XML successfully parsed. eventList should now be populated.");
+            NSLog(@"XML successfully parsed. List should now be populated.");
         }
         else
         {
