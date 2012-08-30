@@ -2,11 +2,12 @@
 //  DUSettingsViewController.m
 //  Duchess
 //
-//  Created by Matthew Bates on 28/08/2012.
+//  Created by Jamie Bates on 28/08/2012.
 //
 //
 
 #import "DUSettingsViewController.h"
+#import "DUCollegeSettingsViewController.h"
 
 @interface DUSettingsViewController ()
 
@@ -14,9 +15,9 @@
 
 @implementation DUSettingsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
@@ -26,7 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"Settings";
 }
 
 - (void)viewDidUnload
@@ -39,6 +41,111 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section)
+    {
+        case  0: return 2;
+        case  1: return 1;
+            
+        default: return 0;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            switch (indexPath.row)
+            {
+                case 0: cell.textLabel.text = @"Affiliation"; break;
+                case 1: cell.textLabel.text = @"College"; break;
+                    
+                default: break;
+            }
+        }
+            break;
+            
+        case 1:
+        {
+            switch (indexPath.row)
+            {
+                case 0: cell.textLabel.text = @"Categories"; break;
+                    
+                default: break;
+            }
+            break;
+        }
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    
+                }
+                break;
+                    
+                case 1:
+                {
+                    DUCollegeSettingsViewController *collegeViewController = [[DUCollegeSettingsViewController alloc] initWithNibName:@"DUCollegeSettingsViewController" bundle:nil];
+                    [self.navigationController pushViewController:collegeViewController animated:YES];
+                }
+                break;
+                    
+                default: break;
+            }
+        }
+            break;
+            
+        case 1:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    
+                }
+                break;
+                    
+                default: break;
+            }
+            break;
+        }
+    }
+
 }
 
 @end

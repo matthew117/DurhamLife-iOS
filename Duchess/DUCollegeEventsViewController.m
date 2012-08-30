@@ -57,9 +57,9 @@
 {
     @autoreleasepool
     {
-        //DUUser* user = [SessionHandler getUser];
+        DUUser* user = [SessionHandler getUser];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        backingArray = [dataProvider getEventsByCollege:@"Hatfield"];
+        backingArray = [dataProvider getEventsByCollege:user.college];
         [self dataHasLoaded];
     }
 }

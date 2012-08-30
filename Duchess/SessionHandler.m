@@ -23,7 +23,8 @@ static NSString* const FIRST_USE_KEY = @"first_use";
 
 + (void)saveUser:(DUUser*)user
 {
-    [[NSUserDefaults standardUserDefaults] setObject:user forKey:USER_KEY];
+    NSData* userData = [NSKeyedArchiver archivedDataWithRootObject:user];
+    [[NSUserDefaults standardUserDefaults] setObject:userData forKey:USER_KEY];
 }
 
 + (void)setDefaults
