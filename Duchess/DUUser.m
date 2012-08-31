@@ -45,6 +45,12 @@
     else return nil;
 }
 
+- (void)setPrimaryCollege:(NSString *)college
+{
+    [_colleges removeAllObjects];
+    [_colleges addObject:college];
+}
+
 + (NSInteger)affiliationToInteger:(UserAffiliation)affiliation
 {
     switch (affiliation)
@@ -115,17 +121,17 @@
 
 - (BOOL)isSubscribedToCollege:(NSString*)college
 {
-    return NO;
+    return [_colleges containsObject:college];
 }
 
 - (void)subcribeToCollege:(NSString*)college
 {
-    
+    [_colleges addObject:college];
 }
 
 - (void)unsubcribeFromCollege:(NSString*)college
 {
-    
+    [_colleges removeObject:college];
 }
 
 - (NSString*)description

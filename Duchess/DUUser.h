@@ -31,6 +31,7 @@ typedef enum userAffiliation
 @property (nonatomic,strong) NSMutableDictionary *bookmarkedEvents;
 
 - (NSString*)getPrimaryCollege;
+- (void)setPrimaryCollege:(NSString*)college;
 
 + (NSInteger)affiliationToInteger:(UserAffiliation)affiliation;
 + (UserAffiliation)integerToAffiliation:(NSInteger)integer;

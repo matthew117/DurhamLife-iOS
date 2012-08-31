@@ -102,7 +102,7 @@ NSIndexPath* lastIndexPath;
 {
     DUUser *user = [SessionHandler getUser];
     
-    [user.colleges addObject:[colleges objectAtIndex:indexPath.row]];
+    [user setPrimaryCollege:[colleges objectAtIndex:indexPath.row]];
     
     [SessionHandler saveUser:user];
     
