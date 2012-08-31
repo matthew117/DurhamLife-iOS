@@ -7,19 +7,17 @@
 //
 
 #import "DUSocietyAboutViewController.h"
+#import "DURoundedBorderLabel.h"
 
 @implementation DUSocietyAboutViewController
 
 @synthesize society;
-@synthesize societyNameLabel;
-@synthesize societyConstitutionScrollView;
-@synthesize emailButton;
-@synthesize websiteButton;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    self = [super initWithStyle:style];
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -28,21 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.title = @"About";
-    societyNameLabel.text = society.name;
-    [emailButton setTitle:society.email forState:UIControlStateNormal];
-    [websiteButton setTitle:society.website forState:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
 {
-    [self setSocietyNameLabel:nil];
-    [self setSocietyConstitutionScrollView:nil];
-    [self setEmailButton:nil];
-    [self setWebsiteButton:nil];
     [super viewDidUnload];
-    
     society = nil;
 }
 
@@ -51,7 +40,101 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)emailAction:(UIButton *)sender
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section)
+    {
+        case  0: return 1;
+        case  1: return 2;
+            
+        default: return 0;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    cell.textLabel.text = society.constitution;
+                }
+                break;
+                default: break;
+            }
+        }
+        break;
+            
+        case 1:
+        {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            switch (indexPath.row)
+            {
+                case 0: cell.textLabel.text = society.email; break;
+                case 1: cell.textLabel.text = society.website; break;
+                default: break;
+            }
+        }
+        break;
+    }
+    
+    // Has to be set after the label text so that it doesn't get greyed out
+    if (indexPath.section == 0) [cell setUserInteractionEnabled:NO];
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            switch (indexPath.row)
+            {
+                // Do nothing
+                default: break;
+            }
+        }
+            break;
+            
+        case 1:
+        {
+            switch (indexPath.row)
+            {
+                case 0: [self websiteAction]; break;
+                case 1: [self emailAction]; break;
+                default: break;
+            }
+        }
+            break;
+    }
+}
+
+
+- (void)emailAction
 {
     if ([MFMailComposeViewController canSendMail])
     {
@@ -97,7 +180,7 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (IBAction)websiteAction:(UIButton *)sender
+- (void)websiteAction
 {
     NSURL *url = [NSURL URLWithString:society.website];
     [[UIApplication sharedApplication] openURL:url];

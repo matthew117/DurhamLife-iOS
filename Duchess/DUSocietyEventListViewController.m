@@ -75,7 +75,7 @@
 
 - (IBAction)aboutAction:(UIButton *)sender
 {
-    DUSocietyAboutViewController* aboutSocietyController = [DUSocietyAboutViewController new];
+    DUSocietyAboutViewController* aboutSocietyController = [[DUSocietyAboutViewController alloc] initWithNibName:@"DUSocietyAboutViewController" bundle:nil];
     aboutSocietyController.society = self.society;
     [self.navigationController pushViewController:aboutSocietyController animated:YES];
 }
