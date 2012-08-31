@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DUEventListViewController : UITableViewController
+@interface DUEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UITableViewCell* customTableViewCell;
     UIActivityIndicatorView* downloadActivityIndicator;
     NSArray* backingArray;
 }
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (NSArray*)getDataSet;
 - (void)loadDataSet;

@@ -7,7 +7,12 @@
 //
 
 #import "DUEventListViewController.h"
+#import "DUSociety.h"
 
 @interface DUSocietyEventListViewController : DUEventListViewController
+
+@property (nonatomic,strong) DUSociety* society;
+- (IBAction)subcribeAction:(UIButton *)sender;
+- (IBAction)aboutAction:(UIButton *)sender;
 
 @end

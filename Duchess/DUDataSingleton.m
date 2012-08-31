@@ -61,9 +61,18 @@
 {
     return nil;
 }
-- (NSArray*)getEventsBySociety:(NSString*)society
+- (NSArray*)getEventsBySociety:(NSString*)societyName
 {
-    return nil;
+    NSMutableArray* societyEvents = [NSMutableArray new];
+    NSArray* eventList = [self getAllEvents];
+    for (DUEvent* event in eventList)
+    {
+        if ([event.associatedSociety isEqualToString:societyName])
+        {
+            [societyEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:societyEvents];
 }
 - (NSArray*)getEventsBySocieties:(NSArray*)societyList
 {

@@ -8,10 +8,7 @@
 
 #import "DUSocietyListViewController.h"
 #import "Reachability.h"
-
-@interface DUSocietyListViewController ()
-
-@end
+#import "DUSocietyEventListViewController.h"
 
 @implementation DUSocietyListViewController
 
@@ -92,12 +89,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DUSociety* society = [[self getDataSet] objectAtIndex:indexPath.row];
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:society.name message:society.constitution
-                          delegate:nil cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil];
-    [alert show];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    DUSocietyEventListViewController* societyEventListViewController = [DUSocietyEventListViewController new];
+    societyEventListViewController.society = society;
+    [self.navigationController pushViewController:societyEventListViewController animated:YES];
 }
 
 #pragma mark - Customize Data Set

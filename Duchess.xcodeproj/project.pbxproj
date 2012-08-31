@@ -90,6 +90,7 @@
 		47E3C48715F0AEA800A4200C /* DUSocietyEventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E3C48515F0AEA800A4200C /* DUSocietyEventListViewController.xib */; };
 		47E3C48C15F0B02E00A4200C /* DUSocietyAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E3C48A15F0B02E00A4200C /* DUSocietyAboutViewController.m */; };
 		47E3C48D15F0B02E00A4200C /* DUSocietyAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E3C48B15F0B02E00A4200C /* DUSocietyAboutViewController.xib */; };
+		47E3C48F15F0D7C400A4200C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E3C48E15F0D7C400A4200C /* MessageUI.framework */; };
 		47FF471A15E7F5F6002F10D6 /* DUDashboardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +220,7 @@
 		47E3C48915F0B02E00A4200C /* DUSocietyAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUSocietyAboutViewController.h; sourceTree = "<group>"; };
 		47E3C48A15F0B02E00A4200C /* DUSocietyAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUSocietyAboutViewController.m; sourceTree = "<group>"; };
 		47E3C48B15F0B02E00A4200C /* DUSocietyAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUSocietyAboutViewController.xib; sourceTree = "<group>"; };
+		47E3C48E15F0D7C400A4200C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		47FF471815E7F5F6002F10D6 /* DUDashboardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUDashboardBackground.h; sourceTree = "<group>"; };
 		47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUDashboardBackground.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E3C48F15F0D7C400A4200C /* MessageUI.framework in Frameworks */,
 				2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */,
 				2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */,
 				2FE12A9D15C1462100B2C6F7 /* UIKit.framework in Frameworks */,
@@ -324,6 +327,7 @@
 		2FE12A9B15C1462000B2C6F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				47E3C48E15F0D7C400A4200C /* MessageUI.framework */,
 				2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */,
 				2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */,
 				2FE12A9C15C1462100B2C6F7 /* UIKit.framework */,
@@ -446,8 +450,6 @@
 				4781009715EA8ADD002FBC67 /* DUEventListViewController.m */,
 				4781009915EAD7F2002FBC67 /* DUCollegeEventsViewController.h */,
 				4781009A15EAD7F2002FBC67 /* DUCollegeEventsViewController.m */,
-				2FD405F315ECF14700F5B8A6 /* DUSocietyListViewController.h */,
-				2FD405F415ECF14700F5B8A6 /* DUSocietyListViewController.m */,
 				47865BCF15ED3D4F00D023A1 /* DUSettingsViewController.h */,
 				47865BD015ED3D4F00D023A1 /* DUSettingsViewController.m */,
 				47B0C90615EE836E006615CD /* DUCollegeSettingsViewController.h */,
@@ -460,6 +462,8 @@
 				470B561515EFA12F00FF8DF8 /* DUMySocietiesListViewController.m */,
 				2F69414015EFA861005B23E4 /* DUCollegesSettingsViewController.h */,
 				2F69414115EFA861005B23E4 /* DUCollegesSettingsViewController.m */,
+				2FD405F315ECF14700F5B8A6 /* DUSocietyListViewController.h */,
+				2FD405F415ECF14700F5B8A6 /* DUSocietyListViewController.m */,
 				47E3C48315F0AEA800A4200C /* DUSocietyEventListViewController.h */,
 				47E3C48415F0AEA800A4200C /* DUSocietyEventListViewController.m */,
 				47E3C48915F0B02E00A4200C /* DUSocietyAboutViewController.h */,
