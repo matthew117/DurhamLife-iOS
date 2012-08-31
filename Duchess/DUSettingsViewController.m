@@ -51,9 +51,11 @@
 {
     [super viewWillAppear:animated];
     
-    if(pressedIndexPath)
-        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:pressedIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-}
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:
+        [NSIndexPath indexPathForRow:1 inSection:0],
+        [NSIndexPath indexPathForRow:0 inSection:0], nil]
+       withRowAnimation:UITableViewRowAnimationFade];
+    }
 
 - (void)deleteDurhamAffiliateRows
 {
@@ -94,6 +96,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    DUUser *user = [SessionHandler getUser];
+    
     switch (section)
     {
         case  0: return 2;
@@ -114,8 +118,6 @@
     }
 }
 
-NSIndexPath *pressedIndexPath;
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -123,10 +125,11 @@ NSIndexPath *pressedIndexPath;
     
     if (cell == nil)
     {
-        if(indexPath.section == 0) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        else cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        
+        NSLog(@"Init cell: %d, %d", indexPath.section, indexPath.row);
     }
-    
+
     DUUser *user = [SessionHandler getUser];
     
     switch (indexPath.section)
@@ -138,13 +141,15 @@ NSIndexPath *pressedIndexPath;
                 case 0:
                 {
                     cell.textLabel.text = @"Affiliation";
-                    cell.detailTextLabel.text = [DUUser affiliationToString:user.userAffiliation]; 
+                    cell.detailTextLabel.text = [DUUser affiliationToString:user.userAffiliation];
                     break;
                 }
                 case 1:
                 {
                     cell.textLabel.text = @"College";
-                    cell.detailTextLabel.text = [user getPrimaryCollege];
+                    if ([user isStudent]) cell.detailTextLabel.text = [user getPrimaryCollege];
+                    else cell.detailTextLabel.text = @"";
+
                     break;
                 }
                     
@@ -166,7 +171,8 @@ NSIndexPath *pressedIndexPath;
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+    
+    NSLog(@"Detail label: %@", cell.detailTextLabel.text);
     
     return cell;
 }
@@ -179,8 +185,6 @@ NSIndexPath *pressedIndexPath;
     {
         case 0:
         {
-            pressedIndexPath = indexPath;
-            
             switch (indexPath.row)
             {
                 case 0:
