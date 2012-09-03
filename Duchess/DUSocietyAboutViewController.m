@@ -58,6 +58,16 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row == 0)
+    {
+        if (society.constitution == nil || [society.constitution length] < 1) return 44;
+        return ([society.constitution sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 10;
+    }
+    else return 44;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -77,7 +87,15 @@
             {
                 case 0:
                 {
-                    cell.textLabel.text = society.constitution;
+                    cell.textLabel.font = [UIFont systemFontOfSize:14];
+                    cell.textLabel.numberOfLines = 0;
+                    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                    if (society.constitution != nil && [society.constitution length] > 0)
+                    {
+                     cell.textLabel.text = society.constitution;   
+                    }
+                    else cell.textLabel.text = @"No Description Available.";
+                    [cell.textLabel sizeToFit];
                 }
                 break;
                 default: break;
@@ -90,8 +108,8 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             switch (indexPath.row)
             {
-                case 0: cell.textLabel.text = society.email; break;
-                case 1: cell.textLabel.text = society.website; break;
+                case 0: cell.textLabel.text = society.email != nil ? society.email : @"No Email Address Available"; break;
+                case 1: cell.textLabel.text = society.website != nil ? society.website : @"No Website Available"; break;
                 default: break;
             }
         }
@@ -124,8 +142,8 @@
         {
             switch (indexPath.row)
             {
-                case 0: [self websiteAction]; break;
-                case 1: [self emailAction]; break;
+                case 0: [self emailAction]; break;
+                case 1: [self websiteAction]; break;
                 default: break;
             }
         }
