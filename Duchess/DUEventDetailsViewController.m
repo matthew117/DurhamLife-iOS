@@ -17,6 +17,8 @@
 
 @implementation DUEventDetailsViewController
 
+@synthesize event;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -48,8 +50,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    event = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -95,9 +96,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    DUEvent *event = delegate.currentEvent;
-    
     if (indexPath.section == 2)
     {
         if (indexPath.row == 0)
@@ -128,9 +126,6 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    DUEvent *event = delegate.currentEvent;
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -308,6 +303,12 @@
                 }
                 break;
                     
+                case 1:
+                {
+                    
+                }
+                break;
+                    
                 default: break;
             }
         }
@@ -317,7 +318,7 @@
         {
             switch (indexPath.row)
             {
-                case 0:
+                case 1:
                 {
 
                 }
@@ -328,8 +329,81 @@
         }
         break;
             
+        case 3:
+        {
+            switch (indexPath.row)
+            {
+
+                case 0: [self phoneAction]; break;
+                case 1: [self emailAction]; break;
+                case 2: [self websiteAction]; break;
+                    
+                default: break;
+            }
+        }
+        break;
+            
         default: break;
     }
+}
+
+- (void)phoneAction
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"tel:07794330580"]];
+    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat: @"tel:%@", event.contactTelephoneNumber]];
+    [[UIApplication sharedApplication] openURL: url];
+}
+
+- (void)emailAction
+{    
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+        mailer.mailComposeDelegate = self;
+        [mailer setToRecipients:[NSArray arrayWithObject:event.contactEmailAddress]];
+        [mailer setMessageBody:@"" isHTML:NO];
+        [self presentModalViewController:mailer animated:YES];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                        message:@"Unsupported Action."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    
+    // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)websiteAction
+{    
+    NSURL *url = [NSURL URLWithString:event.linkedWebsiteURL];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end

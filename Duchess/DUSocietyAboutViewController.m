@@ -213,4 +213,5 @@
     NSURL *url = [NSURL URLWithString:society.website];
     [[UIApplication sharedApplication] openURL:url];
 }
+
 @end

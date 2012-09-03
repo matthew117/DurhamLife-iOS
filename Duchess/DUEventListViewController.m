@@ -188,12 +188,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
-    delegate.currentEvent = [backingArray objectAtIndex:indexPath.row];
-    
     DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsView" bundle:nil];
-    
+    detailViewController.event = [backingArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

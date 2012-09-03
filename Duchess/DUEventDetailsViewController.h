@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import "DUEvent.h"
 
-@interface DUEventDetailsViewController : UITableViewController
+@interface DUEventDetailsViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 {
     
 }
+
+@property (nonatomic, strong) DUEvent* event;
 
 @end
