@@ -51,6 +51,11 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -190,7 +195,6 @@
     DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsView" bundle:nil];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Customize Data Set

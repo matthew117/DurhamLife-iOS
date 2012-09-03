@@ -21,6 +21,7 @@
 @end
 
 @implementation DUDashboardViewController
+@synthesize adButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,10 +51,18 @@
         NSLog(@"This is a first time run.");
         NSLog(@"%@",[SessionHandler userDefaultsToString]);
     }
+    
+    // ==================================================================
+    // Set first time use to NO
+    // ==================================================================
+    
+    [UIView animateWithDuration:1.5f animations:^{[adButton setAlpha:0.5f];}];
 }
+
 
 - (void)viewDidUnload
 {
+    [self setAdButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

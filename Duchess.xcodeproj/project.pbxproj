@@ -47,6 +47,10 @@
 		470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
 		4713B5AA15E95F5A00A45687 /* DUReviewXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */; };
+		473B383F15F4ECBD00908E9D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B383E15F4ECBD00908E9D /* MapKit.framework */; };
+		473B384215F4ECC500908E9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B384115F4ECC500908E9D /* CoreLocation.framework */; };
+		473B384615F4F04D00908E9D /* DUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473B384415F4F04D00908E9D /* DUMapViewController.m */; };
+		473B384715F4F04D00908E9D /* DUMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 473B384515F4F04D00908E9D /* DUMapViewController.xib */; };
 		4781009815EA8ADD002FBC67 /* DUEventListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4781009715EA8ADD002FBC67 /* DUEventListViewController.m */; };
 		4781009C15EAD7F2002FBC67 /* DUCollegeEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4781009A15EAD7F2002FBC67 /* DUCollegeEventsViewController.m */; };
 		4781009D15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4781009B15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib */; };
@@ -167,6 +171,11 @@
 		470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutView.m; sourceTree = "<group>"; };
 		4713B5A815E95F5A00A45687 /* DUReviewXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewXMLParser.h; sourceTree = "<group>"; };
 		4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewXMLParser.m; sourceTree = "<group>"; };
+		473B383E15F4ECBD00908E9D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		473B384115F4ECC500908E9D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		473B384315F4F04D00908E9D /* DUMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUMapViewController.h; sourceTree = "<group>"; };
+		473B384415F4F04D00908E9D /* DUMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUMapViewController.m; sourceTree = "<group>"; };
+		473B384515F4F04D00908E9D /* DUMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUMapViewController.xib; sourceTree = "<group>"; };
 		4781009615EA8ADD002FBC67 /* DUEventListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEventListViewController.h; sourceTree = "<group>"; };
 		4781009715EA8ADD002FBC67 /* DUEventListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEventListViewController.m; sourceTree = "<group>"; };
 		4781009915EAD7F2002FBC67 /* DUCollegeEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUCollegeEventsViewController.h; sourceTree = "<group>"; };
@@ -230,6 +239,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				473B384215F4ECC500908E9D /* CoreLocation.framework in Frameworks */,
+				473B383F15F4ECBD00908E9D /* MapKit.framework in Frameworks */,
 				47E3C48F15F0D7C400A4200C /* MessageUI.framework in Frameworks */,
 				2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */,
 				2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */,
@@ -327,6 +338,8 @@
 		2FE12A9B15C1462000B2C6F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				473B384115F4ECC500908E9D /* CoreLocation.framework */,
+				473B383E15F4ECBD00908E9D /* MapKit.framework */,
 				47E3C48E15F0D7C400A4200C /* MessageUI.framework */,
 				2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */,
 				2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */,
@@ -411,6 +424,7 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				473B384515F4F04D00908E9D /* DUMapViewController.xib */,
 				47E3C48B15F0B02E00A4200C /* DUSocietyAboutViewController.xib */,
 				47E3C48515F0AEA800A4200C /* DUSocietyEventListViewController.xib */,
 				2F69414215EFA861005B23E4 /* DUCollegesSettingsViewController.xib */,
@@ -468,6 +482,8 @@
 				47E3C48415F0AEA800A4200C /* DUSocietyEventListViewController.m */,
 				47E3C48915F0B02E00A4200C /* DUSocietyAboutViewController.h */,
 				47E3C48A15F0B02E00A4200C /* DUSocietyAboutViewController.m */,
+				473B384315F4F04D00908E9D /* DUMapViewController.h */,
+				473B384415F4F04D00908E9D /* DUMapViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -580,6 +596,7 @@
 				47D867A515F016C600BF91DC /* society_dashboard_icon@2x.png in Resources */,
 				47E3C48715F0AEA800A4200C /* DUSocietyEventListViewController.xib in Resources */,
 				47E3C48D15F0B02E00A4200C /* DUSocietyAboutViewController.xib in Resources */,
+				473B384715F4F04D00908E9D /* DUMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +665,7 @@
 				2F69414315EFA861005B23E4 /* DUCollegesSettingsViewController.m in Sources */,
 				47E3C48615F0AEA800A4200C /* DUSocietyEventListViewController.m in Sources */,
 				47E3C48C15F0B02E00A4200C /* DUSocietyAboutViewController.m in Sources */,
+				473B384615F4F04D00908E9D /* DUMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 
 @interface DUDashboardViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIButton *adButton;
+
 - (IBAction)browseButton:(UIButton *)sender;
 - (IBAction)collegeEvents:(UIButton *)sender;
 - (IBAction)societiesButton:(UIButton *)sender;
