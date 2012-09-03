@@ -49,4 +49,8 @@ typedef enum userAffiliation
 - (void)subcribeToCollege:(NSString*)college;
 - (void)unsubcribeFromCollege:(NSString*)college;
 
+- (BOOL)isSubscribedToSociety:(NSString *)society;
+- (void)subscribeToSociety:(NSString*)society;
+- (void)unsubscribeFromSociety:(NSString *)society;
+
 @end

@@ -9,8 +9,10 @@
 #import "DUSocietyEventListViewController.h"
 #import "DUDataSingleton.h"
 #import "DUSocietyAboutViewController.h"
+#import "SessionHandler.h"
 
 @implementation DUSocietyEventListViewController
+@synthesize subscribeButton;
 
 @synthesize society;
 
@@ -29,10 +31,21 @@
     [super viewDidLoad];
     
     self.title = society.name;
+    
+    DUUser* user = [SessionHandler getUser];
+    if ([user isSubscribedToSociety:society.name])
+    {
+        [subscribeButton setTitle:@"Unsubscribe" forState:UIControlStateNormal];
+    }
+    else
+    {
+        [subscribeButton setTitle:@"Subscribe" forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewDidUnload
 {
+    [self setSubscribeButton:nil];
     [super viewDidUnload];
     
     self.society = nil;
@@ -70,7 +83,18 @@
 
 - (IBAction)subcribeAction:(UIButton *)sender
 {
-    
+    DUUser* user = [SessionHandler getUser];
+    if ([user isSubscribedToSociety:society.name])
+    {
+        [subscribeButton setTitle:@"Subscribe" forState:UIControlStateNormal];
+        [user unsubscribeFromSociety:society.name];
+    }
+    else
+    {
+        [subscribeButton setTitle:@"Unsubscribe" forState:UIControlStateNormal];
+        [user subscribeToSociety:society.name];
+    }
+    [SessionHandler saveUser:user];
 }
 
 - (IBAction)aboutAction:(UIButton *)sender

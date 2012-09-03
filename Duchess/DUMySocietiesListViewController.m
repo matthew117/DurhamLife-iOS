@@ -7,6 +7,7 @@
 //
 
 #import "DUMySocietiesListViewController.h"
+#import "SessionHandler.h"
 
 @implementation DUMySocietiesListViewController
 
@@ -23,19 +24,11 @@
 {
     [super viewDidLoad];
     self.title = @"My Societies";
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -54,8 +47,18 @@
 {
     @autoreleasepool
     {
+        DUUser* user = [SessionHandler getUser];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        backingArray = [dataProvider getSocieties];
+        NSArray* societyList = [dataProvider getSocieties];
+        NSMutableArray* tempList = [NSMutableArray new];
+        for (DUSociety* society in societyList)
+        {
+            if ([user isSubscribedToSociety:society.name])
+            {
+                [tempList addObject:society];
+            }
+        }
+        backingArray = [NSArray arrayWithArray:tempList];
         [self dataHasLoaded];
     }
 }

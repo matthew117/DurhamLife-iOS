@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Bookmarked";
 }
 
 - (void)viewDidUnload

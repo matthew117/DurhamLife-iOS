@@ -37,6 +37,7 @@
     NetworkStatus status = [reach currentReachabilityStatus];
     
     downloadActivityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [downloadActivityIndicator setHidesWhenStopped:YES];
     [self.view addSubview: downloadActivityIndicator];
     downloadActivityIndicator.center = self.view.center;
     if (status == NotReachable)

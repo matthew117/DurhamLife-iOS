@@ -134,9 +134,24 @@
     [_colleges removeObject:college];
 }
 
+- (BOOL)isSubscribedToSociety:(NSString *)society
+{
+    return [_subscribedSocities containsObject:society];
+}
+
+- (void)subscribeToSociety:(NSString*)society
+{
+    [_subscribedSocities addObject:society];
+}
+
+- (void)unsubscribeFromSociety:(NSString *)society
+{
+    [_subscribedSocities removeObject:society];
+}
+
 - (NSString*)description
 {
-    return [NSString stringWithFormat:@"Affiliation:%@\nCollege:%@\nCategoryPreferences:%@\nSubscribedEvents:%@\nBookmarkedEvents%@",
+    return [NSString stringWithFormat:@"Affiliation:%@\nCollege:%@\nCategoryPreferences:%@\nSubscribedSocieties:%@\nBookmarkedEvents%@",
             [DUUser affiliationToString:self->_userAffiliation],
             self->_colleges,
             self->_categoryPreferences,

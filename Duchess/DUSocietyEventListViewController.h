@@ -15,4 +15,6 @@
 - (IBAction)subcribeAction:(UIButton *)sender;
 - (IBAction)aboutAction:(UIButton *)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *subscribeButton;
+
 @end
