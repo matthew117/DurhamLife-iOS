@@ -66,7 +66,7 @@
 
 - (IBAction)browseButton:(UIButton *)sender
 {
-    DUEventListViewController* eventListController = [[DUEventListViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    DUEventListViewController* eventListController = [[DUEventListViewController alloc] initWithNibName:@"DUEventListView" bundle:nil];
     [self.navigationController pushViewController:eventListController animated:YES];
 }
 

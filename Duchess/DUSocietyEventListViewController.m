@@ -75,12 +75,6 @@
     }
 }
 
-- (void)dataHasLoaded
-{
-    [downloadActivityIndicator stopAnimating];
-    [self.tableView reloadData];
-}
-
 - (IBAction)subcribeAction:(UIButton *)sender
 {
     DUUser* user = [SessionHandler getUser];

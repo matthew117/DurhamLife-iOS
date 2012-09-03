@@ -155,7 +155,7 @@
 								<reference key="IBUIHighlightedTitleColor" ref="75558340"/>
 								<reference key="IBUINormalTitleColor" ref="75558340"/>
 								<reference key="IBUINormalTitleShadowColor" ref="239939709"/>
-								<object class="NSCustomResource" key="IBUINormalImage">
+								<object class="NSCustomResource" key="IBUINormalImage" id="248359545">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">college_dashboard_icon.png</string>
 								</object>
@@ -306,11 +306,36 @@
 						<reference key="IBUIFontDescription" ref="1058207732"/>
 						<reference key="IBUIFont" ref="763085012"/>
 					</object>
+					<object class="IBUIButton" id="1016195506">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{280, 0}, {40, 176}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+						</object>
+						<bool key="IBUIOpaque">NO</bool>
+						<float key="IBUIAlpha">0.5</float>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIHighlightedTitleColor" ref="75558340"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="239939709"/>
+						<reference key="IBUINormalImage" ref="248359545"/>
+						<reference key="IBUIFontDescription" ref="1058207732"/>
+						<reference key="IBUIFont" ref="763085012"/>
+					</object>
 				</array>
 				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -402,6 +427,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="780904625"/>
 							<reference ref="10434684"/>
+							<reference ref="1016195506"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -464,6 +490,11 @@
 						<reference key="object" ref="10434684"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">26</int>
+						<reference key="object" ref="1016195506"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -482,6 +513,7 @@
 				<real value="2" key="12.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
 				<real value="0.0" key="12.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="6.CustomClassName">DUDashboardBackground</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -498,7 +530,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">23</int>
+			<int key="maxID">26</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -514,20 +546,14 @@
 					<string key="className">DUDashboardViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="aboutButton:">UIButton</string>
 						<string key="bookmarkedButton:">UIButton</string>
 						<string key="browseButton:">UIButton</string>
 						<string key="collegeEvents:">UIButton</string>
 						<string key="mySocietiesButton:">UIButton</string>
-						<string key="settingsButton:">UIButton</string>
 						<string key="showUserDefaults:">UIButton</string>
 						<string key="societiesButton:">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="aboutButton:">
-							<string key="name">aboutButton:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
 						<object class="IBActionInfo" key="bookmarkedButton:">
 							<string key="name">bookmarkedButton:</string>
 							<string key="candidateClassName">UIButton</string>
@@ -542,10 +568,6 @@
 						</object>
 						<object class="IBActionInfo" key="mySocietiesButton:">
 							<string key="name">mySocietiesButton:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBActionInfo" key="settingsButton:">
-							<string key="name">settingsButton:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBActionInfo" key="showUserDefaults:">

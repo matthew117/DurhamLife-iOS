@@ -34,7 +34,7 @@
 		2FE12AAA15C1462100B2C6F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AA915C1462100B2C6F7 /* main.m */; };
 		2FE12AAD15C1462100B2C6F7 /* DUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */; };
 		2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */; };
-		2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AB415C1462100B2C6F7 /* RootViewController.xib */; };
+		2FE12AB615C1462100B2C6F7 /* DUEventListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AB415C1462100B2C6F7 /* DUEventListView.xib */; };
 		2FE12ABD15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
 		2FE12ABE15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
 		2FE12ABF15C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
@@ -149,7 +149,7 @@
 		2FE12AAB15C1462100B2C6F7 /* DUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUAppDelegate.h; sourceTree = "<group>"; };
 		2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUAppDelegate.m; sourceTree = "<group>"; };
 		2FE12AAF15C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		2FE12AB515C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		2FE12AB515C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DUEventListView.xib; sourceTree = "<group>"; };
 		2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuchessTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DuchessTests-Info.plist"; sourceTree = "<group>"; };
 		2FE12AC615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 				47865BD115ED3D4F00D023A1 /* DUSettingsViewController.xib */,
 				478100A315EAE4A7002FBC67 /* DUAboutViewController.xib */,
 				478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */,
-				2FE12AB415C1462100B2C6F7 /* RootViewController.xib */,
+				2FE12AB415C1462100B2C6F7 /* DUEventListView.xib */,
 				2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */,
 				2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsView.xib */,
 				4781009B15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib */,
@@ -545,7 +545,7 @@
 				47E03FC915EB771500DC2250 /* DUEventDetailsView.xib in Resources */,
 				2FE12AA715C1462100B2C6F7 /* InfoPlist.strings in Resources */,
 				2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */,
-				2FE12AB615C1462100B2C6F7 /* RootViewController.xib in Resources */,
+				2FE12AB615C1462100B2C6F7 /* DUEventListView.xib in Resources */,
 				2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */,
 				478CCEB215E2C3E400419CD7 /* DUDashboardView.xib in Resources */,
 				4781009D15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib in Resources */,
@@ -688,12 +688,12 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		2FE12AB415C1462100B2C6F7 /* RootViewController.xib */ = {
+		2FE12AB415C1462100B2C6F7 /* DUEventListView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2FE12AB515C1462100B2C6F7 /* en */,
 			);
-			name = RootViewController.xib;
+			name = DUEventListView.xib;
 			sourceTree = "<group>";
 		};
 		2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */ = {

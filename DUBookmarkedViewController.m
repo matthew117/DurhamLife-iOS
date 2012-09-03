@@ -58,10 +58,4 @@
     }
 }
 
-- (void)dataHasLoaded
-{
-    [downloadActivityIndicator stopAnimating];
-    [self.tableView reloadData];
-}
-
 @end
