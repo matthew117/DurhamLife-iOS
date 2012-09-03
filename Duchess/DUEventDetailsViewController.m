@@ -14,6 +14,7 @@
 #import "CSLinearLayoutView.h"
 #import "CSLinearLayoutItem.h"
 #import "DURoundedBorderLabel.h"
+#import "DUMapViewController.h"
 
 @implementation DUEventDetailsViewController
 
@@ -299,7 +300,9 @@
             {
                 case 0:
                 {
-                    
+                    DUMapViewController *mapViewController = [[DUMapViewController alloc] initWithNibName:@"DUMapViewController" bundle:nil];
+                    [self.navigationController pushViewController:mapViewController animated:YES];
+
                 }
                 break;
                     
