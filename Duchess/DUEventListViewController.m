@@ -190,6 +190,7 @@
     DUEventDetailsViewController *detailViewController = [[DUEventDetailsViewController alloc] initWithNibName:@"DUEventDetailsView" bundle:nil];
     
     [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - Customize Data Set
