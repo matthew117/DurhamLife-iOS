@@ -92,7 +92,7 @@
                     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
                     if (society.constitution != nil && [society.constitution length] > 0)
                     {
-                     cell.textLabel.text = society.constitution;   
+                        cell.textLabel.text = society.constitution;   
                     }
                     else cell.textLabel.text = @"No Description Available.";
                     [cell.textLabel sizeToFit];

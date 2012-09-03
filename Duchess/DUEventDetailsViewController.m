@@ -43,9 +43,6 @@
     [super viewDidLoad];
     self.title = @"Event Details";
     // Do any additional setup after loading the view from its nib.
-    
-    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    DUEvent *event = delegate.currentEvent;
 }
 
 - (void)viewDidUnload
@@ -96,6 +93,32 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    DUEvent *event = delegate.currentEvent;
+    
+    if (indexPath.section == 2)
+    {
+        if (indexPath.row == 0)
+        {
+            if (event.descriptionHeader == nil || [event.descriptionHeader length] < 1) return 44;
+            return ([event.descriptionHeader sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 10;
+        }
+        else
+        {
+            if (event.descriptionBody == nil || [event.descriptionBody length] < 1) return 44;
+            return ([event.descriptionBody sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 10;
+        }
+    }
+    else if (indexPath.section == 4)
+    {
+        if (event.accessibilityInformation == nil || [event.accessibilityInformation length] < 1) return 44;
+        return ([event.accessibilityInformation sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 10;
+    }
+    else return 44;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -103,16 +126,17 @@
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        
-        NSLog(@"Init cell: %d, %d", indexPath.section, indexPath.row);
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     DUEvent *event = delegate.currentEvent;
     
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     switch (indexPath.section)
     {
+        //Location/Reviews
         case 0:
         {
             switch (indexPath.row)
@@ -132,7 +156,7 @@
             }
             break;
         }
-            
+        //When
         case 1:
         {
             switch (indexPath.row)
@@ -146,12 +170,16 @@
                     NSString *eventEndDateStr = [formatter stringFromDate:event.endDate];
                     cell.textLabel.text = [NSString stringWithFormat:@"%@ until %@", eventStartDateStr, eventEndDateStr];
 
+                    cell.accessoryType = UITableViewCellAccessoryNone;
+                    
                     break;
                 }
                 
                 case 1:
                 {
+                    [cell setUserInteractionEnabled:(event.iCalURL != nil)];
                     cell.textLabel.text = @"View Times";
+
                     break;
                 }
                     
@@ -159,20 +187,41 @@
             }
             break;
         }
-            
+        //Description
         case 2:
         {
             switch (indexPath.row)
             {
                 case 0:
                 {
+                    cell.textLabel.font = [UIFont systemFontOfSize:14];
+                    cell.textLabel.numberOfLines = 0;
+                    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                    if (event.descriptionHeader != nil && [event.descriptionHeader length] > 0)
+                    {
+                        cell.textLabel.text = event.descriptionHeader;
+                    }
+                    else cell.textLabel.text = event.name;
+                    [cell.textLabel sizeToFit];
                     
+                    cell.accessoryType = UITableViewCellAccessoryNone; 
                     
                     break;
                 }
                     
                 case 1:
                 {
+                    cell.textLabel.font = [UIFont systemFontOfSize:14];
+                    cell.textLabel.numberOfLines = 0;
+                    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                    if (event.descriptionBody != nil && [event.descriptionBody length] > 0)
+                    {
+                        cell.textLabel.text = event.descriptionBody;
+                    }
+                    else cell.textLabel.text = @"No Description Available.";
+                    [cell.textLabel sizeToFit];
+                    
+                    cell.accessoryType = UITableViewCellAccessoryNone; 
                     
                     break;
                 }
@@ -181,11 +230,64 @@
             }
             break;
         }
+        //Contact Information
+        case 3:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    [cell setUserInteractionEnabled:(event.contactTelephoneNumber != nil)];
+                    cell.textLabel.text = event.contactTelephoneNumber != nil ? event.contactTelephoneNumber : @"No Telephone Number Available";
+                    break;
+                }
+                case 1:
+                {
+                    [cell setUserInteractionEnabled:(event.contactEmailAddress != nil)];
+                    cell.textLabel.text = event.contactEmailAddress != nil ? event.contactEmailAddress : @"No Email Address Available";
+                    break;
+                }
+                case 2:
+                {
+                    [cell setUserInteractionEnabled:(event.linkedWebsiteURL != nil)];
+                    cell.textLabel.text = event.linkedWebsiteURL != nil ? event.linkedWebsiteURL : @"No Website Available";
+                    break;
+                }
+                    
+                default: break;
+            }
+            break;
+        }
+        //Accessibility
+        case 4:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    cell.textLabel.font = [UIFont systemFontOfSize:14];
+                    cell.textLabel.numberOfLines = 0;
+                    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+                    if (event.accessibilityInformation != nil && [event.accessibilityInformation length] > 0)
+                    {
+                        cell.textLabel.text = event.accessibilityInformation;
+                    }
+                    else cell.textLabel.text = @"No Accessibility Information Available.";
+                    [cell.textLabel sizeToFit];
+                    
+                    cell.accessoryType = UITableViewCellAccessoryNone; 
+                
+                    break;
+                }
+                
+                default: break;
+            }
+            break;
+        }
     }
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    NSLog(@"Detail label: %@", cell.detailTextLabel.text);
+    if (indexPath.section == 2 || indexPath.section == 4 || (indexPath.section == 1 && indexPath.row == 0))
+        [cell setUserInteractionEnabled:NO];
     
     return cell;
 }
