@@ -301,6 +301,7 @@
                 case 0:
                 {
                     DUMapViewController *mapViewController = [[DUMapViewController alloc] initWithNibName:@"DUMapViewController" bundle:nil];
+                    mapViewController.event = self.event;
                     [self.navigationController pushViewController:mapViewController animated:YES];
 
                 }

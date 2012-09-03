@@ -26,6 +26,18 @@
 {
     [super viewDidLoad];
     self.title = @"Event Location";
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake([event.location.latitude floatValue], [event.location.longitude floatValue]);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
+    MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = location;
+    annotation.title = event.name;
+    annotation.subtitle = [NSString stringWithFormat:@"%@, %@, %@, %@",
+                           event.location.address1,
+                           event.location.address2,
+                           event.location.city,
+                           event.location.postcode];
+    [self.mapView addAnnotation:annotation];
+    self.mapView.region = region; self.mapView.hidden = NO;
 }
 
 - (void)viewDidUnload
