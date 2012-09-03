@@ -108,8 +108,18 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             switch (indexPath.row)
             {
-                case 0: cell.textLabel.text = society.email != nil ? society.email : @"No Email Address Available"; break;
-                case 1: cell.textLabel.text = society.website != nil ? society.website : @"No Website Available"; break;
+                case 0:
+                {
+                    [cell setUserInteractionEnabled:(society.email != nil)];
+                    cell.textLabel.text = society.email != nil ? society.email : @"No Email Address Available";
+                    break;
+                }
+                case 1:
+                {
+                    [cell setUserInteractionEnabled:(society.website != nil)];
+                    cell.textLabel.text = society.website != nil ? society.website : @"No Website Available";
+                    break;
+                }
                 default: break;
             }
         }
