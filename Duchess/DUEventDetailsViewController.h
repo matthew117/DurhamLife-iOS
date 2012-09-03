@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DUEventDetailsViewController : UIViewController {
+@interface DUEventDetailsViewController : UITableViewController
+{
     
 }
 

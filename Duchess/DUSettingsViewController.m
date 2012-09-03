@@ -96,8 +96,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    DUUser *user = [SessionHandler getUser];
-    
     switch (section)
     {
         case  0: return 2;

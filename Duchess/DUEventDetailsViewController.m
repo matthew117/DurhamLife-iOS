@@ -46,41 +46,6 @@
     
     DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     DUEvent *event = delegate.currentEvent;
-    
-    // create the linear layout view
-    CSLinearLayoutView *linearLayoutView = [[CSLinearLayoutView alloc] initWithFrame:self.view.bounds];
-    linearLayoutView.orientation = CSLinearLayoutViewOrientationVertical;
-    [self.view addSubview:linearLayoutView];
-    
-    UILabel *eventNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 310, 20)];
-    eventNameLabel.textAlignment = UITextAlignmentCenter;
-    eventNameLabel.text = event.name;
-    [eventNameLabel setBackgroundColor:[UIColor clearColor]];
-    [eventNameLabel setTextColor:[UIColor whiteColor]];
-    eventNameLabel.font = [UIFont boldSystemFontOfSize:18];
-    
-    DURoundedBorderLabel *eventDescriptionLabel = [[DURoundedBorderLabel alloc] init];
-    [eventDescriptionLabel setBackgroundColor:[UIColor whiteColor]];
-    [eventDescriptionLabel setTextColor:[UIColor blackColor]];
-    eventDescriptionLabel.text = event.descriptionHeader;
-    eventDescriptionLabel.font = [UIFont systemFontOfSize:15];
-    [eventDescriptionLabel sizeToFitFixedWidth:300.0];
-    
-    // create a layout item for the view you want to display
-    CSLinearLayoutItem *nameItem = [CSLinearLayoutItem layoutItemForView:eventNameLabel];
-    nameItem.padding = CSLinearLayoutMakePadding(5.0, 5.0, 5.0, 5.0);
-    nameItem.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
-    nameItem.fillMode = CSLinearLayoutItemFillModeNormal;
-    
-    CSLinearLayoutItem *descriptionLabel = [CSLinearLayoutItem layoutItemForView:eventDescriptionLabel];
-    descriptionLabel.padding = CSLinearLayoutMakePadding(5.0, 7.0, 5.0, 7.0);
-    descriptionLabel.horizontalAlignment = CSLinearLayoutItemHorizontalAlignmentCenter;
-    descriptionLabel.fillMode = CSLinearLayoutItemFillModeStretch;
-
-    
-    // add the layout item to the linear layout view
-    [linearLayoutView addItem:nameItem];
-    [linearLayoutView addItem:descriptionLabel];
 }
 
 - (void)viewDidUnload
@@ -96,4 +61,174 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 5;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section)
+    {
+        case  0: return 2;
+        case  1: return 2;
+        case  2: return 2;
+        case  3: return 3;
+        case  4: return 1;
+            
+        default: return 0;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section)
+    {
+        case  0: return @"";
+        case  1: return @"When";
+        case  2: return @"Description";
+        case  3: return @"Contact Information";
+        case  4: return @"Accessibility";
+            
+        default: return @"";
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        
+        NSLog(@"Init cell: %d, %d", indexPath.section, indexPath.row);
+    }
+    
+    DUAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    DUEvent *event = delegate.currentEvent;
+    
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    cell.textLabel.text = @"Location";
+                    break;
+                }
+                case 1:
+                {
+                    cell.textLabel.text = @"Reviews";
+                    break;
+                }
+                    
+                default: break;
+            }
+            break;
+        }
+            
+        case 1:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+                    [formatter setDateFormat:@"d MMMM"];
+                    
+                    NSString *eventStartDateStr = [formatter stringFromDate:event.startDate];
+                    NSString *eventEndDateStr = [formatter stringFromDate:event.endDate];
+                    cell.textLabel.text = [NSString stringWithFormat:@"%@ until %@", eventStartDateStr, eventEndDateStr];
+
+                    break;
+                }
+                
+                case 1:
+                {
+                    cell.textLabel.text = @"View Times";
+                    break;
+                }
+                    
+                default: break;
+            }
+            break;
+        }
+            
+        case 2:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    
+                    
+                    break;
+                }
+                    
+                case 1:
+                {
+                    
+                    break;
+                }
+                    
+                default: break;
+            }
+            break;
+        }
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    NSLog(@"Detail label: %@", cell.detailTextLabel.text);
+    
+    return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    
+                }
+                break;
+                    
+                default: break;
+            }
+        }
+        break;
+            
+        case 1:
+        {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+
+                }
+                break;
+                    
+                default: break;
+            }
+        }
+        break;
+            
+        default: break;
+    }
+}
+
 @end
+
