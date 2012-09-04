@@ -11,7 +11,14 @@
 @interface DUCalendarViewController : DUEventListViewController
 
 - (void)setupCalendarView;
+- (void)setMonthBounds;
+- (void)setupCalendarCells;
+
 - (IBAction)filterByDate:(UIButton *)sender;
-@property (strong, nonatomic) IBOutlet UIButton *calendarCell;
+- (IBAction)previousMonthAction:(UIButton *)sender;
+- (IBAction)nextMonthAction:(UIButton *)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *previousButton;
+@property (strong, nonatomic) IBOutlet UIButton *nextButton;
 
 @end

@@ -14,6 +14,12 @@
 
 @implementation DUCalendarViewController
 
+NSInteger upperBound;
+NSInteger lowerBound;
+NSInteger lastBound;
+NSArray *calendarCells;
+NSDate *firstDayOfMonth;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +35,24 @@
     [super viewDidLoad];
     
     self.title = @"Event Calendar";
+    
+    for (int i = 1; i <= 42; i++)
+    {
+        //UIButton *cell = (UIButton*)[self.view viewWithTag:i];
+    }
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *today = [NSDate date];
+    
+    NSDateComponents *dateComps = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
+    
+    [dateComps setCalendar:calendar];
+    [dateComps setDay:1];
+    [dateComps setHour:0];
+    [dateComps setMinute:0];
+    [dateComps setSecond:0];
+    
+    firstDayOfMonth = [dateComps date];
     
     [self setupCalendarView];
 }
@@ -47,53 +71,54 @@
 
 - (void)setupCalendarView
 {
+    [self setMonthBounds];
+    [self setupCalendarCells];
+}
+
+- (void)setMonthBounds
+{
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDate *today = [NSDate date];
     
     UILabel *header = (UILabel*)[self.view viewWithTag:43];
     
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMMM yyyy"];
-    header.text = [formatter stringFromDate:today];
+    header.text = [formatter stringFromDate:firstDayOfMonth];
     
-    NSDateComponents *dateComps = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:today];
-    NSRange daysInMonth = [calendar rangeOfUnit:NSDayCalendarUnit
-                                         inUnit:NSMonthCalendarUnit
-                                        forDate:today];
+    NSRange daysInMonth = [calendar rangeOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:firstDayOfMonth];
     
-    NSInteger upperBound = daysInMonth.length;
-    
-    [dateComps setCalendar:calendar];
-    [dateComps setDay:1];
-    [dateComps setHour:0];
-    [dateComps setMinute:0];
-    [dateComps setSecond:0];
-    
-    NSDate *firstDayOfMonth = [dateComps date];
+    upperBound = daysInMonth.length;
     
     NSDateComponents *weekdayComponents = [calendar components:NSWeekdayCalendarUnit fromDate:firstDayOfMonth];
-    NSInteger lowerBound = [weekdayComponents weekday];
+    lowerBound = [weekdayComponents weekday];
     
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     [comps setMonth:-1];
-    NSDate *firstDayOfLastMonth = [calendar dateByAddingComponents:comps toDate:firstDayOfMonth options:0];
-    NSRange daysInLastMonth = [calendar rangeOfUnit:NSDayCalendarUnit
-                                             inUnit:NSMonthCalendarUnit
-                                            forDate:firstDayOfLastMonth];
+    NSDate *firstDayOfPrevMonth = [calendar dateByAddingComponents:comps toDate:firstDayOfMonth options:0];
+    NSRange daysInPrevMonth = [calendar rangeOfUnit:NSDayCalendarUnit
+                                        inUnit:NSMonthCalendarUnit
+                                        forDate:firstDayOfPrevMonth];
     
-    NSInteger lastBound = daysInLastMonth.length;
+    lastBound = daysInPrevMonth.length;
     
     NSLog(@"Days in month: %d", upperBound);
     NSLog(@"First day of month: %d", lowerBound);
     NSLog(@"Days in last month: %d", lastBound);
-    
+}
+
+- (void)setupCalendarCells
+{
     int cellID = -((lowerBound + 5) % 7);
     
     NSLog(@"Cell ID: %d", cellID);
     
     for (int i = 1; i <= 42; i++)
     {
+         NSLog(@"Cell number: %d", i);
+        
         UIButton *cell = (UIButton*)[self.view viewWithTag:i];
+        
+        NSLog(@"Cell tag: %d", cell.tag);
         
         int cellDate = cellID + 1;
         
@@ -118,6 +143,28 @@
 - (IBAction)filterByDate:(UIButton *)sender
 {
     NSLog(@"Pressed calendar cell: %d", sender.tag);
+}
+
+- (IBAction)previousMonthAction:(UIButton *)sender
+{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setMonth:-1];
+    firstDayOfMonth = [calendar dateByAddingComponents:comps toDate:firstDayOfMonth options:0];
+    
+    [self setupCalendarView];
+}
+
+- (IBAction)nextMonthAction:(UIButton *)sender
+{
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setMonth:+1];
+    firstDayOfMonth = [calendar dateByAddingComponents:comps toDate:firstDayOfMonth options:0];
+    
+    [self setupCalendarView];
 }
 
 @end
