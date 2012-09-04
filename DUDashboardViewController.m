@@ -15,6 +15,7 @@
 #import "DUSettingsViewController.h"
 #import "DUBookmarkedViewController.h"
 #import "DUMySocietiesListViewController.h"
+#import "DUCalendarViewController.h"
 
 @interface DUDashboardViewController ()
 
@@ -90,6 +91,13 @@
     DUCollegeEventsViewController* collegeListController = [[DUCollegeEventsViewController alloc] initWithNibName:@"DUCollegeEventsViewController" bundle:nil];
     [self.navigationController pushViewController:collegeListController animated:YES];
 
+}
+
+- (IBAction)calendarButton:(UIButton *)sender
+{
+    DUCalendarViewController* calendarController = [[DUCalendarViewController alloc] initWithNibName:@"DUCalendarViewController" bundle:nil];
+    [self.navigationController pushViewController:calendarController animated:YES];
+    
 }
 
 - (IBAction)societiesButton:(UIButton *)sender

@@ -17,6 +17,7 @@
 - (IBAction)societiesButton:(UIButton *)sender;
 - (IBAction)bookmarkedButton:(UIButton *)sender;
 - (IBAction)mySocietiesButton:(UIButton *)sender;
+- (IBAction)calendarButton:(UIButton *)sender;
 
 - (void)settingsButton:(UIButton *)sender;
 - (void)aboutButton:(UIButton *)sender;
