@@ -129,6 +129,9 @@
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    cell.textLabel.textColor = [UIColor blackColor];
+    [cell setUserInteractionEnabled:YES];
     
     switch (indexPath.section)
     {
@@ -173,9 +176,9 @@
                 
                 case 1:
                 {
-                    [cell setUserInteractionEnabled:(event.iCalURL != nil)];
                     cell.textLabel.text = @"View Times";
-
+                    [cell setUserInteractionEnabled:(event.iCalURL != nil)];
+                    if (event.iCalURL == nil) cell.textLabel.textColor = [UIColor lightGrayColor];
                     break;
                 }
                     
@@ -233,18 +236,21 @@
             {
                 case 0:
                 {
+                    if (event.contactTelephoneNumber == nil) cell.textLabel.textColor = [UIColor lightGrayColor];
                     [cell setUserInteractionEnabled:(event.contactTelephoneNumber != nil)];
                     cell.textLabel.text = event.contactTelephoneNumber != nil ? event.contactTelephoneNumber : @"No Telephone Number Available";
                     break;
                 }
                 case 1:
                 {
+                    if (event.contactEmailAddress == nil) cell.textLabel.textColor = [UIColor lightGrayColor];
                     [cell setUserInteractionEnabled:(event.contactEmailAddress != nil)];
                     cell.textLabel.text = event.contactEmailAddress != nil ? event.contactEmailAddress : @"No Email Address Available";
                     break;
                 }
                 case 2:
                 {
+                    if (event.linkedWebsiteURL == nil) cell.textLabel.textColor = [UIColor lightGrayColor];
                     [cell setUserInteractionEnabled:(event.linkedWebsiteURL != nil)];
                     cell.textLabel.text = event.linkedWebsiteURL != nil ? event.linkedWebsiteURL : @"No Website Available";
                     break;
