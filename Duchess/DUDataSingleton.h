@@ -25,6 +25,7 @@
 - (NSArray*)getEventsBySociety:(NSString*)societyName;
 - (NSArray*)getEventsBySocieties:(NSArray*)societyList;
 - (NSArray*)getUsersBookmarkedEvents:(DUUser*)user;
+- (NSArray*)getEventsByDate:(NSDate*)date;
 
 - (NSArray*)getSocieties;
 

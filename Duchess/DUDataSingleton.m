@@ -94,6 +94,30 @@
     return [NSArray arrayWithArray:bookmarkedEvents];
 }
 
+- (NSArray*)getEventsByDate:(NSDate*)date
+{
+    NSMutableArray* dateEvents = [NSMutableArray new];
+    NSArray* eventList = [self getAllEvents];
+   
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setDay:+1];
+    NSDate *dayAfter = [calendar dateByAddingComponents:comps toDate:date options:0];
+    
+    for (DUEvent* event in eventList)
+    {
+        NSComparisonResult start = [event.startDate compare:dayAfter];
+        NSComparisonResult end = [event.endDate compare:date];
+        
+        if (start == NSOrderedAscending && (end == NSOrderedDescending || end == NSOrderedSame))
+        {
+            [dateEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:dateEvents];
+}
+
 + (BOOL)arrayContainsEventID:(NSArray*)array: (NSInteger)eventID
 {
     for (DUEvent* event in array)

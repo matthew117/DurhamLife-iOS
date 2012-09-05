@@ -7,6 +7,8 @@
 //
 
 #import "DUCalendarViewController.h"
+#import "DUDataSingleton.h"
+#import "SessionHandler.h"
 
 @interface DUCalendarViewController ()
 
@@ -103,25 +105,15 @@ NSDate *firstDayOfMonth;
                                         forDate:firstDayOfPrevMonth];
     
     lastBound = daysInPrevMonth.length;
-    
-    NSLog(@"Days in month: %d", upperBound);
-    NSLog(@"First day of month: %d", lowerBound);
-    NSLog(@"Days in last month: %d", lastBound);
 }
 
 - (void)setupCalendarCells
 {
     int cellID = -((lowerBound + 5) % 7);
     
-    NSLog(@"Cell ID: %d", cellID);
-    
     for (int i = 1; i <= 42; i++)
     {
-         NSLog(@"Cell number: %d", i);
-        
         UIButton *cell = [calendarCells objectAtIndex:(i - 1)];
-        
-        NSLog(@"Cell tag: %d", cell.tag);
         
         int cellDate = cellID + 1;
         
@@ -149,12 +141,17 @@ NSDate *firstDayOfMonth;
 
 - (IBAction)filterByDate:(UIButton *)sender
 {
-    NSLog(@"Pressed calendar cell: %d", sender.tag);
+    NSDate *date = [DUCalendarViewController dateFromCellTag:sender.tag];
     
-    
+    @autoreleasepool
+    {
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        backingArray = [dataProvider getEventsByDate:date];
+        [self dataHasLoaded];
+    }
 }
 
-- (NSDate*)dateFromCellTag:(NSInteger)tag
++ (NSDate*)dateFromCellTag:(NSInteger)tag
 {
     int cellID = -((lowerBound + 5) % 7);
     cellID += (tag - 1);
@@ -162,7 +159,7 @@ NSDate *firstDayOfMonth;
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     
     NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setMonth:cellID];
+    [comps setDay:cellID];
     return [calendar dateByAddingComponents:comps toDate:firstDayOfMonth options:0];
 }
 
@@ -187,5 +184,6 @@ NSDate *firstDayOfMonth;
     
     [self setupCalendarView];
 }
+
 
 @end
