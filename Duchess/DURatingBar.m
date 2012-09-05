@@ -16,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        rating = 0;
     }
     return self;
 }
@@ -37,8 +37,6 @@
                                 (id)purple.CGColor, nil];
     CGFloat gradientLocations[] = {0, 1};
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
-    
-    rating = 3;
     
     int numOfFullStars = rating / 2;
     
@@ -119,6 +117,14 @@
     //// Cleanup
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	CGPoint point = [(UITouch*)[touches anyObject] locationInView:self];
+	rating = (int) (point.x / (self.frame.size.width/10)) + 1;
+    NSLog(@"Rating: %d", rating);
+    [self setNeedsDisplay];
 }
 
 @end
