@@ -124,11 +124,13 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        
-        NSLog(@"Init cell: %d, %d", indexPath.section, indexPath.row);
     }
 
     DUUser *user = [SessionHandler getUser];
+    
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:17.0];
+    cell.textLabel.textColor = [UIColor blackColor];
+    [cell setUserInteractionEnabled:YES];
     
     switch (indexPath.section)
     {
@@ -147,6 +149,12 @@
                     cell.textLabel.text = @"College";
                     if ([user isStudent]) cell.detailTextLabel.text = [user getPrimaryCollege];
                     else cell.detailTextLabel.text = @"";
+                    
+                    if ([user isGuest])
+                    {
+                        [cell setUserInteractionEnabled:NO];
+                        cell.textLabel.textColor = [UIColor lightGrayColor];
+                    }
 
                     break;
                 }
