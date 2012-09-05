@@ -11,6 +11,7 @@
 #import "DUSocietyXMLParser.h"
 #import "DUNetworkedDataProvider.h"
 #import "SessionHandler.h"
+#import "DUReviewXMLParser.h"
 
 @implementation DUDataSingleton
 
@@ -177,15 +178,15 @@
     NSURLResponse *response = nil;
     NSError *error = nil;
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"Loaded page from: %@%d", @"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/",forEventID]]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", @"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/",forEventID]]];
     NSData *loadedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     
     if (error == nil)
     {
         NSLog(@"Loaded page from: %@%d", @"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/",forEventID);
         
-        DUSocietyXMLParser *xmlHandler = [[DUSocietyXMLParser alloc] init];
-        xmlHandler.societyList = reviewList;
+        DUReviewXMLParser *xmlHandler = [[DUReviewXMLParser alloc] init];
+        xmlHandler.reviewList = reviewList;
         
         NSXMLParser *parser = [[NSXMLParser alloc] initWithData:loadedData];
         [parser setDelegate:xmlHandler];

@@ -15,6 +15,7 @@
 #import "CSLinearLayoutItem.h"
 #import "DURoundedBorderLabel.h"
 #import "DUMapViewController.h"
+#import "DUReviewsViewController.h"
 
 @implementation DUEventDetailsViewController
 
@@ -315,7 +316,9 @@
                     
                 case 1:
                 {
-                    
+                    DUReviewsViewController *reviewViewController = [[DUReviewsViewController alloc] initWithNibName:@"DUReviewsViewController" bundle:nil];
+                    reviewViewController.event = self.event;
+                    [self.navigationController pushViewController:reviewViewController animated:YES];
                 }
                 break;
                     

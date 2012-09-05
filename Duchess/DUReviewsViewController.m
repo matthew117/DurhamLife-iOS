@@ -10,14 +10,12 @@
 #import "Reachability.h"
 #import "DUReview.h"
 #import "DURatingBar.h"
-
-@interface DUReviewsViewController ()
-
-@end
+#import "DUDataSingleton.h"
 
 @implementation DUReviewsViewController
 
 @synthesize tableView;
+@synthesize event;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +32,7 @@
     [super viewDidLoad];
     
     [super viewDidLoad];
-    self.title = @"Events";
+    self.title = @"Reviews";
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
     
@@ -55,6 +53,7 @@
 
 - (void)viewDidUnload
 {
+    reviewCell = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -92,8 +91,8 @@
     if (cell == nil)
     {
         [[NSBundle mainBundle] loadNibNamed:@"DUReviewTableCell" owner:self options:nil];
-        cell = customTableViewCell;
-        customTableViewCell = nil;
+        cell = reviewCell;
+        reviewCell = nil;
     }
     
     DUReview *review = [[self getDataSet] objectAtIndex:indexPath.row];
@@ -101,6 +100,11 @@
     UILabel *timepost = (UILabel*) [self.view viewWithTag:1];
     UILabel *reviewBody = (UILabel*) [self.view viewWithTag:2];
     DURatingBar *ratingBar = (DURatingBar*) [self.view viewWithTag:3];
+    
+    timepost.text = [review.timestamp description];
+    reviewBody.text = review.comment;
+    ratingBar.rating = review.rating;
+    [ratingBar setNeedsDisplay];
     
     return cell;
 }
@@ -156,5 +160,31 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+#pragma mark - Customize Data Set
+
+- (NSArray*)getDataSet
+{
+    return backingArray;
+}
+
+#pragma mark - Background Thread
+
+- (void)loadDataSet
+{
+    @autoreleasepool
+    {
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        backingArray = [dataProvider getReviews:event.eventID];
+        [self dataHasLoaded];
+    }
+}
+
+- (void)dataHasLoaded
+{
+    [downloadActivityIndicator stopAnimating];
+    [self.tableView reloadData];
+}
+
 
 @end
