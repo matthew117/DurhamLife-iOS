@@ -68,6 +68,7 @@
 		47B0C90F15EEC0F8006615CD /* DUAffiliationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B0C90D15EEC0F7006615CD /* DUAffiliationSettingsViewController.m */; };
 		47B0C91015EEC0F8006615CD /* DUAffiliationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B0C90E15EEC0F8006615CD /* DUAffiliationSettingsViewController.xib */; };
 		47B3E75015F7593F0046EE52 /* DUGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3E74F15F7593F0046EE52 /* DUGradientBackground.m */; };
+		47B3E75315F76C9E0046EE52 /* DUReviewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B3E75215F76C9E0046EE52 /* DUReviewTableCell.xib */; };
 		47D8679215F016C600BF91DC /* bookmark_dashboard_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D8677E15F016C600BF91DC /* bookmark_dashboard_icon.png */; };
 		47D8679315F016C600BF91DC /* bookmark_dashboard_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D8677F15F016C600BF91DC /* bookmark_dashboard_icon@2x.png */; };
 		47D8679415F016C600BF91DC /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D8678015F016C600BF91DC /* bookmark.png */; };
@@ -206,6 +207,7 @@
 		47B0C90E15EEC0F8006615CD /* DUAffiliationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUAffiliationSettingsViewController.xib; sourceTree = "<group>"; };
 		47B3E74E15F7593F0046EE52 /* DUGradientBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUGradientBackground.h; sourceTree = "<group>"; };
 		47B3E74F15F7593F0046EE52 /* DUGradientBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUGradientBackground.m; sourceTree = "<group>"; };
+		47B3E75215F76C9E0046EE52 /* DUReviewTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewTableCell.xib; sourceTree = "<group>"; };
 		47D8677E15F016C600BF91DC /* bookmark_dashboard_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_dashboard_icon.png; sourceTree = "<group>"; };
 		47D8677F15F016C600BF91DC /* bookmark_dashboard_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_dashboard_icon@2x.png"; sourceTree = "<group>"; };
 		47D8678015F016C600BF91DC /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark.png; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				478100A315EAE4A7002FBC67 /* DUAboutViewController.xib */,
 				2FE12AB415C1462100B2C6F7 /* DUEventListView.xib */,
 				2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */,
+				47B3E75215F76C9E0046EE52 /* DUReviewTableCell.xib */,
 				2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsView.xib */,
 				4781009B15EAD7F2002FBC67 /* DUCollegeEventsViewController.xib */,
 				2FD405F515ECF14700F5B8A6 /* DUSocietyListViewController.xib */,
@@ -611,6 +614,7 @@
 				47E3C48D15F0B02E00A4200C /* DUSocietyAboutViewController.xib in Resources */,
 				473B384715F4F04D00908E9D /* DUMapViewController.xib in Resources */,
 				2FC20E4615F4F87000095AD8 /* DUCalendarViewController.xib in Resources */,
+				47B3E75315F76C9E0046EE52 /* DUReviewTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
