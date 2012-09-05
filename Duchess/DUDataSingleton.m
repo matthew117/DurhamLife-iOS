@@ -170,9 +170,40 @@
     }
 }
 
-- (NSArray*)getReviews
+- (NSArray*)getReviews:(NSInteger)forEventID
 {
-    return nil;
+    NSMutableArray* reviewList = [NSMutableArray new];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"Loaded page from: %@%d", @"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/",forEventID]]];
+    NSData *loadedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+    if (error == nil)
+    {
+        NSLog(@"Loaded page from: %@%d", @"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/",forEventID);
+        
+        DUSocietyXMLParser *xmlHandler = [[DUSocietyXMLParser alloc] init];
+        xmlHandler.societyList = reviewList;
+        
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:loadedData];
+        [parser setDelegate:xmlHandler];
+        
+        if ([parser parse])
+        {
+            NSLog(@"XML successfully parsed. List should now be populated.");
+        }
+        else
+        {
+            NSLog(@"XML Parser Error.");
+        }
+    }
+    else
+    {
+        NSLog(@"ERROR: %@", error);
+    }
+    return reviewList;
 }
 
 - (NSArray*)getLocations

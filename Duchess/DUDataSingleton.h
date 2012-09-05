@@ -29,7 +29,7 @@
 
 - (NSArray*)getSocieties;
 
-- (NSArray*)getReviews;
+- (NSArray*)getReviews:(NSInteger)forEventID;
 
 - (NSArray*)getLocations;
 
