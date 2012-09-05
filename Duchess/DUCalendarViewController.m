@@ -17,7 +17,7 @@
 NSInteger upperBound;
 NSInteger lowerBound;
 NSInteger lastBound;
-NSArray *calendarCells;
+NSMutableArray *calendarCells;
 NSDate *firstDayOfMonth;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,9 +36,12 @@ NSDate *firstDayOfMonth;
     
     self.title = @"Event Calendar";
     
+    calendarCells = [NSMutableArray new];
+    
     for (int i = 1; i <= 42; i++)
     {
-        //UIButton *cell = (UIButton*)[self.view viewWithTag:i];
+        UIButton *cell = (UIButton*)[self.view viewWithTag:i];
+        [calendarCells addObject:cell];
     }
     
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -116,7 +119,7 @@ NSDate *firstDayOfMonth;
     {
          NSLog(@"Cell number: %d", i);
         
-        UIButton *cell = (UIButton*)[self.view viewWithTag:i];
+        UIButton *cell = [calendarCells objectAtIndex:(i - 1)];
         
         NSLog(@"Cell tag: %d", cell.tag);
         
@@ -132,6 +135,10 @@ NSDate *firstDayOfMonth;
             cellDate %= upperBound;
             [cell setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         }
+        else
+        {
+            [cell setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
         
         [cell setTitle: [NSString stringWithFormat:@"%d", cellDate] forState:UIControlStateNormal];
         [cell addTarget:self action:@selector(filterByDate:) forControlEvents:UIControlEventTouchUpInside];
@@ -143,6 +150,20 @@ NSDate *firstDayOfMonth;
 - (IBAction)filterByDate:(UIButton *)sender
 {
     NSLog(@"Pressed calendar cell: %d", sender.tag);
+    
+    
+}
+
+- (NSDate*)dateFromCellTag:(NSInteger)tag
+{
+    int cellID = -((lowerBound + 5) % 7);
+    cellID += (tag - 1);
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    [comps setMonth:cellID];
+    return [calendar dateByAddingComponents:comps toDate:firstDayOfMonth options:0];
 }
 
 - (IBAction)previousMonthAction:(UIButton *)sender
