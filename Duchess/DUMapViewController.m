@@ -11,6 +11,7 @@
 @implementation DUMapViewController
 @synthesize mapView;
 @synthesize event;
+@synthesize addressLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +27,11 @@
 {
     [super viewDidLoad];
     self.title = @"Event Location";
+    self.addressLabel.text = [NSString stringWithFormat:@"%@, %@\n%@, %@",
+                              event.location.address1,
+                              event.location.address2,
+                              event.location.city,
+                              event.location.postcode];
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake([event.location.latitude floatValue], [event.location.longitude floatValue]);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(location, 1000, 1000);
     MKPointAnnotation* annotation = [[MKPointAnnotation alloc] init];
@@ -43,6 +49,7 @@
 - (void)viewDidUnload
 {
     [self setMapView:nil];
+    [self setAddressLabel:nil];
     [super viewDidUnload];
     event = nil;
 }
