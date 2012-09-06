@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "DUEvent.h"
+#import "DUReviewCell.h"
 
 @interface DUReviewsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     UIActivityIndicatorView* downloadActivityIndicator;
     NSArray* backingArray;
-    IBOutlet UITableViewCell *reviewCell;
 }
     
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet DUReviewCell *reviewCell;
 @property (strong, nonatomic) DUEvent* event;
 
 - (NSArray*)getDataSet;

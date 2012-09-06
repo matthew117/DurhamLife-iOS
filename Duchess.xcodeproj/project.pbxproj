@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F28E81E15F8CBB300CFB4E2 /* DUReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */; };
 		2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */; };
 		2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
 		2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
@@ -116,6 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F28E81C15F8CBB300CFB4E2 /* DUReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewCell.h; sourceTree = "<group>"; };
+		2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewCell.m; sourceTree = "<group>"; };
 		2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2F69414015EFA861005B23E4 /* DUCollegesSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUCollegesSettingsViewController.h; sourceTree = "<group>"; };
 		2F69414115EFA861005B23E4 /* DUCollegesSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUCollegesSettingsViewController.m; sourceTree = "<group>"; };
@@ -513,6 +516,8 @@
 				2FC20E4315F4F87000095AD8 /* DUCalendarViewController.m */,
 				2FCEE4B515F79A6300CF0829 /* DUReviewsViewController.h */,
 				2FCEE4B615F79A6300CF0829 /* DUReviewsViewController.m */,
+				2F28E81C15F8CBB300CFB4E2 /* DUReviewCell.h */,
+				2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				47B3E75015F7593F0046EE52 /* DUGradientBackground.m in Sources */,
 				47B3E75D15F77A4F0046EE52 /* DURatingBar.m in Sources */,
 				2FCEE4B815F79A6300CF0829 /* DUReviewsViewController.m in Sources */,
+				2F28E81E15F8CBB300CFB4E2 /* DUReviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

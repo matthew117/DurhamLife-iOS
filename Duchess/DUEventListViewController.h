@@ -10,7 +10,7 @@
 
 @interface DUEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    UITableViewCell* customTableViewCell;
+    IBOutlet UITableViewCell* customTableViewCell;
     UIActivityIndicatorView* downloadActivityIndicator;
     NSArray* backingArray;
 }

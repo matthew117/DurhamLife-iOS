@@ -16,6 +16,7 @@
 
 @synthesize tableView;
 @synthesize event;
+@synthesize reviewCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,8 +54,8 @@
 
 - (void)viewDidUnload
 {
-    reviewCell = nil;
     [super viewDidUnload];
+    reviewCell = nil;
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
@@ -85,18 +86,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)parentTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ReviewCell";
     
-    UITableViewCell *cell = [parentTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    DUReviewCell *cell = (DUReviewCell *)[tableView dequeueReusableCellWithIdentifier:[DUReviewCell reuseIdentifier]];
     if (cell == nil)
     {
         [[NSBundle mainBundle] loadNibNamed:@"DUReviewTableCell" owner:self options:nil];
         cell = reviewCell;
         reviewCell = nil;
     }
+    /*
+    static NSString *CellIdentifier = @"ReviewCell";
     
+    UITableViewCell *cell = [parentTableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"DUReviewTableCell" owner:self options:nil] lastObject];
+
+        //[[NSBundle mainBundle] loadNibNamed:@"DUReviewTableCell" owner:self options:nil];
+        //cell = reviewCell;
+        reviewCell = nil;
+    }
+    */
     DUReview *review = [[self getDataSet] objectAtIndex:indexPath.row];
-    
+    /*
     UILabel *timepost = (UILabel*) [self.view viewWithTag:1];
     UILabel *reviewBody = (UILabel*) [self.view viewWithTag:2];
     DURatingBar *ratingBar = (DURatingBar*) [self.view viewWithTag:3];
@@ -104,61 +117,23 @@
     timepost.text = [review.timestamp description];
     reviewBody.text = review.comment;
     ratingBar.rating = review.rating;
-    [ratingBar setNeedsDisplay];
+     */
+    
+    cell.timestamp.text = [review.timestamp description];
+    cell.comment.text = review.comment;
+    cell.ratingBar.rating = review.rating;
+    
+    [cell.ratingBar setNeedsDisplay];
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    DUReview *review = [backingArray objectAtIndex:indexPath.row];
+    NSLog(review.description);
 }
 
 #pragma mark - Customize Data Set

@@ -132,43 +132,41 @@
 {
     if (_societyList == nil)
     {
-    NSMutableArray* societyList = [NSMutableArray new];
-    
-    NSURLResponse *response = nil;
-    NSError *error = nil;
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.dur.ac.uk/cs.seg01/duchess/api/v1/societies.php"]];
-    NSData *loadedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    if (error == nil)
-    {
-        NSLog(@"Loaded page from: %@", @"https://www.dur.ac.uk/cs.seg01/duchess/api/v1/societies.php");
+        NSMutableArray* societyList = [NSMutableArray new];
         
-        DUSocietyXMLParser *xmlHandler = [[DUSocietyXMLParser alloc] init];
-        xmlHandler.societyList = societyList;
+        NSURLResponse *response = nil;
+        NSError *error = nil;
         
-        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:loadedData];
-        [parser setDelegate:xmlHandler];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.dur.ac.uk/cs.seg01/duchess/api/v1/societies.php"]];
+        NSData *loadedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         
-        if ([parser parse])
+        if (error == nil)
         {
-            NSLog(@"XML successfully parsed. List should now be populated.");
+            NSLog(@"Loaded page from: %@", @"https://www.dur.ac.uk/cs.seg01/duchess/api/v1/societies.php");
+            
+            DUSocietyXMLParser *xmlHandler = [[DUSocietyXMLParser alloc] init];
+            xmlHandler.societyList = societyList;
+            
+            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:loadedData];
+            [parser setDelegate:xmlHandler];
+            
+            if ([parser parse])
+            {
+                NSLog(@"XML successfully parsed. List should now be populated.");
+            }
+            else
+            {
+                NSLog(@"XML Parser Error.");
+            }
         }
         else
         {
-            NSLog(@"XML Parser Error.");
+            NSLog(@"ERROR: %@", error);
         }
-    }
-    else
-    {
-        NSLog(@"ERROR: %@", error);
-    }
         _societyList = societyList;
-    return societyList;
+        return societyList;
     }
-    else{
-        return _societyList;
-    }
+    else return _societyList;
 }
 
 - (NSArray*)getReviews:(NSInteger)forEventID
@@ -204,6 +202,7 @@
     {
         NSLog(@"ERROR: %@", error);
     }
+    
     return reviewList;
 }
 
