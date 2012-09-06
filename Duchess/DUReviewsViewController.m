@@ -94,34 +94,23 @@
         cell = reviewCell;
         reviewCell = nil;
     }
-    /*
-    static NSString *CellIdentifier = @"ReviewCell";
     
-    UITableViewCell *cell = [parentTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil)
-    {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"DUReviewTableCell" owner:self options:nil] lastObject];
-
-        //[[NSBundle mainBundle] loadNibNamed:@"DUReviewTableCell" owner:self options:nil];
-        //cell = reviewCell;
-        reviewCell = nil;
-    }
-    */
     DUReview *review = [[self getDataSet] objectAtIndex:indexPath.row];
-    /*
-    UILabel *timepost = (UILabel*) [self.view viewWithTag:1];
-    UILabel *reviewBody = (UILabel*) [self.view viewWithTag:2];
-    DURatingBar *ratingBar = (DURatingBar*) [self.view viewWithTag:3];
-    
-    timepost.text = [review.timestamp description];
-    reviewBody.text = review.comment;
-    ratingBar.rating = review.rating;
-     */
     
     cell.timestamp.text = [review.timestamp description];
     cell.comment.text = review.comment;
     cell.ratingBar.rating = review.rating;
+    
+    CGSize maximumLabelSize = CGSizeMake(296,9999);
+    
+    CGSize expectedLabelSize = [review.comment sizeWithFont:cell.comment.font constrainedToSize:maximumLabelSize lineBreakMode:cell.comment.lineBreakMode];
+    
+    CGRect newFrame = cell.comment.frame;
+    newFrame.size.height = expectedLabelSize.height;
+    cell.comment.frame = newFrame;
+    
+    cell.comment.lineBreakMode = UILineBreakModeWordWrap;
+    cell.comment.numberOfLines = 0;
     
     [cell.ratingBar setNeedsDisplay];
     
@@ -134,6 +123,17 @@
 {
     DUReview *review = [backingArray objectAtIndex:indexPath.row];
     NSLog(review.description);
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DUReview *review = [backingArray objectAtIndex:indexPath.row];
+    
+    if (review.comment == nil || [review.comment length] < 1) return 44;
+    else
+    {
+        return ([review.comment sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 40;
+    }
 }
 
 #pragma mark - Customize Data Set
