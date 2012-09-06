@@ -122,7 +122,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DUReview *review = [backingArray objectAtIndex:indexPath.row];
-    NSLog(review.description);
+    NSLog(@"%@", review.description);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
