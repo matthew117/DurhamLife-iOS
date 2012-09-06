@@ -14,6 +14,7 @@
 #import "Reachability.h"
 #import "DUUser.h"
 #import "SessionHandler.h"
+#import "DURatingBar.h"
 
 @implementation DUEventListViewController
 
@@ -120,14 +121,17 @@
     eventDescriptionLabel = (UILabel *)[cell viewWithTag:4];
     eventDescriptionLabel.text = event.descriptionHeader;
     
+    DURatingBar *eventRatingBar;
+    eventRatingBar = (DURatingBar *)[cell viewWithTag:5];
+    [eventRatingBar setHidden:(event.averageReview < 1)];
+    eventRatingBar.rating = event.averageReview;
+    [eventRatingBar setNeedsDisplay];
+    
     UILabel *eventReviewsLabel;
-    eventReviewsLabel = (UILabel *)[cell viewWithTag:5];
-    NSMutableString *stars = [[NSMutableString alloc] init];
-    for (int i = 0; i < event.averageReview; i++)
-    {
-        [stars appendString:@"*"];
-    }
-    eventReviewsLabel.text = [NSString stringWithFormat:@"%@", stars];
+    eventReviewsLabel = (UILabel *)[cell viewWithTag:7];
+    [eventReviewsLabel setHidden:(event.averageReview < 1)];
+    eventReviewsLabel.text = [NSString stringWithFormat:@"based on %d %@", event.numberOfReviews,
+                              event.numberOfReviews > 1 ? @"reviews" : @"review"];
     
     DUUser* user = [SessionHandler getUser];
     
@@ -183,7 +187,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    DUEvent* event = [backingArray objectAtIndex:indexPath.row];
+    if (event.averageReview < 1) return 110;
+    else return 135;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

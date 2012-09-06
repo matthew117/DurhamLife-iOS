@@ -104,6 +104,8 @@
     else if ([elementName isEqualToString:@"reviewScore"])
     {
         _isAverageReviewTag = true;
+        NSString *numberOfReviews = [attributeDict objectForKey:@"n"];
+        _currentEvent.numberOfReviews = [numberOfReviews integerValue];
     }
     else if ([elementName isEqualToString:@"associatedCollege"])
     {
