@@ -22,6 +22,7 @@ NSInteger lastBound;
 NSMutableArray *calendarCells;
 NSDate *firstDayOfMonth;
 UIButton *selected;
+BOOL calendarLoaded = NO;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -139,8 +140,16 @@ UIButton *selected;
             if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:cell.tag]])
             {
                 [cell setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-                [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_normal.png"] forState:UIControlStateNormal];
                 [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_selected.png"] forState:UIControlStateHighlighted];
+            
+                if (!calendarLoaded)
+                {
+                    [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_selected.png"] forState:UIControlStateNormal];
+                    selected = cell;
+                    calendarLoaded = YES;
+                }
+                else [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_normal.png"] forState:UIControlStateNormal];
+
             }
             else
             {
@@ -188,6 +197,16 @@ UIButton *selected;
     {
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
         backingArray = [dataProvider getEventsByDate:date];
+        [self dataHasLoaded];
+    }
+}
+
+- (void)loadDataSet
+{
+    @autoreleasepool
+    {
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        backingArray = [dataProvider getEventsByDate:[NSDate date]];
         [self dataHasLoaded];
     }
 }
