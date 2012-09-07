@@ -140,13 +140,14 @@ UIButton *selected;
             {
                 [cell setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_normal.png"] forState:UIControlStateNormal];
-                UIImage *imageOfClicked = [UIImage imageNamed:@"calendar_cell_today_selected.png"];
-                [cell setBackgroundImage:imageOfClicked forState:UIControlStateHighlighted];
+                [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_selected.png"] forState:UIControlStateHighlighted];
             }
             else
             {
                 [cell setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];
+                [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_selected.png"] forState:UIControlStateHighlighted];
+
             }
         }
         
