@@ -136,7 +136,18 @@ UIButton *selected;
         }
         else
         {
-            [cell setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:cell.tag]])
+            {
+                [cell setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_normal.png"] forState:UIControlStateNormal];
+                UIImage *imageOfClicked = [UIImage imageNamed:@"calendar_cell_today_selected.png"];
+                [cell setBackgroundImage:imageOfClicked forState:UIControlStateHighlighted];
+            }
+            else
+            {
+                [cell setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];
+            }
         }
         
         [cell setTitle: [NSString stringWithFormat:@"%d", cellDate] forState:UIControlStateNormal];
@@ -150,12 +161,24 @@ UIButton *selected;
 {
     if (selected != nil)
     {
-        [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];
-        [selected setTitleColor:[DUCalendarViewController colorFromCellTag:selected.tag] forState:UIControlStateNormal];
+        if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:selected.tag]])
+        {
+            [selected setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_normal.png"] forState:UIControlStateNormal];
+        }
+        else
+        {
+            [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];
+            [selected setTitleColor:[DUCalendarViewController colorFromCellTag:selected.tag] forState:UIControlStateNormal];
+        }
     }
     selected = sender;
     
-    [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_selected.png"] forState:UIControlStateNormal];
+    if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:selected.tag]])
+         [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_selected.png"] forState:UIControlStateNormal];
+    else [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_selected.png"] forState:UIControlStateNormal];
+
+    
     [selected setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
     NSDate *date = [DUCalendarViewController dateFromCellTag:sender.tag];
@@ -166,6 +189,20 @@ UIButton *selected;
         backingArray = [dataProvider getEventsByDate:date];
         [self dataHasLoaded];
     }
+}
+
++ (BOOL)isDateToday:(NSDate*)date
+{
+    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents* dateComps = [calendar components:flags fromDate:date];
+    date = [calendar dateFromComponents:dateComps];
+    
+    NSDateComponents* todayComps = [calendar components:flags fromDate:[NSDate date]];
+    NSDate* today = [calendar dateFromComponents:todayComps];
+    
+    return [today compare:date] == NSOrderedSame;
 }
 
 + (UIColor*)colorFromCellTag:(NSInteger)tag
