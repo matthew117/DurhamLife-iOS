@@ -113,6 +113,7 @@
     cell.comment.numberOfLines = 0;
     
     [cell.ratingBar setNeedsDisplay];
+    [cell setUserInteractionEnabled:NO];
     
     return cell;
 }
