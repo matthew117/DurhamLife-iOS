@@ -10,7 +10,7 @@
 
 typedef enum userAffiliation
 {
-    GUEST,
+    VISITOR,
     STUDENT,
     STAFF,
 } UserAffiliation;
