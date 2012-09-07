@@ -16,6 +16,7 @@
 #import "DUBookmarkedViewController.h"
 #import "DUMySocietiesListViewController.h"
 #import "DUCalendarViewController.h"
+#import "UIImage+crop.h"
 
 @interface DUDashboardViewController ()
 
@@ -23,6 +24,8 @@
 
 @implementation DUDashboardViewController
 @synthesize adButton;
+@synthesize adText;
+@synthesize adImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,13 +60,15 @@
     // Set first time use to NO
     // ==================================================================
     
-    [UIView animateWithDuration:1.5f animations:^{[adButton setAlpha:0.5f];}];
+    [self performSelectorInBackground:@selector(downloadAndDisplayADImage) withObject:nil];
 }
 
 
 - (void)viewDidUnload
 {
     [self setAdButton:nil];
+    [self setAdText:nil];
+    [self setAdImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -84,6 +89,9 @@
 {
     DUAboutViewController *aboutView = [[DUAboutViewController alloc] init];
     [self presentModalViewController:aboutView animated:YES];
+}
+
+- (IBAction)adAction:(UIButton *)sender {
 }
 
 - (IBAction)collegeEvents:(UIButton *)sender
@@ -124,8 +132,31 @@
     [self.navigationController pushViewController:mySocietiesController animated:YES];
 }
 
-- (IBAction)showUserDefaults:(UIButton *)sender
+- (void)downloadAndDisplayADImage
 {
-    NSLog(@"%@", [SessionHandler getUser]);
+	NSURLResponse *response = nil;
+    NSError *error = nil;
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/features.php"]];
+    NSData *loadedData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    
+	if (error == nil)
+	{
+		NSLog(@"Loaded page from: %@", @"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/features.php");
+		
+		NSString *downloadedString = [[NSString alloc] initWithData:loadedData encoding:NSUTF8StringEncoding];
+		NSArray *adSpec = [downloadedString componentsSeparatedByString: @"\n"];
+		adText.text = [adSpec objectAtIndex:1];
+		adLink = [adSpec objectAtIndex:3];
+		NSURL *url = [NSURL URLWithString: [adSpec objectAtIndex:2]];
+		adImage.image = [[UIImage imageWithData: [NSData dataWithContentsOfURL:url]] crop:adImage.frame];
+        [UIView animateWithDuration:1.5f animations:^{[adButton setAlpha:0.5f];}];
+        [UIView animateWithDuration:1.5f animations:^{[adImage setAlpha:1];}];
+        [UIView animateWithDuration:1.5f animations:^{[adText setAlpha:0.6f];}];
+	}
+	else
+	{
+		NSLog(@"ERROR: %@", error);
+	}
 }
 @end
