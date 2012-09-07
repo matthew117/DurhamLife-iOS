@@ -2,7 +2,7 @@
 //  DUReviewCell.m
 //  Duchess
 //
-//  Created by App Dev on 06/09/2012.
+//  Created by Jamie Bates on 06/09/2012.
 //
 //
 
@@ -17,7 +17,8 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
+    if (self)
+    {
         // Initialization code
     }
     return self;

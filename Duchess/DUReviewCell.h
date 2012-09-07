@@ -2,7 +2,7 @@
 //  DUReviewCell.h
 //  Duchess
 //
-//  Created by App Dev on 06/09/2012.
+//  Created by Jamie Bates on 06/09/2012.
 //
 //
 

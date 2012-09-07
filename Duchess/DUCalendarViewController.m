@@ -21,6 +21,7 @@ NSInteger lowerBound;
 NSInteger lastBound;
 NSMutableArray *calendarCells;
 NSDate *firstDayOfMonth;
+UIButton *selected;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -109,6 +110,12 @@ NSDate *firstDayOfMonth;
 
 - (void)setupCalendarCells
 {
+    backingArray = [NSArray new];
+    [self dataHasLoaded];
+    
+    [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];    
+    selected = nil;
+    
     int cellID = -((lowerBound + 5) % 7);
     
     for (int i = 1; i <= 42; i++)
@@ -141,6 +148,16 @@ NSDate *firstDayOfMonth;
 
 - (IBAction)filterByDate:(UIButton *)sender
 {
+    if (selected != nil)
+    {
+        [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];
+        [selected setTitleColor:[DUCalendarViewController colorFromCellTag:selected.tag] forState:UIControlStateNormal];
+    }
+    selected = sender;
+    
+    [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_selected.png"] forState:UIControlStateNormal];
+    [selected setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     NSDate *date = [DUCalendarViewController dateFromCellTag:sender.tag];
     
     @autoreleasepool
@@ -148,6 +165,25 @@ NSDate *firstDayOfMonth;
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
         backingArray = [dataProvider getEventsByDate:date];
         [self dataHasLoaded];
+    }
+}
+
++ (UIColor*)colorFromCellTag:(NSInteger)tag
+{
+    int cellID = -((lowerBound + 5) % 7);
+    cellID += tag;
+    
+    if (cellID < 1)
+    {
+        return [UIColor lightGrayColor];
+    }
+    else if(cellID > upperBound)
+    {
+        return [UIColor lightGrayColor];
+    }
+    else
+    {
+        return [UIColor blackColor];
     }
 }
 
