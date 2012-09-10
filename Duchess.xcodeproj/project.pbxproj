@@ -55,6 +55,7 @@
 		470B561815EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470B561615EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib */; };
 		4713B5AA15E95F5A00A45687 /* DUReviewXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */; };
 		471662FE15FDE185005EA493 /* DUIndentedLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 471662FD15FDE185005EA493 /* DUIndentedLabelView.m */; };
+		4716630915FE39AB005EA493 /* DUImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4716630815FE39AB005EA493 /* DUImageTableViewCell.m */; };
 		473B383F15F4ECBD00908E9D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B383E15F4ECBD00908E9D /* MapKit.framework */; };
 		473B384215F4ECC500908E9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B384115F4ECC500908E9D /* CoreLocation.framework */; };
 		473B384615F4F04D00908E9D /* DUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 473B384415F4F04D00908E9D /* DUMapViewController.m */; };
@@ -197,6 +198,8 @@
 		4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewXMLParser.m; sourceTree = "<group>"; };
 		471662FC15FDE185005EA493 /* DUIndentedLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUIndentedLabelView.h; sourceTree = "<group>"; };
 		471662FD15FDE185005EA493 /* DUIndentedLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUIndentedLabelView.m; sourceTree = "<group>"; };
+		4716630715FE39AB005EA493 /* DUImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUImageTableViewCell.h; sourceTree = "<group>"; };
+		4716630815FE39AB005EA493 /* DUImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUImageTableViewCell.m; sourceTree = "<group>"; };
 		473B383E15F4ECBD00908E9D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		473B384115F4ECC500908E9D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		473B384315F4F04D00908E9D /* DUMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUMapViewController.h; sourceTree = "<group>"; };
@@ -495,6 +498,8 @@
 				47D582D815FA5EB200F907DD /* UIImage+crop.m */,
 				471662FC15FDE185005EA493 /* DUIndentedLabelView.h */,
 				471662FD15FDE185005EA493 /* DUIndentedLabelView.m */,
+				4716630715FE39AB005EA493 /* DUImageTableViewCell.h */,
+				4716630815FE39AB005EA493 /* DUImageTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -738,6 +743,7 @@
 				2F28E81E15F8CBB300CFB4E2 /* DUReviewCell.m in Sources */,
 				47D582D915FA5EB200F907DD /* UIImage+crop.m in Sources */,
 				471662FE15FDE185005EA493 /* DUIndentedLabelView.m in Sources */,
+				4716630915FE39AB005EA493 /* DUImageTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

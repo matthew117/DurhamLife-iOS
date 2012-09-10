@@ -12,7 +12,9 @@
 
 - (UIImage *)crop:(CGRect)rect
 {
+
     CGFloat cropRatio = rect.size.width / rect.size.height;
+    if (cropRatio <= 1.0) cropRatio = rect.size.height / rect.size.width;
     CGFloat newImageWidth = cropRatio * self.size.height;
     
     CGRect cropRect = CGRectMake((self.size.width-newImageWidth)/2, 0, newImageWidth, self.size.height);

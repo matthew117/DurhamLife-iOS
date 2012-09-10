@@ -15,6 +15,7 @@
 #import "DUMapViewController.h"
 #import "DUReviewsViewController.h"
 #import "UIImage+crop.h"
+#import "DUImageTableViewCell.h"
 
 @implementation DUEventDetailsViewController
 
@@ -44,7 +45,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Event Details";
+    self.title = event.name;
     
     [self performSelectorInBackground:@selector(downloadAndDisplayImage) withObject:nil];
     // Do any additional setup after loading the view from its nib.
@@ -138,7 +139,7 @@
     
     if (cell == nil)
     {
-        if (indexPath.section == 0) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:ImageIdentifier];
+        if (indexPath.section == 0) cell = [[DUImageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ImageIdentifier];
         else cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
@@ -152,9 +153,15 @@
         //Image
         case 0:
         {
-            
             cell.accessoryType = UITableViewCellAccessoryNone;
             [cell setUserInteractionEnabled:NO];
+            if (event.imageURL == nil) cell.textLabel.text = @"No Image Available.";
+            else cell.textLabel.text = @"Loading Image...";
+            if (eventImage != nil)
+            {
+                cell.imageView.image = [eventImage crop:cell.imageView.bounds];
+                cell.textLabel.text = @"";
+            }
             break;
         }
         //Location/Reviews
