@@ -71,6 +71,11 @@ BOOL calendarLoaded = NO;
     // e.g. self.myOutlet = nil;
 }
 
+- (void)enableFilters
+{
+    
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

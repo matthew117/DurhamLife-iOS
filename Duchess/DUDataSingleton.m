@@ -126,8 +126,6 @@
     
     for (DUEvent* event in eventList)
     {
-        for (NSString* _category in event.categories)
-            
         if ([event.categories containsObject:category])
         {
             [categoryEvents addObject:event];

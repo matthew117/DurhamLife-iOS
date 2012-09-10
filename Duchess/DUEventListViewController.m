@@ -34,7 +34,8 @@
 {
     [super viewDidLoad];
     self.title = @"Events";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseFilter:)];
+    
+    [self enableFilters];
 
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
@@ -52,6 +53,13 @@
         [downloadActivityIndicator startAnimating];
         [self performSelectorInBackground:@selector(loadDataSet) withObject:nil];
     }
+}
+
+- (void)enableFilters
+{
+    self.navigationItem.rightBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseFilter:)];
+   
 }
 
 - (void)viewWillAppear:(BOOL)animated

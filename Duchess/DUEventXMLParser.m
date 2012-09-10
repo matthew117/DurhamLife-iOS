@@ -131,6 +131,11 @@
     {
         _currentCategories = [[NSMutableArray alloc] init];
     }
+    else if ([elementName isEqualToString:@"category"])
+    {
+        _isCategoryTag = true;
+    }
+        
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
@@ -142,6 +147,7 @@
     {
         [_eventList addObject:_currentEvent];
         _currentEvent = nil;
+        _currentCategories = nil;
     }
     else if ([elementName isEqualToString:@"name"])
     {
@@ -348,6 +354,10 @@
     {
         if ([string isEqualToString:@"Open"]) _currentEvent.eventPrivacy = OPEN;
         if ([string isEqualToString:@"Private"]) _currentEvent.eventPrivacy = PRIVATE;
+    }
+    else if (_isCategoryTag)
+    {
+        [_currentCategories addObject:[NSString stringWithString:string]];
     }
 }
 

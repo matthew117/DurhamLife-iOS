@@ -21,6 +21,7 @@
 - (void)loadDataSet;
 - (void)dataHasLoaded;
 
+- (void)enableFilters;
 - (void)chooseFilter:(UIButton *)sender;
 
 @end

@@ -44,6 +44,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)enableFilters
+{
+    
+}
+
 #pragma mark - Customize Data Set
 
 - (NSArray*)getDataSet
