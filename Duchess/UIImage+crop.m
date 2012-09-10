@@ -10,16 +10,14 @@
 
 @implementation UIImage (crop)
 
-- (UIImage *)crop:(CGRect)rect {
+- (UIImage *)crop:(CGRect)rect
+{
+    CGFloat cropRatio = rect.size.width / rect.size.height;
+    CGFloat newImageWidth = cropRatio * self.size.height;
     
-    if (self.scale > 1.0f) {
-        rect = CGRectMake(rect.origin.x * self.scale,
-                          rect.origin.y * self.scale,
-                          rect.size.width * self.scale,
-                          rect.size.height * self.scale);
-    }
+    CGRect cropRect = CGRectMake((self.size.width-newImageWidth)/2, 0, newImageWidth, self.size.height);
     
-    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, cropRect);
     UIImage *result = [UIImage imageWithCGImage:imageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(imageRef);
     return result;
