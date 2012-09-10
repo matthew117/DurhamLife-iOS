@@ -91,7 +91,10 @@
     [self presentModalViewController:aboutView animated:YES];
 }
 
-- (IBAction)adAction:(UIButton *)sender {
+- (IBAction)adAction:(UIButton *)sender
+{
+    NSURL *url = [NSURL URLWithString:adLink];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (IBAction)collegeEvents:(UIButton *)sender
