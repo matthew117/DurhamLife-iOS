@@ -258,6 +258,7 @@
 {
     [downloadActivityIndicator stopAnimating];
     [self.tableView reloadData];
+    [downloadActivityIndicator stopAnimating];
 }
 
 @end
