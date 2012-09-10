@@ -58,10 +58,22 @@
     }
     return [NSArray arrayWithArray:collegeEvents];
 }
-- (NSArray*)getEventsByColleges:(NSArray*)collegeList
+
+- (NSArray*)getEventsByColleges:(NSSet*)collegeList
 {
-    return nil;
+    NSMutableArray* collegeEvents = [NSMutableArray new];
+    NSArray* eventList = [self getAllEvents];
+    
+    for (DUEvent* event in eventList)
+    {
+        if ([collegeList containsObject: event.associatedCollege])
+        {
+            [collegeEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:collegeEvents];
 }
+
 - (NSArray*)getEventsBySociety:(NSString*)societyName
 {
     NSMutableArray* societyEvents = [NSMutableArray new];
@@ -75,10 +87,12 @@
     }
     return [NSArray arrayWithArray:societyEvents];
 }
+
 - (NSArray*)getEventsBySocieties:(NSArray*)societyList
 {
     return nil;
 }
+
 - (NSArray*)getUsersBookmarkedEvents:(DUUser*)user
 {
     NSMutableArray* bookmarkedEvents = [NSMutableArray new];

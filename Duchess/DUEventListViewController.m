@@ -59,7 +59,6 @@
 {
     self.navigationItem.rightBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseFilter:)];
-   
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,11 +93,8 @@
     
     @autoreleasepool
     {
-        NSLog(@"Filter by: %@", category);
-        
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
         backingArray = [dataProvider getEventsByCategory:category];
-        NSLog(@"New eventlist size: %d", backingArray.count);
         [self dataHasLoaded];
     }
 }

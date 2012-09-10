@@ -46,7 +46,44 @@
 
 - (void)enableFilters
 {
+    DUUser* user = [SessionHandler getUser];
     
+    if ([user isStaff])
+        self.navigationItem.rightBarButtonItem =
+            [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseFilter:)];
+
+}
+
+- (void)chooseFilter:(UIButton *)sender
+{
+    DUUser* user = [SessionHandler getUser];
+    
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose College"
+        delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil
+        otherButtonTitles: nil];
+    
+    for (NSString *college in user.colleges)
+    {
+        [actionSheet addButtonWithTitle:college];
+    }
+    
+    [actionSheet addButtonWithTitle:@"Cancel"];
+    actionSheet.cancelButtonIndex = user.colleges.count;
+    
+    [actionSheet showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void)actionSheet:(UIActionSheet *)sheet clickedButtonAtIndex:(NSInteger)index
+{
+    if (index == sheet.cancelButtonIndex) return;
+    NSString* college = [sheet buttonTitleAtIndex:index];
+    
+    @autoreleasepool
+    {        
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        backingArray = [dataProvider getEventsByCollege:college];
+        [self dataHasLoaded];
+    }
 }
 
 #pragma mark - Customize Data Set
@@ -64,7 +101,10 @@
     {
         DUUser* user = [SessionHandler getUser];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        backingArray = [dataProvider getEventsByCollege:[user getPrimaryCollege]];
+        
+        if ([user isStaff])
+             backingArray = [dataProvider getEventsByColleges:user.colleges];
+        else backingArray = [dataProvider getEventsByCollege:[user getPrimaryCollege]];
         [self dataHasLoaded];
     }
 }
