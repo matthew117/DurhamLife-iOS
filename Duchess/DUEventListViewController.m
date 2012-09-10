@@ -34,6 +34,8 @@
 {
     [super viewDidLoad];
     self.title = @"Events";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseFilter:)];
+
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
     
@@ -65,6 +67,32 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)chooseFilter:(UIButton *)sender
+{
+    UIActionSheet* sheet = [[UIActionSheet alloc] initWithTitle:@"Choose Category"
+        delegate:self cancelButtonTitle:(NSString *)@"Cancel" destructiveButtonTitle:nil
+        otherButtonTitles:@"University", @"College", @"Music", @"Theatre",
+                          @"Exhibitions", @"Sport", @"Conferences", @"Community", nil];
+    
+    [sheet showInView:[UIApplication sharedApplication].keyWindow];
+}
+
+- (void)actionSheet:(UIActionSheet *)sheet clickedButtonAtIndex:(NSInteger)index
+{
+    if (index == sheet.cancelButtonIndex) return;
+    NSString* category = [sheet buttonTitleAtIndex:index];
+    
+    @autoreleasepool
+    {
+        NSLog(@"Filter by: %@", category);
+        
+        DUDataSingleton *dataProvider = [DUDataSingleton instance];
+        backingArray = [dataProvider getEventsByCategory:category];
+        NSLog(@"New eventlist size: %d", backingArray.count);
+        [self dataHasLoaded];
+    }
 }
 
 #pragma mark - Table view data source

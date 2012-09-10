@@ -119,6 +119,24 @@
     return [NSArray arrayWithArray:dateEvents];
 }
 
+- (NSArray*)getEventsByCategory:(NSString *)category
+{
+    NSMutableArray* categoryEvents = [NSMutableArray new];
+    NSArray* eventList = [self getAllEvents];
+    
+    for (DUEvent* event in eventList)
+    {
+        for (NSString* _category in event.categories)
+            
+        if ([event.categories containsObject:category])
+        {
+            [categoryEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:categoryEvents];
+}
+
+
 + (BOOL)arrayContainsEventID:(NSArray*)array: (NSInteger)eventID
 {
     for (DUEvent* event in array)

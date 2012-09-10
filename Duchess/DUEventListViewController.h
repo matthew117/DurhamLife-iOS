@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DUEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface DUEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>
 {
     IBOutlet UITableViewCell* customTableViewCell;
     UIActivityIndicatorView* downloadActivityIndicator;
@@ -20,5 +20,7 @@
 - (NSArray*)getDataSet;
 - (void)loadDataSet;
 - (void)dataHasLoaded;
+
+- (void)chooseFilter:(UIButton *)sender;
 
 @end
