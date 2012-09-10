@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F28E81E15F8CBB300CFB4E2 /* DUReviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */; };
 		2F4E62E015C67F0B008815F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E62DF15C67F0B008815F9 /* QuartzCore.framework */; };
-		2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
-		2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
 		2F69414315EFA861005B23E4 /* DUCollegesSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F69414115EFA861005B23E4 /* DUCollegesSettingsViewController.m */; };
 		2F69414415EFA861005B23E4 /* DUCollegesSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F69414215EFA861005B23E4 /* DUCollegesSettingsViewController.xib */; };
 		2F7DD68D15C15E30007BB3BE /* DUUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DD68C15C15E30007BB3BE /* DUUser.m */; };
@@ -55,8 +53,6 @@
 		2FE8323415FA3250000782A1 /* calendar_cell_today_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE8323315FA3250000782A1 /* calendar_cell_today_selected.png */; };
 		470B561715EFA12F00FF8DF8 /* DUMySocietiesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 470B561515EFA12F00FF8DF8 /* DUMySocietiesListViewController.m */; };
 		470B561815EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 470B561615EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib */; };
-		470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */; };
-		470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */; };
 		4713B5AA15E95F5A00A45687 /* DUReviewXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */; };
 		473B383F15F4ECBD00908E9D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B383E15F4ECBD00908E9D /* MapKit.framework */; };
 		473B384215F4ECC500908E9D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473B384115F4ECC500908E9D /* CoreLocation.framework */; };
@@ -196,10 +192,6 @@
 		470B561415EFA12F00FF8DF8 /* DUMySocietiesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUMySocietiesListViewController.h; sourceTree = "<group>"; };
 		470B561515EFA12F00FF8DF8 /* DUMySocietiesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUMySocietiesListViewController.m; sourceTree = "<group>"; };
 		470B561615EFA12F00FF8DF8 /* DUMySocietiesListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUMySocietiesListViewController.xib; sourceTree = "<group>"; };
-		470F860715C5D87B0073AD88 /* CSLinearLayoutItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutItem.h; sourceTree = "<group>"; };
-		470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutItem.m; sourceTree = "<group>"; };
-		470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLinearLayoutView.h; sourceTree = "<group>"; };
-		470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLinearLayoutView.m; sourceTree = "<group>"; };
 		4713B5A815E95F5A00A45687 /* DUReviewXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewXMLParser.h; sourceTree = "<group>"; };
 		4713B5A915E95F5A00A45687 /* DUReviewXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewXMLParser.m; sourceTree = "<group>"; };
 		473B383E15F4ECBD00908E9D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -416,10 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				2F4E632B15C6E3D9008815F9 /* Icons */,
-				470F860715C5D87B0073AD88 /* CSLinearLayoutItem.h */,
-				470F860815C5D87B0073AD88 /* CSLinearLayoutItem.m */,
-				470F860915C5D87B0073AD88 /* CSLinearLayoutView.h */,
-				470F860A15C5D87B0073AD88 /* CSLinearLayoutView.m */,
 				2FCCAE1A15C2DA9E00CC3D61 /* Reachability.h */,
 				2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */,
 				2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */,
@@ -707,8 +695,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47E03FC815EB754300DC2250 /* DUEventDetailsViewController.m in Sources */,
-				2F4E62E115C67F5D008815F9 /* CSLinearLayoutItem.m in Sources */,
-				2F4E62E215C67F5D008815F9 /* CSLinearLayoutView.m in Sources */,
 				2FE12AAA15C1462100B2C6F7 /* main.m in Sources */,
 				2FE12AAD15C1462100B2C6F7 /* DUAppDelegate.m in Sources */,
 				2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */,
@@ -754,8 +740,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */,
-				470F860B15C5D87B0073AD88 /* CSLinearLayoutItem.m in Sources */,
-				470F860C15C5D87B0073AD88 /* CSLinearLayoutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
