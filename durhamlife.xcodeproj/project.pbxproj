@@ -165,22 +165,22 @@
 		2FDC2FC915E23D440026B917 /* DUSociety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUSociety.m; sourceTree = "<group>"; };
 		2FDC2FCB15E244480026B917 /* DULocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DULocation.h; sourceTree = "<group>"; };
 		2FDC2FCC15E244480026B917 /* DULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DULocation.m; sourceTree = "<group>"; };
-		2FE12A9815C1462000B2C6F7 /* Duchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Duchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE12A9815C1462000B2C6F7 /* durhamlife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = durhamlife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE12A9C15C1462100B2C6F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2FE12A9E15C1462100B2C6F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Duchess-Info.plist"; sourceTree = "<group>"; };
+		2FE12AA415C1462100B2C6F7 /* durhamlife-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "durhamlife-Info.plist"; sourceTree = "<group>"; };
 		2FE12AA615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Duchess-Prefix.pch"; sourceTree = "<group>"; };
+		2FE12AA815C1462100B2C6F7 /* durhamlife-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "durhamlife-Prefix.pch"; sourceTree = "<group>"; };
 		2FE12AA915C1462100B2C6F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2FE12AAB15C1462100B2C6F7 /* DUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUAppDelegate.h; sourceTree = "<group>"; };
 		2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUAppDelegate.m; sourceTree = "<group>"; };
 		2FE12AAF15C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		2FE12AB515C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DUEventListView.xib; sourceTree = "<group>"; };
-		2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuchessTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DuchessTests-Info.plist"; sourceTree = "<group>"; };
+		2FE12ABC15C1462100B2C6F7 /* durhamlifeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = durhamlifeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE12AC415C1462100B2C6F7 /* durhamlifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "durhamlifeTests-Info.plist"; sourceTree = "<group>"; };
 		2FE12AC615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DuchessTests-Prefix.pch"; sourceTree = "<group>"; };
+		2FE12AC815C1462100B2C6F7 /* durhamlifeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "durhamlifeTests-Prefix.pch"; sourceTree = "<group>"; };
 		2FE12AC915C1462100B2C6F7 /* DuchessTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessTests.h; sourceTree = "<group>"; };
 		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
 		2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEvent.h; sourceTree = "<group>"; };
@@ -375,8 +375,8 @@
 		2FE12A9915C1462000B2C6F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FE12A9815C1462000B2C6F7 /* Duchess.app */,
-				2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */,
+				2FE12A9815C1462000B2C6F7 /* durhamlife.app */,
+				2FE12ABC15C1462100B2C6F7 /* durhamlifeTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -416,9 +416,9 @@
 				2F4E632B15C6E3D9008815F9 /* Icons */,
 				2FCCAE1A15C2DA9E00CC3D61 /* Reachability.h */,
 				2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */,
-				2FE12AA415C1462100B2C6F7 /* Duchess-Info.plist */,
+				2FE12AA415C1462100B2C6F7 /* durhamlife-Info.plist */,
 				2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */,
-				2FE12AA815C1462100B2C6F7 /* Duchess-Prefix.pch */,
+				2FE12AA815C1462100B2C6F7 /* durhamlife-Prefix.pch */,
 				2FE12AA915C1462100B2C6F7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -437,9 +437,9 @@
 		2FE12AC315C1462100B2C6F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2FE12AC415C1462100B2C6F7 /* DuchessTests-Info.plist */,
+				2FE12AC415C1462100B2C6F7 /* durhamlifeTests-Info.plist */,
 				2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */,
-				2FE12AC815C1462100B2C6F7 /* DuchessTests-Prefix.pch */,
+				2FE12AC815C1462100B2C6F7 /* durhamlifeTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -552,9 +552,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2FE12A9715C1462000B2C6F7 /* Duchess */ = {
+		2FE12A9715C1462000B2C6F7 /* durhamlife */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FE12ACF15C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "Duchess" */;
+			buildConfigurationList = 2FE12ACF15C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "durhamlife" */;
 			buildPhases = (
 				2FE12A9415C1462000B2C6F7 /* Sources */,
 				2FE12A9515C1462000B2C6F7 /* Frameworks */,
@@ -564,14 +564,14 @@
 			);
 			dependencies = (
 			);
-			name = Duchess;
+			name = durhamlife;
 			productName = Duchess;
-			productReference = 2FE12A9815C1462000B2C6F7 /* Duchess.app */;
+			productReference = 2FE12A9815C1462000B2C6F7 /* durhamlife.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2FE12ABB15C1462100B2C6F7 /* DuchessTests */ = {
+		2FE12ABB15C1462100B2C6F7 /* durhamlifeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "DuchessTests" */;
+			buildConfigurationList = 2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "durhamlifeTests" */;
 			buildPhases = (
 				2FE12AB715C1462100B2C6F7 /* Sources */,
 				2FE12AB815C1462100B2C6F7 /* Frameworks */,
@@ -583,9 +583,9 @@
 			dependencies = (
 				2FE12AC115C1462100B2C6F7 /* PBXTargetDependency */,
 			);
-			name = DuchessTests;
+			name = durhamlifeTests;
 			productName = DuchessTests;
-			productReference = 2FE12ABC15C1462100B2C6F7 /* DuchessTests.octest */;
+			productReference = 2FE12ABC15C1462100B2C6F7 /* durhamlifeTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -596,7 +596,7 @@
 			attributes = {
 				LastUpgradeCheck = 0440;
 			};
-			buildConfigurationList = 2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "Duchess" */;
+			buildConfigurationList = 2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "durhamlife" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -608,8 +608,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2FE12A9715C1462000B2C6F7 /* Duchess */,
-				2FE12ABB15C1462100B2C6F7 /* DuchessTests */,
+				2FE12A9715C1462000B2C6F7 /* durhamlife */,
+				2FE12ABB15C1462100B2C6F7 /* durhamlifeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -760,7 +760,7 @@
 /* Begin PBXTargetDependency section */
 		2FE12AC115C1462100B2C6F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2FE12A9715C1462000B2C6F7 /* Duchess */;
+			target = 2FE12A9715C1462000B2C6F7 /* durhamlife */;
 			targetProxy = 2FE12AC015C1462100B2C6F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -805,7 +805,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Matthew Bates (P6URMJ8Q43)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Matthew Bates (P6URMJ8Q43)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -815,8 +815,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "4B95CD66-95B8-477C-B0A5-C2352818A3FD";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4B95CD66-95B8-477C-B0A5-C2352818A3FD";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
@@ -826,7 +824,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Matthew Bates (P6URMJ8Q43)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Matthew Bates (P6URMJ8Q43)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -834,8 +832,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "4B95CD66-95B8-477C-B0A5-C2352818A3FD";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4B95CD66-95B8-477C-B0A5-C2352818A3FD";
 				SDKROOT = iphoneos;
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
@@ -849,12 +845,12 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
+				GCC_PREFIX_HEADER = "Duchess/durhamlife-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
+				INFOPLIST_FILE = "Duchess/durhamlife-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = durhamlife;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -866,12 +862,12 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Duchess/Duchess-Prefix.pch";
+				GCC_PREFIX_HEADER = "Duchess/durhamlife-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "Duchess/Duchess-Info.plist";
+				INFOPLIST_FILE = "Duchess/durhamlife-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = durhamlife;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -888,14 +884,14 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DuchessTests/DuchessTests-Prefix.pch";
+				GCC_PREFIX_HEADER = "DuchessTests/durhamlifeTests-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "DuchessTests/DuchessTests-Info.plist";
+				INFOPLIST_FILE = "DuchessTests/durhamlifeTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = durhamlifeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -912,14 +908,14 @@
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DuchessTests/DuchessTests-Prefix.pch";
+				GCC_PREFIX_HEADER = "DuchessTests/durhamlifeTests-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "DuchessTests/DuchessTests-Info.plist";
+				INFOPLIST_FILE = "DuchessTests/durhamlifeTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = durhamlifeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -928,7 +924,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "Duchess" */ = {
+		2FE12A9215C1462000B2C6F7 /* Build configuration list for PBXProject "durhamlife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FE12ACD15C1462100B2C6F7 /* Debug */,
@@ -937,7 +933,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FE12ACF15C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "Duchess" */ = {
+		2FE12ACF15C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "durhamlife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FE12AD015C1462100B2C6F7 /* Debug */,
@@ -946,7 +942,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "DuchessTests" */ = {
+		2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "durhamlifeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2FE12AD315C1462100B2C6F7 /* Debug */,
