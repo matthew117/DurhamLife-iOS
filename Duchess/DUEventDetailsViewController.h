@@ -12,7 +12,7 @@
 
 @interface DUEventDetailsViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 {
-    
+    UIImage* eventImage;
 }
 
 @property (nonatomic, strong) DUEvent* event;

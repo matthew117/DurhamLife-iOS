@@ -14,6 +14,7 @@
 #import "DURoundedBorderLabel.h"
 #import "DUMapViewController.h"
 #import "DUReviewsViewController.h"
+#import "UIImage+crop.h"
 
 @implementation DUEventDetailsViewController
 
@@ -44,6 +45,8 @@
 {
     [super viewDidLoad];
     self.title = @"Event Details";
+    
+    [self performSelectorInBackground:@selector(downloadAndDisplayImage) withObject:nil];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -63,18 +66,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section)
     {
-        case  0: return 2;
+        case  0: return 1;
         case  1: return 2;
         case  2: return 2;
-        case  3: return 3;
-        case  4: return 1;
+        case  3: return 2;
+        case  4: return 3;
+        case  5: return 1;
             
         default: return 0;
     }
@@ -85,10 +89,11 @@
     switch (section)
     {
         case  0: return @"";
-        case  1: return @"When";
-        case  2: return @"Description";
-        case  3: return @"Contact Information";
-        case  4: return @"Accessibility";
+        case  1: return @"";
+        case  2: return @"When";
+        case  3: return @"Description";
+        case  4: return @"Contact Information";
+        case  5: return @"Accessibility";
             
         default: return @"";
     }
@@ -96,7 +101,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 2)
+    if (indexPath.section == 0)
+    {
+        return 170;
+    }
+    else if (indexPath.section == 3)
     {
         if (indexPath.row == 0)
         {
@@ -109,7 +118,7 @@
             return ([event.descriptionBody sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 10;
         }
     }
-    else if (indexPath.section == 4)
+    else if (indexPath.section == 5)
     {
         if (event.accessibilityInformation == nil || [event.accessibilityInformation length] < 1) return 44;
         return ([event.accessibilityInformation sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(280, 9000) lineBreakMode:UILineBreakModeWordWrap].height) + 10;
@@ -120,11 +129,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *ImageIdentifier = @"ImageCell";
+    
+    UITableViewCell *cell;
+    
+    if (indexPath.section == 0) cell = [tableView dequeueReusableCellWithIdentifier:ImageIdentifier];
+    else cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        if (indexPath.section == 0) cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:ImageIdentifier];
+        else cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -134,8 +149,16 @@
     
     switch (indexPath.section)
     {
-        //Location/Reviews
+        //Image
         case 0:
+        {
+            
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            [cell setUserInteractionEnabled:NO];
+            break;
+        }
+        //Location/Reviews
+        case 1:
         {
             switch (indexPath.row)
             {
@@ -155,7 +178,7 @@
             break;
         }
         //When
-        case 1:
+        case 2:
         {
             switch (indexPath.row)
             {
@@ -186,7 +209,7 @@
             break;
         }
         //Description
-        case 2:
+        case 3:
         {
             switch (indexPath.row)
             {
@@ -229,7 +252,7 @@
             break;
         }
         //Contact Information
-        case 3:
+        case 4:
         {
             switch (indexPath.row)
             {
@@ -260,7 +283,7 @@
             break;
         }
         //Accessibility
-        case 4:
+        case 5:
         {
             switch (indexPath.row)
             {
@@ -287,7 +310,7 @@
         }
     }
     
-    if (indexPath.section == 2 || indexPath.section == 4 || (indexPath.section == 1 && indexPath.row == 0))
+    if (indexPath.section == 3 || indexPath.section == 5 || (indexPath.section == 2 && indexPath.row == 0))
         [cell setUserInteractionEnabled:NO];
     
     return cell;
@@ -299,7 +322,7 @@
 {
     switch (indexPath.section)
     {
-        case 0:
+        case 1:
         {
             switch (indexPath.row)
             {
@@ -325,7 +348,7 @@
         }
         break;
             
-        case 1:
+        case 2:
         {
             switch (indexPath.row)
             {
@@ -340,7 +363,7 @@
         }
         break;
             
-        case 3:
+        case 4:
         {
             switch (indexPath.row)
             {
@@ -415,6 +438,13 @@
 {    
     NSURL *url = [NSURL URLWithString:event.linkedWebsiteURL];
     [[UIApplication sharedApplication] openURL:url];
+}
+
+- (void)downloadAndDisplayImage
+{
+    NSURL* url = [NSURL URLWithString:event.imageURL];
+    eventImage = [[UIImage imageWithData: [NSData dataWithContentsOfURL:url]] crop:CGRectMake(0, 0, 280, 170)];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:NO];
 }
 
 @end
