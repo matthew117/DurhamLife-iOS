@@ -11,8 +11,6 @@
 #import "DUDataSingleton.h"
 #import "DUEvent.h"
 #import <QuartzCore/QuartzCore.h>
-#import "CSLinearLayoutView.h"
-#import "CSLinearLayoutItem.h"
 #import "DURoundedBorderLabel.h"
 #import "DUMapViewController.h"
 #import "DUReviewsViewController.h"
