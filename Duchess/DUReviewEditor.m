@@ -52,18 +52,13 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
                                                  (unsigned long)NULL), ^(void)
         {
-        
-        NSLog(@"HelloHelloHello");
             NSMutableURLRequest *urlRequest =
             [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/%d", event.eventID]]];
             [urlRequest setHTTPMethod:@"PUT"];
             [urlRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
             
             [urlRequest setHTTPBody:[reviewXML dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            NSData *loadedData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
-            
-            NSLog(@"Response:%@", [[NSString alloc] initWithData:loadedData encoding:NSUTF8StringEncoding]);
+            [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
         });
     }
     return YES;
