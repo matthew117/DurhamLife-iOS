@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DUEvent.h"
 #import "DUReviewCell.h"
+#import "DUReviewEditor.h"
 
 @interface DUReviewsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet DUReviewCell *reviewCell;
 @property (strong, nonatomic) DUEvent* event;
+@property (strong, nonatomic) IBOutlet DUReviewEditor *reviewEditor;
 
 - (NSArray*)getDataSet;
 - (void)loadDataSet;

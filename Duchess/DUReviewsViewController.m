@@ -11,11 +11,13 @@
 #import "DUReview.h"
 #import "DURatingBar.h"
 #import "DUDataSingleton.h"
+#import "DUReviewEditor.h"
 
 @implementation DUReviewsViewController
 
 @synthesize tableView;
 @synthesize event;
+@synthesize reviewEditor;
 @synthesize reviewCell;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,6 +36,11 @@
     
     [super viewDidLoad];
     self.title = @"Reviews";
+    
+    [[NSBundle mainBundle] loadNibNamed:@"DUReviewEditor" owner:self options:nil];
+    
+    self.tableView.tableHeaderView = reviewEditor;
+    
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
     
@@ -54,6 +61,7 @@
 
 - (void)viewDidUnload
 {
+    [self setReviewEditor:nil];
     [super viewDidUnload];
     reviewCell = nil;
     // Release any retained subviews of the main view.
