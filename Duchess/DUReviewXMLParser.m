@@ -79,7 +79,9 @@
     }
     else if (_isTimestampTag)
     {
-        _currentReview.timestamp = [NSString stringWithString:string];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        _currentReview.timestamp = [dateFormatter dateFromString:string];
     }
 }
 

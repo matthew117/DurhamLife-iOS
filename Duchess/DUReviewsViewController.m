@@ -12,6 +12,7 @@
 #import "DURatingBar.h"
 #import "DUDataSingleton.h"
 #import "DUReviewEditor.h"
+#import "CalendarUtils.h"
 
 @implementation DUReviewsViewController
 
@@ -105,7 +106,7 @@
     
     DUReview *review = [[self getDataSet] objectAtIndex:indexPath.row];
     
-    cell.timestamp.text = [review.timestamp description];
+    cell.timestamp.text = [CalendarUtils getReviewTimestampString:review];
     cell.comment.text = review.comment;
     cell.ratingBar.rating = review.rating;
     
