@@ -11,6 +11,7 @@
 @implementation DUReviewEditor
 @synthesize reviewTextField;
 @synthesize reviewEditorRatingBar;
+@synthesize event;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -21,13 +22,15 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(BOOL) textFieldShouldReturn: (UITextField *) textField
 {
-    // Drawing code
+    [textField resignFirstResponder];
+    
+    NSLog(@"<?xml version=\"1.0\" encoding=\"UTF-8\"?><review userID=\"%d\" eventID=\"%d\"><rating>%d</rating><post>%@</post><timestamp>%f</timestamp></review>",
+          -1, event.eventID, reviewEditorRatingBar.rating , textField.text,
+          [[NSDate date] timeIntervalSince1970]);
+    
+    return YES;
 }
-*/
 
 @end

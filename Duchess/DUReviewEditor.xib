@@ -80,7 +80,6 @@
 						<string key="NSFrame">{{35, 46}, {250, 50}}</string>
 						<reference key="NSSuperview" ref="910829532"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="387393941">
 							<int key="NSColorSpace">3</int>
@@ -124,6 +123,14 @@
 						<reference key="destination" ref="355635937"/>
 					</object>
 					<int key="connectionID">13</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="355635937"/>
+						<reference key="destination" ref="910829532"/>
+					</object>
+					<int key="connectionID">16</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -181,7 +188,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">14</int>
+			<int key="maxID">16</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -223,17 +230,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DUReviewEditor</string>
 					<string key="superclassName">UIView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">submitReviewAction:</string>
-						<string key="NS.object.0">UIButton</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">submitReviewAction:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">submitReviewAction:</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="reviewEditorRatingBar">DURatingBar</string>
 						<string key="reviewTextField">UITextField</string>
