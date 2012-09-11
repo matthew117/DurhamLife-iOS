@@ -43,11 +43,7 @@
 
 + (NSString*)getReviewTimestampString:(DUReview*)review
 {
-    NSLog(@"0");
-
     NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:review.timestamp];
-    
-    NSLog(@"1");
     
     if (interval < 60)
     {
@@ -65,9 +61,7 @@
         return [NSString stringWithFormat:@"%d hour%@ ago", hours, hours < 2 ? @"" : @"s"];
     }
     else
-    {
-        NSLog(@"3");
-        
+    {        
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"d MMMM yyyy HH:mm"];
         
