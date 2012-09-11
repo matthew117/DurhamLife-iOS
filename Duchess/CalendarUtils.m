@@ -60,8 +60,13 @@
         int hours = interval / (60 * 60);
         return [NSString stringWithFormat:@"%d hour%@ ago", hours, hours < 2 ? @"" : @"s"];
     }
-    
-    return @"";
+    else
+    {
+        NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"d MMMM yyyy HH:mm"];
+        
+        return [formatter stringFromDate:review.timestamp];
+    }
 }
 
 + (BOOL)isDateToday:(NSDate*)date

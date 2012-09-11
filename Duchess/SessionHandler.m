@@ -15,9 +15,8 @@ static NSString* const FIRST_USE_KEY = @"first_use";
 
 + (DUUser*)getUser
 {
-    DUUser* user = [DUUser new];
     NSData* userData = [[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY];
-    user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    DUUser* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
     return user;
 }
 
@@ -68,9 +67,8 @@ static NSString* const FIRST_USE_KEY = @"first_use";
 
 + (NSString*)userDefaultsToString
 {
-    DUUser* user = [DUUser new];
     NSData* userData = [[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY];
-    user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
+    DUUser* user = [NSKeyedUnarchiver unarchiveObjectWithData:userData];
     
     BOOL firstRun = [[NSUserDefaults standardUserDefaults] boolForKey:FIRST_USE_KEY];
     
