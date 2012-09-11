@@ -43,6 +43,24 @@
 
 + (NSString*)getReviewTimestampString:(DUReview*)review
 {
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:review.timestamp];
+    
+    if (interval < 60)
+    {
+        int seconds = interval;
+        return [NSString stringWithFormat:@"%d second%@ ago", seconds, seconds < 2 ? @"" : @"s"];
+    }
+    else if (interval < 60 * 60)
+    {
+        int minutes = interval / 60;
+        return [NSString stringWithFormat:@"%d minute%@ ago", minutes, minutes < 2 ? @"" : @"s"];
+    }
+    else if (interval < 60 * 60 * 24)
+    {
+        int hours = interval / (60 * 60);
+        return [NSString stringWithFormat:@"%d hour%@ ago", hours, hours < 2 ? @"" : @"s"];
+    }
+    
     return @"";
 }
 
