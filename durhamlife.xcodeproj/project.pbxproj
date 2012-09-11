@@ -38,12 +38,6 @@
 		2FE12AAD15C1462100B2C6F7 /* DUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */; };
 		2FE12AB015C1462100B2C6F7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AAE15C1462100B2C6F7 /* MainWindow.xib */; };
 		2FE12AB615C1462100B2C6F7 /* DUEventListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AB415C1462100B2C6F7 /* DUEventListView.xib */; };
-		2FE12ABD15C1462100B2C6F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9C15C1462100B2C6F7 /* UIKit.framework */; };
-		2FE12ABE15C1462100B2C6F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12A9E15C1462100B2C6F7 /* Foundation.framework */; };
-		2FE12ABF15C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE12AA015C1462100B2C6F7 /* CoreGraphics.framework */; };
-		2FE12AC715C1462100B2C6F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */; };
-		2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2FE12AC915C1462100B2C6F7 /* DuchessTests.h */; };
-		2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */; };
 		2FE12AE015C1497A00B2C6F7 /* DUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */; };
 		2FE8322415FA029F000782A1 /* month_backward.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE8322315FA029F000782A1 /* month_backward.png */; };
 		2FE8322715FA02BE000782A1 /* month_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE8322615FA02BE000782A1 /* month_forward.png */; };
@@ -113,16 +107,6 @@
 		47FF471A15E7F5F6002F10D6 /* DUDashboardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2FE12AC015C1462100B2C6F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2FE12A8F15C1462000B2C6F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2FE12A9715C1462000B2C6F7;
-			remoteInfo = Duchess;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2F28E81C15F8CBB300CFB4E2 /* DUReviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewCell.h; sourceTree = "<group>"; };
 		2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewCell.m; sourceTree = "<group>"; };
@@ -177,12 +161,6 @@
 		2FE12AAC15C1462100B2C6F7 /* DUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUAppDelegate.m; sourceTree = "<group>"; };
 		2FE12AAF15C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		2FE12AB515C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DUEventListView.xib; sourceTree = "<group>"; };
-		2FE12ABC15C1462100B2C6F7 /* durhamlifeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = durhamlifeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FE12AC415C1462100B2C6F7 /* durhamlifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "durhamlifeTests-Info.plist"; sourceTree = "<group>"; };
-		2FE12AC615C1462100B2C6F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2FE12AC815C1462100B2C6F7 /* durhamlifeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "durhamlifeTests-Prefix.pch"; sourceTree = "<group>"; };
-		2FE12AC915C1462100B2C6F7 /* DuchessTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DuchessTests.h; sourceTree = "<group>"; };
-		2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DuchessTests.m; sourceTree = "<group>"; };
 		2FE12ADE15C1497A00B2C6F7 /* DUEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUEvent.h; sourceTree = "<group>"; };
 		2FE12ADF15C1497A00B2C6F7 /* DUEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUEvent.m; sourceTree = "<group>"; };
 		2FE8322315FA029F000782A1 /* month_backward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = month_backward.png; sourceTree = "<group>"; };
@@ -288,16 +266,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FE12AB815C1462100B2C6F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FE12ABD15C1462100B2C6F7 /* UIKit.framework in Frameworks */,
-				2FE12ABE15C1462100B2C6F7 /* Foundation.framework in Frameworks */,
-				2FE12ABF15C1462100B2C6F7 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -366,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				2FE12AA215C1462100B2C6F7 /* Duchess */,
-				2FE12AC215C1462100B2C6F7 /* DuchessTests */,
 				2FE12A9B15C1462000B2C6F7 /* Frameworks */,
 				2FE12A9915C1462000B2C6F7 /* Products */,
 			);
@@ -376,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				2FE12A9815C1462000B2C6F7 /* durhamlife.app */,
-				2FE12ABC15C1462100B2C6F7 /* durhamlifeTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -420,26 +386,6 @@
 				2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */,
 				2FE12AA815C1462100B2C6F7 /* durhamlife-Prefix.pch */,
 				2FE12AA915C1462100B2C6F7 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2FE12AC215C1462100B2C6F7 /* DuchessTests */ = {
-			isa = PBXGroup;
-			children = (
-				2FE12AC915C1462100B2C6F7 /* DuchessTests.h */,
-				2FE12ACB15C1462100B2C6F7 /* DuchessTests.m */,
-				2FE12AC315C1462100B2C6F7 /* Supporting Files */,
-			);
-			path = DuchessTests;
-			sourceTree = "<group>";
-		};
-		2FE12AC315C1462100B2C6F7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2FE12AC415C1462100B2C6F7 /* durhamlifeTests-Info.plist */,
-				2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */,
-				2FE12AC815C1462100B2C6F7 /* durhamlifeTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -569,25 +515,6 @@
 			productReference = 2FE12A9815C1462000B2C6F7 /* durhamlife.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2FE12ABB15C1462100B2C6F7 /* durhamlifeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "durhamlifeTests" */;
-			buildPhases = (
-				2FE12AB715C1462100B2C6F7 /* Sources */,
-				2FE12AB815C1462100B2C6F7 /* Frameworks */,
-				2FE12AB915C1462100B2C6F7 /* Resources */,
-				2FE12ABA15C1462100B2C6F7 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2FE12AC115C1462100B2C6F7 /* PBXTargetDependency */,
-			);
-			name = durhamlifeTests;
-			productName = DuchessTests;
-			productReference = 2FE12ABC15C1462100B2C6F7 /* durhamlifeTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -609,7 +536,6 @@
 			projectRoot = "";
 			targets = (
 				2FE12A9715C1462000B2C6F7 /* durhamlife */,
-				2FE12ABB15C1462100B2C6F7 /* durhamlifeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -672,32 +598,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FE12AB915C1462100B2C6F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FE12AC715C1462100B2C6F7 /* InfoPlist.strings in Resources */,
-				2FE12ACA15C1462100B2C6F7 /* DuchessTests.h in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2FE12ABA15C1462100B2C6F7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FE12A9415C1462000B2C6F7 /* Sources */ = {
@@ -747,23 +648,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2FE12AB715C1462100B2C6F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2FE12ACC15C1462100B2C6F7 /* DuchessTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2FE12AC115C1462100B2C6F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2FE12A9715C1462000B2C6F7 /* durhamlife */;
-			targetProxy = 2FE12AC015C1462100B2C6F7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2FE12AA515C1462100B2C6F7 /* InfoPlist.strings */ = {
@@ -788,14 +673,6 @@
 				2FE12AB515C1462100B2C6F7 /* en */,
 			);
 			name = DUEventListView.xib;
-			sourceTree = "<group>";
-		};
-		2FE12AC515C1462100B2C6F7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FE12AC615C1462100B2C6F7 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -873,54 +750,6 @@
 			};
 			name = Release;
 		};
-		2FE12AD315C1462100B2C6F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Duchess.app/Duchess";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DuchessTests/durhamlifeTests-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "DuchessTests/durhamlifeTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_NAME = durhamlifeTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		2FE12AD415C1462100B2C6F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Duchess.app/Duchess";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DuchessTests/durhamlifeTests-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "DuchessTests/durhamlifeTests-Info.plist";
-				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
-				);
-				PRODUCT_NAME = durhamlifeTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -938,15 +767,6 @@
 			buildConfigurations = (
 				2FE12AD015C1462100B2C6F7 /* Debug */,
 				2FE12AD115C1462100B2C6F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2FE12AD215C1462100B2C6F7 /* Build configuration list for PBXNativeTarget "durhamlifeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2FE12AD315C1462100B2C6F7 /* Debug */,
-				2FE12AD415C1462100B2C6F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

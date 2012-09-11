@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2FE12A9715C1462000B2C6F7"
-               BuildableName = "Duchess.app"
-               BlueprintName = "Duchess"
-               ReferencedContainer = "container:Duchess.xcodeproj">
+               BuildableName = "durhamlife.app"
+               BlueprintName = "durhamlife"
+               ReferencedContainer = "container:durhamlife.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2FE12ABB15C1462100B2C6F7"
-               BuildableName = "DuchessTests.octest"
-               BlueprintName = "DuchessTests"
-               ReferencedContainer = "container:Duchess.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FE12A9715C1462000B2C6F7"
-            BuildableName = "Duchess.app"
-            BlueprintName = "Duchess"
-            ReferencedContainer = "container:Duchess.xcodeproj">
+            BuildableName = "durhamlife.app"
+            BlueprintName = "durhamlife"
+            ReferencedContainer = "container:durhamlife.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FE12A9715C1462000B2C6F7"
-            BuildableName = "Duchess.app"
-            BlueprintName = "Duchess"
-            ReferencedContainer = "container:Duchess.xcodeproj">
+            BuildableName = "durhamlife.app"
+            BlueprintName = "durhamlife"
+            ReferencedContainer = "container:durhamlife.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2FE12A9715C1462000B2C6F7"
-            BuildableName = "Duchess.app"
-            BlueprintName = "Duchess"
-            ReferencedContainer = "container:Duchess.xcodeproj">
+            BuildableName = "durhamlife.app"
+            BlueprintName = "durhamlife"
+            ReferencedContainer = "container:durhamlife.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
