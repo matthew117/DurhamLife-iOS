@@ -24,6 +24,7 @@
 		2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */; };
 		2FCEE4B815F79A6300CF0829 /* DUReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCEE4B615F79A6300CF0829 /* DUReviewsViewController.m */; };
 		2FCEE4B915F79A6300CF0829 /* DUReviewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCEE4B715F79A6300CF0829 /* DUReviewsViewController.xib */; };
+		2FD0608E15FF36C500CEC902 /* CalendarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD0608D15FF36C500CEC902 /* CalendarUtils.m */; };
 		2FD405F115ECEABC00F5B8A6 /* DUSocietyXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD405F015ECEABC00F5B8A6 /* DUSocietyXMLParser.m */; };
 		2FD405F615ECF14700F5B8A6 /* DUSocietyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD405F415ECF14700F5B8A6 /* DUSocietyListViewController.m */; };
 		2FD405F715ECF14700F5B8A6 /* DUSocietyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FD405F515ECF14700F5B8A6 /* DUSocietyListViewController.xib */; };
@@ -138,6 +139,8 @@
 		2FCEE4B515F79A6300CF0829 /* DUReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewsViewController.h; sourceTree = "<group>"; };
 		2FCEE4B615F79A6300CF0829 /* DUReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUReviewsViewController.m; sourceTree = "<group>"; };
 		2FCEE4B715F79A6300CF0829 /* DUReviewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewsViewController.xib; sourceTree = "<group>"; };
+		2FD0608C15FF36C500CEC902 /* CalendarUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarUtils.h; sourceTree = "<group>"; };
+		2FD0608D15FF36C500CEC902 /* CalendarUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarUtils.m; sourceTree = "<group>"; };
 		2FD405EF15ECEABC00F5B8A6 /* DUSocietyXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUSocietyXMLParser.h; sourceTree = "<group>"; };
 		2FD405F015ECEABC00F5B8A6 /* DUSocietyXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUSocietyXMLParser.m; sourceTree = "<group>"; };
 		2FD405F315ECF14700F5B8A6 /* DUSocietyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUSocietyListViewController.h; sourceTree = "<group>"; };
@@ -326,6 +329,8 @@
 				2F7DD6A015C193C6007BB3BE /* DUDataSingleton.m */,
 				47E03FCA15EB7C0700DC2250 /* SessionHandler.h */,
 				47E03FCB15EB7C0700DC2250 /* SessionHandler.m */,
+				2FD0608C15FF36C500CEC902 /* CalendarUtils.h */,
+				2FD0608D15FF36C500CEC902 /* CalendarUtils.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -645,6 +650,7 @@
 				47D582D915FA5EB200F907DD /* UIImage+crop.m in Sources */,
 				471662FE15FDE185005EA493 /* DUIndentedLabelView.m in Sources */,
 				4716630915FE39AB005EA493 /* DUImageTableViewCell.m in Sources */,
+				2FD0608E15FF36C500CEC902 /* CalendarUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

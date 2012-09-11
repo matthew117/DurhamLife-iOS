@@ -9,6 +9,7 @@
 #import "DUCalendarViewController.h"
 #import "DUDataSingleton.h"
 #import "SessionHandler.h"
+#import "CalendarUtils.h"
 
 @interface DUCalendarViewController ()
 
@@ -142,7 +143,7 @@ BOOL calendarLoaded = NO;
         }
         else
         {
-            if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:cell.tag]])
+            if ([CalendarUtils isDateToday:[DUCalendarViewController dateFromCellTag:cell.tag]])
             {
                 [cell setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 [cell setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_selected.png"] forState:UIControlStateHighlighted];
@@ -176,7 +177,7 @@ BOOL calendarLoaded = NO;
 {
     if (selected != nil)
     {
-        if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:selected.tag]])
+        if ([CalendarUtils isDateToday:[DUCalendarViewController dateFromCellTag:selected.tag]])
         {
             [selected setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_normal.png"] forState:UIControlStateNormal];
@@ -189,7 +190,7 @@ BOOL calendarLoaded = NO;
     }
     selected = sender;
     
-    if ([DUCalendarViewController isDateToday:[DUCalendarViewController dateFromCellTag:selected.tag]])
+    if ([CalendarUtils isDateToday:[DUCalendarViewController dateFromCellTag:selected.tag]])
          [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_today_selected.png"] forState:UIControlStateNormal];
     else [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_selected.png"] forState:UIControlStateNormal];
 
@@ -216,19 +217,7 @@ BOOL calendarLoaded = NO;
     }
 }
 
-+ (BOOL)isDateToday:(NSDate*)date
-{
-    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    NSDateComponents* dateComps = [calendar components:flags fromDate:date];
-    date = [calendar dateFromComponents:dateComps];
-    
-    NSDateComponents* todayComps = [calendar components:flags fromDate:[NSDate date]];
-    NSDate* today = [calendar dateFromComponents:todayComps];
-    
-    return [today compare:date] == NSOrderedSame;
-}
+
 
 + (UIColor*)colorFromCellTag:(NSInteger)tag
 {
