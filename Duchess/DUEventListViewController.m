@@ -15,6 +15,7 @@
 #import "DUUser.h"
 #import "SessionHandler.h"
 #import "DURatingBar.h"
+#import "CalendarUtils.h"
 
 @implementation DUEventListViewController
 
@@ -142,12 +143,7 @@
     
     UILabel *eventDateLabel;
     eventDateLabel = (UILabel *)[cell viewWithTag:3];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"d MMMM"];
-    
-    NSString *eventStartDateStr = [formatter stringFromDate:event.startDate];
-    NSString *eventEndDateStr = [formatter stringFromDate:event.endDate];
-    eventDateLabel.text = [NSString stringWithFormat:@"%@ until %@", eventStartDateStr, eventEndDateStr];
+    eventDateLabel.text = [CalendarUtils getEventDateString:event];
     
     UILabel *eventDescriptionLabel;
     eventDescriptionLabel = (UILabel *)[cell viewWithTag:4];

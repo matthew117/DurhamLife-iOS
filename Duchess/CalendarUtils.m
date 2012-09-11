@@ -19,7 +19,7 @@
     else
     {
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"dd MMMM yyyy"];
+        [formatter setDateFormat:@"d MMMM"];
         
         if ([self areDatesEqual:event.startDate:event.endDate])
         {
@@ -32,8 +32,9 @@
             if ([self isDateToday:event.startDate])
             {
                 if ([self isDateTomorrow:event.endDate]) date = @"Today & Tomorrow";
-                else date = [NSString stringWithFormat:@"Today until %@", event.endDate];
+                else date = [NSString stringWithFormat:@"Today until %@", [formatter stringFromDate:event.endDate]];
             }
+            else date = [NSString stringWithFormat:@"%@ until %@", [formatter stringFromDate:event.startDate], [formatter stringFromDate:event.endDate]];
         }
     }
     

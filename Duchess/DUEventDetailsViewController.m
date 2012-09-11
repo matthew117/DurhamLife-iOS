@@ -16,6 +16,7 @@
 #import "DUReviewsViewController.h"
 #import "UIImage+crop.h"
 #import "DUImageTableViewCell.h"
+#import "CalendarUtils.h"
 
 @implementation DUEventDetailsViewController
 
@@ -191,13 +192,7 @@
             {
                 case 0:
                 {
-                    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-                    [formatter setDateFormat:@"d MMMM"];
-                    
-                    NSString *eventStartDateStr = [formatter stringFromDate:event.startDate];
-                    NSString *eventEndDateStr = [formatter stringFromDate:event.endDate];
-                    cell.textLabel.text = [NSString stringWithFormat:@"%@ until %@", eventStartDateStr, eventEndDateStr];
-
+                    cell.textLabel.text = [CalendarUtils getEventDateString:event];
                     cell.accessoryType = UITableViewCellAccessoryNone;
                     
                     break;
