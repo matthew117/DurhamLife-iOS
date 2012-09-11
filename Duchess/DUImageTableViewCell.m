@@ -23,16 +23,16 @@
 {
     [super layoutSubviews];
     
-    self.imageView.frame = CGRectInset(self.contentView.bounds, 5, 5);
     self.textLabel.frame = CGRectInset(self.contentView.bounds, 5, 5);
     self.textLabel.textAlignment = UITextAlignmentCenter;
+    
+    self.imageView.frame = CGRectInset(self.imageView.bounds, 5, 5);
+    self.imageView.frame = CGRectMake((self.contentView.bounds.size.width/2) - (self.imageView.bounds.size.width/2), 5, self.imageView.frame.size.width, self.imageView.frame.size.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
