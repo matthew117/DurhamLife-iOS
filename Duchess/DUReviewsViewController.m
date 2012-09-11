@@ -40,6 +40,7 @@
     
     [[NSBundle mainBundle] loadNibNamed:@"DUReviewEditor" owner:self options:nil];
     
+    reviewEditor.event = event;
     self.tableView.tableHeaderView = reviewEditor;
     
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];

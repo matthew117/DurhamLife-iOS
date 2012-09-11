@@ -7,6 +7,7 @@
 //
 
 #import "DUReviewEditor.h"
+#import "Reachability.h"
 
 @implementation DUReviewEditor
 @synthesize reviewTextField;
@@ -26,10 +27,45 @@
 {
     [textField resignFirstResponder];
     
-    NSLog(@"<?xml version=\"1.0\" encoding=\"UTF-8\"?><review userID=\"%d\" eventID=\"%d\"><rating>%d</rating><post>%@</post><timestamp>%f</timestamp></review>",
-          -1, event.eventID, reviewEditorRatingBar.rating , textField.text,
-          [[NSDate date] timeIntervalSince1970]);
+    NSString *reviewXML = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?><review userID=\"%d\" eventID=\"%d\"><rating>%d</rating><post>%@</post><timestamp>%.0f</timestamp></review>",
+     -1,
+     event.eventID,
+     reviewEditorRatingBar.rating,
+     textField.text,
+     [[NSDate date] timeIntervalSince1970]];
     
+    textField.text = @"";
+    reviewEditorRatingBar.rating = 0;
+    [reviewEditorRatingBar setNeedsDisplay];
+    
+    NSLog(@"%@", reviewXML);
+    
+    Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    
+    if (status == NotReachable)
+    {
+        [[[UIAlertView alloc] initWithTitle:@"Network Problem" message:@"Could not connect to the Internet. Review was not submitted." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    else
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                                 (unsigned long)NULL), ^(void)
+        {
+        
+        NSLog(@"HelloHelloHello");
+            NSMutableURLRequest *urlRequest =
+            [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/reviews.php/%d", event.eventID]]];
+            [urlRequest setHTTPMethod:@"PUT"];
+            [urlRequest setValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
+            
+            [urlRequest setHTTPBody:[reviewXML dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            NSData *loadedData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
+            
+            NSLog(@"Response:%@", [[NSString alloc] initWithData:loadedData encoding:NSUTF8StringEncoding]);
+        });
+    }
     return YES;
 }
 
