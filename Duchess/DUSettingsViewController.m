@@ -178,8 +178,6 @@
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    NSLog(@"Detail label: %@", cell.detailTextLabel.text);
-    
     return cell;
 }
 
