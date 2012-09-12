@@ -240,8 +240,9 @@
 {
     @autoreleasepool
     {
+        DUUser *user = [SessionHandler getUser];
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        backingArray = [dataProvider getAllEvents];
+        backingArray = [dataProvider getEventsByCategories:user.categoryPreferences];
         [self dataHasLoaded];
     }
 }

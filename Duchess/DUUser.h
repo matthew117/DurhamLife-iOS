@@ -20,14 +20,14 @@ typedef enum userAffiliation
 {
     UserAffiliation _userAffiliation;
     NSMutableSet *_colleges;
-    NSMutableArray *_categoryPreferences;
+    NSMutableSet *_categoryPreferences;
     NSMutableArray *_subscribedSocities;
     NSMutableDictionary *_bookmarkedEvents;
 }
 
 @property (nonatomic) UserAffiliation userAffiliation;
 @property (nonatomic,strong) NSMutableSet *colleges;
-@property (nonatomic,strong) NSMutableArray *categoryPreferences;
+@property (nonatomic,strong) NSMutableSet *categoryPreferences;
 @property (nonatomic,strong) NSMutableArray *subscribedSocities;
 @property (nonatomic,strong) NSMutableDictionary *bookmarkedEvents;
 

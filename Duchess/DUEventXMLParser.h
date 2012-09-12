@@ -17,7 +17,7 @@
     @private
     DUEvent *_currentEvent;
     DULocation *_currentLocation;
-    NSMutableArray *_currentCategories;
+    NSMutableSet *_currentCategories;
     
     BOOL _isNameTag;
     BOOL _isDescriptionHeaderTag;

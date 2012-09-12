@@ -148,6 +148,20 @@
     return [NSArray arrayWithArray:categoryEvents];
 }
 
+- (NSArray*)getEventsByCategories:(NSSet*)categories
+{
+    NSMutableArray* categoryEvents = [NSMutableArray new];
+    NSArray* eventList = [self getAllEvents];
+    
+    for (DUEvent* event in eventList)
+    {
+         if([categories intersectsSet:event.categories])
+        {
+            [categoryEvents addObject:event];
+        }
+    }
+    return [NSArray arrayWithArray:categoryEvents];
+}
 
 + (BOOL)arrayContainsEventID:(NSArray*)array: (NSInteger)eventID
 {

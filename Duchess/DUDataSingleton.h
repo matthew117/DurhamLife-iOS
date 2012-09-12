@@ -27,6 +27,7 @@
 - (NSArray*)getUsersBookmarkedEvents:(DUUser*)user;
 - (NSArray*)getEventsByDate:(NSDate*)date;
 - (NSArray*)getEventsByCategory:(NSString *)category;
+- (NSArray*)getEventsByCategories:(NSSet*)categories;
 
 - (NSArray*)getSocieties;
 

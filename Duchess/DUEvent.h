@@ -47,7 +47,7 @@ typedef enum eventPrivacyEnum
     NSString    *_associatedSociety;
     EventScope   _eventScope;
     EventPrivacy _eventPrivacy;
-    NSArray     *_categories;
+    NSSet     *_categories;
 }
 
 @property (nonatomic)        NSInteger    eventID;
@@ -70,6 +70,6 @@ typedef enum eventPrivacyEnum
 @property (nonatomic,strong) NSString    *associatedSociety;
 @property (nonatomic)        EventScope   eventScope;
 @property (nonatomic)        EventPrivacy eventPrivacy;
-@property (nonatomic,strong) NSArray     *categories;
+@property (nonatomic,strong) NSSet       *categories;
 
 @end

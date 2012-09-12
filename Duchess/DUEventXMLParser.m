@@ -129,7 +129,7 @@
     }
     else if ([elementName isEqualToString:@"tags"])
     {
-        _currentCategories = [[NSMutableArray alloc] init];
+        _currentCategories = [[NSMutableSet alloc] init];
     }
     else if ([elementName isEqualToString:@"category"])
     {

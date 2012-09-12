@@ -87,34 +87,14 @@
     }
 }
 
-- (BOOL)isStudent
-{
-    return _userAffiliation == STUDENT;
-}
-
-- (BOOL)isStaff
-{
-    return _userAffiliation == STAFF;
-}
-
-- (BOOL)isGuest
-{
-    return _userAffiliation == VISITOR;
-}
-
-- (BOOL)isAlumni
-{
-    return _userAffiliation == ALUMNI;
-}
+- (BOOL)isStudent { return _userAffiliation == STUDENT; }
+- (BOOL)isStaff   { return _userAffiliation == STAFF;   }
+- (BOOL)isGuest   { return _userAffiliation == VISITOR; }
+- (BOOL)isAlumni  { return _userAffiliation == ALUMNI;  }
 
 - (BOOL)isSubscribedToCategory:(NSString *)category
 {
-    for(int i = 0; i < _categoryPreferences.count; i++)
-    {
-        if ([category isEqualToString:[_categoryPreferences objectAtIndex:i]]) return YES;
-    }
-    
-    return NO;
+    return [_categoryPreferences containsObject:category];
 }
 
 - (void)subcribeToCategory:(NSString *)category
