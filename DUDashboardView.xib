@@ -409,58 +409,106 @@
 					<int key="connectionID">39</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">browseButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="955727317"/>
+					</object>
+					<int key="connectionID">46</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">calendarButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="84486402"/>
+					</object>
+					<int key="connectionID">47</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">bookmarkedButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="690353209"/>
+					</object>
+					<int key="connectionID">48</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">collegeButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="119424634"/>
+					</object>
+					<int key="connectionID">49</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">societiesButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="181572348"/>
+					</object>
+					<int key="connectionID">50</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">mySocietiesButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="155656305"/>
+					</object>
+					<int key="connectionID">51</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">browseButton:</string>
+						<string key="label">browseAction:</string>
 						<reference key="source" ref="955727317"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">13</int>
+					<int key="connectionID">40</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">societiesButton:</string>
+						<string key="label">societiesAction:</string>
 						<reference key="source" ref="181572348"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">17</int>
+					<int key="connectionID">42</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">bookmarkedButton:</string>
+						<string key="label">bookmarkedAction:</string>
 						<reference key="source" ref="690353209"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">20</int>
+					<int key="connectionID">43</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">calendarButton:</string>
+						<string key="label">calendarAction:</string>
 						<reference key="source" ref="84486402"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">28</int>
+					<int key="connectionID">45</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">collegeEvents:</string>
+						<string key="label">collegeAction:</string>
 						<reference key="source" ref="119424634"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">16</int>
+					<int key="connectionID">41</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">mySocietiesButton:</string>
+						<string key="label">mySocietiesAction:</string>
 						<reference key="source" ref="155656305"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">23</int>
+					<int key="connectionID">44</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -597,7 +645,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">39</int>
+			<int key="maxID">51</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -614,11 +662,17 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="adAction:">UIButton</string>
+						<string key="bookmarkedAction:">UIButton</string>
 						<string key="bookmarkedButton:">UIButton</string>
+						<string key="browseAction:">UIButton</string>
 						<string key="browseButton:">UIButton</string>
+						<string key="calendarAction:">UIButton</string>
 						<string key="calendarButton:">UIButton</string>
+						<string key="collegeAction:">UIButton</string>
 						<string key="collegeEvents:">UIButton</string>
+						<string key="mySocietiesAction:">UIButton</string>
 						<string key="mySocietiesButton:">UIButton</string>
+						<string key="societiesAction:">UIButton</string>
 						<string key="societiesButton:">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -626,24 +680,48 @@
 							<string key="name">adAction:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBActionInfo" key="bookmarkedAction:">
+							<string key="name">bookmarkedAction:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBActionInfo" key="bookmarkedButton:">
 							<string key="name">bookmarkedButton:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBActionInfo" key="browseAction:">
+							<string key="name">browseAction:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBActionInfo" key="browseButton:">
 							<string key="name">browseButton:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBActionInfo" key="calendarAction:">
+							<string key="name">calendarAction:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBActionInfo" key="calendarButton:">
 							<string key="name">calendarButton:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBActionInfo" key="collegeAction:">
+							<string key="name">collegeAction:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBActionInfo" key="collegeEvents:">
 							<string key="name">collegeEvents:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBActionInfo" key="mySocietiesAction:">
+							<string key="name">mySocietiesAction:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBActionInfo" key="mySocietiesButton:">
 							<string key="name">mySocietiesButton:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBActionInfo" key="societiesAction:">
+							<string key="name">societiesAction:</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBActionInfo" key="societiesButton:">
@@ -655,6 +733,12 @@
 						<string key="adButton">UIButton</string>
 						<string key="adImage">UIImageView</string>
 						<string key="adText">UILabel</string>
+						<string key="bookmarkedButton">UIButton</string>
+						<string key="browseButton">UIButton</string>
+						<string key="calendarButton">UIButton</string>
+						<string key="collegeButton">UIButton</string>
+						<string key="mySocietiesButton">UIButton</string>
+						<string key="societiesButton">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="adButton">
@@ -668,6 +752,30 @@
 						<object class="IBToOneOutletInfo" key="adText">
 							<string key="name">adText</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="bookmarkedButton">
+							<string key="name">bookmarkedButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="browseButton">
+							<string key="name">browseButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="calendarButton">
+							<string key="name">calendarButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="collegeButton">
+							<string key="name">collegeButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="mySocietiesButton">
+							<string key="name">mySocietiesButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="societiesButton">
+							<string key="name">societiesButton</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

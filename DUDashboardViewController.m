@@ -26,6 +26,12 @@
 @synthesize adButton;
 @synthesize adText;
 @synthesize adImage;
+@synthesize browseButton;
+@synthesize calendarButton;
+@synthesize bookmarkedButton;
+@synthesize collegeButton;
+@synthesize societiesButton;
+@synthesize mySocietiesButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,9 +75,42 @@
     [self setAdButton:nil];
     [self setAdText:nil];
     [self setAdImage:nil];
+    [self setBrowseButton:nil];
+    [self setCalendarButton:nil];
+    [self setBookmarkedButton:nil];
+    [self setCollegeButton:nil];
+    [self setSocietiesButton:nil];
+    [self setMySocietiesButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    DUUser *user = [SessionHandler getUser];
+    if (user.userAffiliation == VISITOR)
+    {
+        NSLog(@"VISITOR");
+        [societiesButton setUserInteractionEnabled:NO];
+        [societiesButton setHidden:YES];
+        [mySocietiesButton setUserInteractionEnabled:NO];
+        [mySocietiesButton setHidden:YES];
+        [collegeButton setUserInteractionEnabled:NO];
+        [collegeButton setHidden:YES];
+        
+        CGFloat x = bookmarkedButton.frame.origin.x;
+        CGFloat y = bookmarkedButton.frame.origin.y;
+        CGFloat width = bookmarkedButton.frame.size.width;
+        CGFloat height = bookmarkedButton.frame.size.height;
+        
+        bookmarkedButton.frame = CGRectMake(x, y, 302, height);
+    }
+    else
+    {
+        NSLog(@"NOT VISITOR");
+    }
+    NSLog(@"ViewWillAppear");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -79,7 +118,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)browseButton:(UIButton *)sender
+- (IBAction)browseAction:(UIButton *)sender
 {
     DUEventListViewController* eventListController = [[DUEventListViewController alloc] initWithNibName:@"DUEventListView" bundle:nil];
     [self.navigationController pushViewController:eventListController animated:YES];
@@ -97,21 +136,21 @@
     [[UIApplication sharedApplication] openURL:url];
 }
 
-- (IBAction)collegeEvents:(UIButton *)sender
+- (IBAction)collegeAction:(UIButton *)sender
 {
     DUCollegeEventsViewController* collegeListController = [[DUCollegeEventsViewController alloc] initWithNibName:@"DUCollegeEventsViewController" bundle:nil];
     [self.navigationController pushViewController:collegeListController animated:YES];
 
 }
 
-- (IBAction)calendarButton:(UIButton *)sender
+- (IBAction)calendarAction:(UIButton *)sender
 {
     DUCalendarViewController* calendarController = [[DUCalendarViewController alloc] initWithNibName:@"DUCalendarViewController" bundle:nil];
     [self.navigationController pushViewController:calendarController animated:YES];
     
 }
 
-- (IBAction)societiesButton:(UIButton *)sender
+- (IBAction)societiesAction:(UIButton *)sender
 {
     DUSocietyListViewController* societyListController = [[DUSocietyListViewController alloc] initWithNibName:@"DUSocietyListViewController" bundle:nil];
     [self.navigationController pushViewController:societyListController animated:YES];
@@ -123,13 +162,13 @@
     [self.navigationController pushViewController:settingsController animated:YES];
 }
 
-- (IBAction)bookmarkedButton:(UIButton *)sender
+- (IBAction)bookmarkedAction:(UIButton *)sender
 {
     DUBookmarkedViewController* bookmarkController = [[DUBookmarkedViewController alloc] initWithNibName:@"DUBookmarkedViewController" bundle:nil];
     [self.navigationController pushViewController:bookmarkController animated:YES];
 }
 
-- (IBAction)mySocietiesButton:(UIButton *)sender
+- (IBAction)mySocietiesAction:(UIButton *)sender
 {
     DUMySocietiesListViewController* mySocietiesController = [[DUMySocietiesListViewController alloc] initWithNibName:@"DUMySocietiesListViewController" bundle:nil];
     [self.navigationController pushViewController:mySocietiesController animated:YES];

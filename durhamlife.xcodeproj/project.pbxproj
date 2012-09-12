@@ -74,6 +74,8 @@
 		47B3E75D15F77A4F0046EE52 /* DURatingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3E75C15F77A4F0046EE52 /* DURatingBar.m */; };
 		47CF719615FF56DA00B5F09E /* DUReviewEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CF719515FF56DA00B5F09E /* DUReviewEditor.m */; };
 		47CF719815FF56FE00B5F09E /* DUReviewEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */; };
+		47D527241600AE8F0095133B /* DUVisitorDashboardGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D527231600AE8F0095133B /* DUVisitorDashboardGrid.xib */; };
+		47D527281600B1360095133B /* DUVisitorDashboardGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D527271600B1360095133B /* DUVisitorDashboardGridViewController.m */; };
 		47D582D415FA4C1B00F907DD /* ad_navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D582D215FA4C1B00F907DD /* ad_navigation.png */; };
 		47D582D515FA4C1B00F907DD /* ad_navigation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 47D582D315FA4C1B00F907DD /* ad_navigation@2x.png */; };
 		47D582D915FA5EB200F907DD /* UIImage+crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D582D815FA5EB200F907DD /* UIImage+crop.m */; };
@@ -218,6 +220,9 @@
 		47CF719415FF56DA00B5F09E /* DUReviewEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewEditor.h; sourceTree = "<group>"; };
 		47CF719515FF56DA00B5F09E /* DUReviewEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUReviewEditor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewEditor.xib; sourceTree = "<group>"; };
+		47D527231600AE8F0095133B /* DUVisitorDashboardGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUVisitorDashboardGrid.xib; sourceTree = "<group>"; };
+		47D527261600B1360095133B /* DUVisitorDashboardGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUVisitorDashboardGridViewController.h; sourceTree = "<group>"; };
+		47D527271600B1360095133B /* DUVisitorDashboardGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUVisitorDashboardGridViewController.m; sourceTree = "<group>"; };
 		47D582D215FA4C1B00F907DD /* ad_navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad_navigation.png; sourceTree = "<group>"; };
 		47D582D315FA4C1B00F907DD /* ad_navigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ad_navigation@2x.png"; sourceTree = "<group>"; };
 		47D582D715FA5EB200F907DD /* UIImage+crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIImage+crop.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -434,6 +439,9 @@
 				2FB177FE15EF66DE00CA3FF7 /* DUCategorySettingsViewController.xib */,
 				47B0C90E15EEC0F8006615CD /* DUAffiliationSettingsViewController.xib */,
 				478CCEB015E2C3E400419CD7 /* DUDashboardView.xib */,
+				47D527231600AE8F0095133B /* DUVisitorDashboardGrid.xib */,
+				47D527261600B1360095133B /* DUVisitorDashboardGridViewController.h */,
+				47D527271600B1360095133B /* DUVisitorDashboardGridViewController.m */,
 				47B0C90815EE836E006615CD /* DUCollegeSettingsViewController.xib */,
 				47D8F15515EE09AA00F44AB3 /* DUBookmarkedViewController.xib */,
 				47865BD115ED3D4F00D023A1 /* DUSettingsViewController.xib */,
@@ -609,6 +617,7 @@
 				47D582D415FA4C1B00F907DD /* ad_navigation.png in Resources */,
 				47D582D515FA4C1B00F907DD /* ad_navigation@2x.png in Resources */,
 				47CF719815FF56FE00B5F09E /* DUReviewEditor.xib in Resources */,
+				47D527241600AE8F0095133B /* DUVisitorDashboardGrid.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +670,7 @@
 				4716630915FE39AB005EA493 /* DUImageTableViewCell.m in Sources */,
 				2FD0608E15FF36C500CEC902 /* CalendarUtils.m in Sources */,
 				47CF719615FF56DA00B5F09E /* DUReviewEditor.m in Sources */,
+				47D527281600B1360095133B /* DUVisitorDashboardGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
