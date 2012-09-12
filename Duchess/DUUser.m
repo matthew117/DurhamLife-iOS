@@ -57,8 +57,9 @@
     {
         case VISITOR: return 1;
         case STUDENT: return 2;
-        case STAFF: return 3;
-        default: return 1;
+        case ALUMNI:  return 3;
+        case STAFF:   return 4;
+        default:      return 1;
     }
 }
 
@@ -68,7 +69,8 @@
     {
         case 1: return VISITOR;
         case 2: return STUDENT;
-        case 3: return STAFF;
+        case 3: return ALUMNI;
+        case 4: return STAFF;
         default:return VISITOR;
     }
 }
@@ -79,8 +81,9 @@
     {
         case VISITOR: return @"Visitor";
         case STUDENT: return @"Student";
-        case STAFF: return @"Staff";
-        default:return @"Visitor";
+        case ALUMNI:  return @"Alumni";
+        case STAFF:   return @"Staff";
+        default:      return @"Visitor";
     }
 }
 
@@ -97,6 +100,11 @@
 - (BOOL)isGuest
 {
     return _userAffiliation == VISITOR;
+}
+
+- (BOOL)isAlumni
+{
+    return _userAffiliation == ALUMNI;
 }
 
 - (BOOL)isSubscribedToCategory:(NSString *)category

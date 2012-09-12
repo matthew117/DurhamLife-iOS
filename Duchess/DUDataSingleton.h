@@ -21,7 +21,7 @@
 
 - (NSArray*)getAllEvents;
 - (NSArray*)getEventsByCollege:(NSString*)college;
-- (NSArray*)getEventsByColleges:(NSArray*)collegeList;
+- (NSArray*)getEventsByColleges:(NSSet*)collegeList;
 - (NSArray*)getEventsBySociety:(NSString*)societyName;
 - (NSArray*)getEventsBySocieties:(NSArray*)societyList;
 - (NSArray*)getUsersBookmarkedEvents:(DUUser*)user;

@@ -147,7 +147,7 @@
                 case 1:
                 {
                     cell.textLabel.text = @"College";
-                    if ([user isStudent]) cell.detailTextLabel.text = [user getPrimaryCollege];
+                    if ([user isStudent] || [user isAlumni]) cell.detailTextLabel.text = [user getPrimaryCollege];
                     else cell.detailTextLabel.text = @"";
                     
                     if ([user isGuest])

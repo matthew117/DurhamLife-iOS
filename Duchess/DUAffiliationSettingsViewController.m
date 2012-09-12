@@ -19,7 +19,7 @@ static NSArray *affiliation;
 
 + (void)initialize
 {
-    affiliation = [NSArray arrayWithObjects: @"Visitor", @"Student", @"Staff", nil];
+    affiliation = [NSArray arrayWithObjects: @"Visitor", @"Student", @"Alumni", @"Staff", nil];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style

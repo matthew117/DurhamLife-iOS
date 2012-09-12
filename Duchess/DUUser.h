@@ -12,6 +12,7 @@ typedef enum userAffiliation
 {
     VISITOR,
     STUDENT,
+    ALUMNI,
     STAFF,
 } UserAffiliation;
 
@@ -39,6 +40,7 @@ typedef enum userAffiliation
 
 - (BOOL)isStudent;
 - (BOOL)isStaff;
+- (BOOL)isAlumni;
 - (BOOL)isGuest;
 
 - (BOOL)isSubscribedToCategory:(NSString*)category;
