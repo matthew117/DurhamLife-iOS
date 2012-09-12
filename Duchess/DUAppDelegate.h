@@ -1,5 +1,5 @@
 //
-//  DuchessAppDelegate.h
+//  DUAppDelegate.h
 //  Durham Life
 //
 //  Created by Matthew Bates on 26/07/2012.
