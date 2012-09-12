@@ -422,6 +422,8 @@
 		4785266915C1D1780075AB21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F28E81C15F8CBB300CFB4E2 /* DUReviewCell.h */,
+				2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */,
 				2FCEE4B715F79A6300CF0829 /* DUReviewsViewController.xib */,
 				2FC20E4415F4F87000095AD8 /* DUCalendarViewController.xib */,
 				473B384515F4F04D00908E9D /* DUMapViewController.xib */,
@@ -502,8 +504,6 @@
 				2FC20E4315F4F87000095AD8 /* DUCalendarViewController.m */,
 				2FCEE4B515F79A6300CF0829 /* DUReviewsViewController.h */,
 				2FCEE4B615F79A6300CF0829 /* DUReviewsViewController.m */,
-				2F28E81C15F8CBB300CFB4E2 /* DUReviewCell.h */,
-				2F28E81D15F8CBB300CFB4E2 /* DUReviewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

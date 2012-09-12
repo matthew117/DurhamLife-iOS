@@ -59,6 +59,10 @@
             
             [urlRequest setHTTPBody:[reviewXML dataUsingEncoding:NSUTF8StringEncoding]];
             [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:nil error:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+             [[[UIAlertView alloc] initWithTitle:@"Review Submitted" message:@"Thank you for submitting a review. Note that reviews are moderated and may take a while to appear." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+            });
         });
     }
     return YES;
