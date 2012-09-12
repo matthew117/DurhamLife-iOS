@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DUDashboardBackground.h"
 
 @interface DUDashboardViewController : UIViewController
 {
@@ -16,24 +17,18 @@
 @property (strong, nonatomic) IBOutlet UIButton *adButton;
 @property (strong, nonatomic) IBOutlet UILabel *adText;
 @property (strong, nonatomic) IBOutlet UIImageView *adImage;
+@property (strong, nonatomic) IBOutlet DUDashboardBackground *visitorBoard;
+@property (strong, nonatomic) IBOutlet DUDashboardBackground *normalBoard;
 
-@property (strong, nonatomic) IBOutlet UIButton *browseButton;
-@property (strong, nonatomic) IBOutlet UIButton *calendarButton;
-@property (strong, nonatomic) IBOutlet UIButton *bookmarkedButton;
-@property (strong, nonatomic) IBOutlet UIButton *collegeButton;
-@property (strong, nonatomic) IBOutlet UIButton *societiesButton;
-@property (strong, nonatomic) IBOutlet UIButton *mySocietiesButton;
+@property (strong, nonatomic) IBOutlet UIView *buttonGrid;
 
-
-- (IBAction)browseAction:(UIButton *)sender;
+- (IBAction)eventsAction:(UIButton *)sender;
+- (IBAction)calendarAction:(UIButton *)sender;
+- (IBAction)bookmarkedAction:(UIButton *)sender;
 - (IBAction)collegeAction:(UIButton *)sender;
 - (IBAction)societiesAction:(UIButton *)sender;
-- (IBAction)bookmarkedAction:(UIButton *)sender;
 - (IBAction)mySocietiesAction:(UIButton *)sender;
-- (IBAction)calendarAction:(UIButton *)sender;
 
-- (void)settingsButton:(UIButton *)sender;
-- (void)aboutButton:(UIButton *)sender;
 - (IBAction)adAction:(UIButton *)sender;
 
 @end

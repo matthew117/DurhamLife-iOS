@@ -18,20 +18,14 @@
 #import "DUCalendarViewController.h"
 #import "UIImage+crop.h"
 
-@interface DUDashboardViewController ()
-
-@end
-
 @implementation DUDashboardViewController
+
 @synthesize adButton;
 @synthesize adText;
 @synthesize adImage;
-@synthesize browseButton;
-@synthesize calendarButton;
-@synthesize bookmarkedButton;
-@synthesize collegeButton;
-@synthesize societiesButton;
-@synthesize mySocietiesButton;
+@synthesize visitorBoard;
+@synthesize normalBoard;
+@synthesize buttonGrid;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,12 +69,11 @@
     [self setAdButton:nil];
     [self setAdText:nil];
     [self setAdImage:nil];
-    [self setBrowseButton:nil];
-    [self setCalendarButton:nil];
-    [self setBookmarkedButton:nil];
-    [self setCollegeButton:nil];
-    [self setSocietiesButton:nil];
-    [self setMySocietiesButton:nil];
+
+    [self setButtonGrid:nil];
+    [self setVisitorBoard:nil];
+    [self setNormalBoard:nil];
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -92,23 +85,16 @@
     if (user.userAffiliation == VISITOR)
     {
         NSLog(@"VISITOR");
-        [societiesButton setUserInteractionEnabled:NO];
-        [societiesButton setHidden:YES];
-        [mySocietiesButton setUserInteractionEnabled:NO];
-        [mySocietiesButton setHidden:YES];
-        [collegeButton setUserInteractionEnabled:NO];
-        [collegeButton setHidden:YES];
-        
-        CGFloat x = bookmarkedButton.frame.origin.x;
-        CGFloat y = bookmarkedButton.frame.origin.y;
-        CGFloat width = bookmarkedButton.frame.size.width;
-        CGFloat height = bookmarkedButton.frame.size.height;
-        
-        bookmarkedButton.frame = CGRectMake(x, y, 302, height);
+        [[NSBundle mainBundle] loadNibNamed:@"DUVisitorDashboardGrid" owner:self options:nil];
+        [[buttonGrid subviews] makeObjectsPerformSelector: @selector(removeFromSuperview)];
+        [buttonGrid addSubview:visitorBoard];
     }
     else
     {
         NSLog(@"NOT VISITOR");
+        [[NSBundle mainBundle] loadNibNamed:@"DUNormalDashboardGrid" owner:self options:nil];
+        [[buttonGrid subviews] makeObjectsPerformSelector: @selector(removeFromSuperview)];
+        [buttonGrid addSubview:normalBoard];
     }
     NSLog(@"ViewWillAppear");
 }
@@ -118,7 +104,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)browseAction:(UIButton *)sender
+- (IBAction)eventsAction:(UIButton *)sender
 {
     DUEventListViewController* eventListController = [[DUEventListViewController alloc] initWithNibName:@"DUEventListView" bundle:nil];
     [self.navigationController pushViewController:eventListController animated:YES];
