@@ -359,6 +359,10 @@
     {
         [_currentCategories addObject:[NSString stringWithString:string]];
     }
+    else if (_isICalURLTag)
+    {
+        _currentEvent.iCalURL = [NSString stringWithString:string];
+    }
 }
 
 @end
