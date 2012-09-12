@@ -1,6 +1,6 @@
 //
 //  DUCalendarViewController.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Jamie Bates on 03/09/2012.
 //

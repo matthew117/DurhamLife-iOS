@@ -1,6 +1,6 @@
 //
 //  UIImage+crop.h
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 07/09/2012.
 //

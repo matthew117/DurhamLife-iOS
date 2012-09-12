@@ -1,6 +1,6 @@
 //
 //  DUReview.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 20/08/2012.
 //  Copyright 2012 Durham University. All rights reserved.

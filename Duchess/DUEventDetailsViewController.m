@@ -1,6 +1,6 @@
 //
 //  DUEventDetailsViewController.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 27/07/2012.
 //  Copyright 2012 Durham University. All rights reserved.

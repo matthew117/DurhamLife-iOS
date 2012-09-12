@@ -1,6 +1,6 @@
 //
 //  DUIndentedLabelView.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 10/09/2012.
 //

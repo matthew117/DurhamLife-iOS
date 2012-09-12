@@ -1,6 +1,6 @@
 //
 //  DashboardBackground.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 24/08/2012.
 //

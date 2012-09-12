@@ -1,6 +1,6 @@
 //
 //  DUReviewXMLParser.h
-//  Duchess
+//  Durham Life
 //
 //  Created by Jamie Bates on 25/08/2012.
 //  Copyright 2012 Durham University. All rights reserved.

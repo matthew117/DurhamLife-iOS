@@ -1,6 +1,6 @@
 //
 //  DUMapViewController.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 03/09/2012.
 //

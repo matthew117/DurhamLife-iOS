@@ -1,6 +1,6 @@
 //
 //  DUCollegeSettingsViewController.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Jamie Bates on 29/08/2012.
 //

@@ -1,6 +1,6 @@
 //
 //  DUSocietyEventListViewController.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 31/08/2012.
 //

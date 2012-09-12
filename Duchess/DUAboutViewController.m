@@ -1,6 +1,6 @@
 //
 //  DUAboutViewController.m
-//  Duchess
+//  Durham Life
 //
 //  Created by Matthew Bates on 27/08/2012.
 //
