@@ -41,17 +41,15 @@
     Reachability *reach = [Reachability reachabilityWithHostName:@"www.dur.ac.uk"];
     NetworkStatus status = [reach currentReachabilityStatus];
     
-    downloadActivityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [downloadActivityIndicator setHidesWhenStopped:YES];
-    [self.view addSubview: downloadActivityIndicator];
-    downloadActivityIndicator.center = self.view.center;
+    downloadActivityIndicator = [DULoadingView loadSpinnerIntoView:self.view];
+    
     if (status == NotReachable)
     {
         [[[UIAlertView alloc] initWithTitle:@"Network Problem" message:@"Could not connect to the Internet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
     else
     {
-        [downloadActivityIndicator startAnimating];
+        //[downloadActivityIndicator removeSpinner];
         [self performSelectorInBackground:@selector(loadDataSet) withObject:nil];
     }
 }
@@ -249,10 +247,8 @@
 
 - (void)dataHasLoaded
 {
-    [downloadActivityIndicator stopAnimating];
     [self.tableView reloadData];
-    [downloadActivityIndicator stopAnimating];
-    [downloadActivityIndicator setHidden:YES];
+    [downloadActivityIndicator removeSpinner];
 }
 
 @end

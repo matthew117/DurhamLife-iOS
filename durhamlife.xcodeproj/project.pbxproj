@@ -109,6 +109,7 @@
 		47E3C48C15F0B02E00A4200C /* DUSocietyAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E3C48A15F0B02E00A4200C /* DUSocietyAboutViewController.m */; };
 		47E3C48D15F0B02E00A4200C /* DUSocietyAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47E3C48B15F0B02E00A4200C /* DUSocietyAboutViewController.xib */; };
 		47E3C48F15F0D7C400A4200C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E3C48E15F0D7C400A4200C /* MessageUI.framework */; };
+		47E5F058160717C800640757 /* DULoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E5F057160717C800640757 /* DULoadingView.m */; };
 		47FF471A15E7F5F6002F10D6 /* DUDashboardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +259,8 @@
 		47E3C48A15F0B02E00A4200C /* DUSocietyAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUSocietyAboutViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		47E3C48B15F0B02E00A4200C /* DUSocietyAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUSocietyAboutViewController.xib; sourceTree = "<group>"; };
 		47E3C48E15F0D7C400A4200C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		47E5F056160717C800640757 /* DULoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DULoadingView.h; sourceTree = "<group>"; };
+		47E5F057160717C800640757 /* DULoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DULoadingView.m; sourceTree = "<group>"; };
 		47FF471815E7F5F6002F10D6 /* DUDashboardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DUDashboardBackground.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		47FF471915E7F5F6002F10D6 /* DUDashboardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUDashboardBackground.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
@@ -467,6 +470,8 @@
 				47CF719415FF56DA00B5F09E /* DUReviewEditor.h */,
 				47CF719515FF56DA00B5F09E /* DUReviewEditor.m */,
 				47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */,
+				47E5F056160717C800640757 /* DULoadingView.h */,
+				47E5F057160717C800640757 /* DULoadingView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				4716630915FE39AB005EA493 /* DUImageTableViewCell.m in Sources */,
 				2FD0608E15FF36C500CEC902 /* CalendarUtils.m in Sources */,
 				47CF719615FF56DA00B5F09E /* DUReviewEditor.m in Sources */,
+				47E5F058160717C800640757 /* DULoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

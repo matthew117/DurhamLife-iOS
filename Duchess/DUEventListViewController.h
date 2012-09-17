@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DULoadingView.h"
 
 @interface DUEventListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate>
 {
     IBOutlet UITableViewCell* customTableViewCell;
-    UIActivityIndicatorView* downloadActivityIndicator;
+    DULoadingView* downloadActivityIndicator;
     NSArray* backingArray;
 }
 
