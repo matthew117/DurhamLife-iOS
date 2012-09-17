@@ -22,6 +22,10 @@
 		2FCCAE1915C2A60300CC3D61 /* DUCustomEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1815C2A60300CC3D61 /* DUCustomEventTableViewCell.xib */; };
 		2FCCAE1C15C2DA9E00CC3D61 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCAE1B15C2DA9E00CC3D61 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2FCCAE1E15C2DAC400CC3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCAE1D15C2DAC400CC3D61 /* SystemConfiguration.framework */; };
+		2FCE18561607374800CCF8C6 /* dashboardButtonBackgroundNormalLong.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FCE18541607374800CCF8C6 /* dashboardButtonBackgroundNormalLong.png */; };
+		2FCE18571607374800CCF8C6 /* dashboardButtonBackgroundSelectedLong.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FCE18551607374800CCF8C6 /* dashboardButtonBackgroundSelectedLong.png */; };
+		2FCE185A16073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FCE185916073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png */; };
+		2FCE185C16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FCE185B16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png */; };
 		2FCEE4B815F79A6300CF0829 /* DUReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FCEE4B615F79A6300CF0829 /* DUReviewsViewController.m */; };
 		2FCEE4B915F79A6300CF0829 /* DUReviewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCEE4B715F79A6300CF0829 /* DUReviewsViewController.xib */; };
 		2FD0608E15FF36C500CEC902 /* CalendarUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD0608D15FF36C500CEC902 /* CalendarUtils.m */; };
@@ -141,6 +145,10 @@
 		2FCCAE2115C2E7D600CC3D61 /* DUEventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DUEventDetailsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2FCCAE2215C2E7D600CC3D61 /* DUEventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUEventDetailsViewController.m; sourceTree = "<group>"; wrapsLines = 0; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2FCCAE2315C2E7D600CC3D61 /* DUEventDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUEventDetailsView.xib; sourceTree = "<group>"; };
+		2FCE18541607374800CCF8C6 /* dashboardButtonBackgroundNormalLong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashboardButtonBackgroundNormalLong.png; sourceTree = "<group>"; };
+		2FCE18551607374800CCF8C6 /* dashboardButtonBackgroundSelectedLong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dashboardButtonBackgroundSelectedLong.png; sourceTree = "<group>"; };
+		2FCE185916073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dashboardButtonBackgroundNormalLong@2x.png"; sourceTree = "<group>"; };
+		2FCE185B16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dashboardButtonBackgroundSelectedLong@2x.png"; sourceTree = "<group>"; };
 		2FCEE4B515F79A6300CF0829 /* DUReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DUReviewsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2FCEE4B615F79A6300CF0829 /* DUReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUReviewsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2FCEE4B715F79A6300CF0829 /* DUReviewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewsViewController.xib; sourceTree = "<group>"; };
@@ -287,6 +295,10 @@
 		2F4E632B15C6E3D9008815F9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				2FCE185B16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png */,
+				2FCE185916073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png */,
+				2FCE18541607374800CCF8C6 /* dashboardButtonBackgroundNormalLong.png */,
+				2FCE18551607374800CCF8C6 /* dashboardButtonBackgroundSelectedLong.png */,
 				47D582D215FA4C1B00F907DD /* ad_navigation.png */,
 				47D582D315FA4C1B00F907DD /* ad_navigation@2x.png */,
 				2FE8323315FA3250000782A1 /* calendar_cell_today_selected.png */,
@@ -622,6 +634,10 @@
 				47CF719815FF56FE00B5F09E /* DUReviewEditor.xib in Resources */,
 				47D527241600AE8F0095133B /* DUVisitorDashboardGrid.xib in Resources */,
 				47D5272D1600B3670095133B /* DUNormalDashboardGrid.xib in Resources */,
+				2FCE18561607374800CCF8C6 /* dashboardButtonBackgroundNormalLong.png in Resources */,
+				2FCE18571607374800CCF8C6 /* dashboardButtonBackgroundSelectedLong.png in Resources */,
+				2FCE185A16073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png in Resources */,
+				2FCE185C16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,6 @@
 + (BOOL)isDateToday:(NSDate*)date;
 + (BOOL)isDateTomorrow:(NSDate*)date;
 + (BOOL)areDatesEqual:(NSDate*)date1:(NSDate*)date2;
-
++ (NSDate*)getTodayAsDateOnly;
 
 @end

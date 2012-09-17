@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "DUDataSingleton.h"
 #import "DUSociety.h"
+#import "DULoadingView.h"
 
 @interface DUSocietyListViewController : UITableViewController
 {
     NSArray* backingArray;
-    UIActivityIndicatorView* downloadActivityIndicator;
+    DULoadingView* downloadActivityIndicator;
 }
+
+- (NSArray*)getDataSet;
+- (void)loadDataSet;
+- (void)dataHasLoaded;
+
 @end

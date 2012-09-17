@@ -15,7 +15,8 @@
 {
     NSString *date = @"";
     
-    if ([event.endDate compare:[NSDate date]] == NSOrderedAscending) date = @"This event has ended";
+    if ([event.endDate compare:[NSDate date]] == NSOrderedAscending &&
+        ![self areDatesEqual:event.endDate :[NSDate date]]) date = @"This event has ended";
     else
     {
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -113,6 +114,19 @@
     date2 = [calendar dateFromComponents:date2Comps];
     
     return [date1 compare:date2] == NSOrderedSame;
+}
+
++ (NSDate*)getTodayAsDateOnly
+{
+    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDate *today = [NSDate date];
+    
+    NSDateComponents* dateComps = [calendar components:flags fromDate:today];
+    today = [calendar dateFromComponents:dateComps];
+        
+    return today;
 }
 
 @end

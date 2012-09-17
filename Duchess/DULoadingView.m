@@ -41,22 +41,21 @@
     [loadingView addSubview:indicator];
 	[indicator startAnimating];
 	[superView addSubview:loadingView];
-    // Create a new animation
-    CATransition *animation = [CATransition animation];
-	// Set the type to a nice wee fade
-	[animation setType:kCATransitionFade];
-	// Add it to the superView
-	[[superView layer] addAnimation:animation forKey:@"layerAnimation"];
 	return loadingView;
 }
 
 -(void)removeSpinner
 {
     // Add this in at the top of the method. If you place it after you've remove the view from the superView it won't work!
+    [self performSelectorOnMainThread:@selector(removeSpinnerAnimation) withObject:nil waitUntilDone:YES];
+	[super removeFromSuperview];
+}
+    
+- (void)removeSpinnerAnimation
+{
     CATransition *animation = [CATransition animation];
 	[animation setType:kCATransitionFade];
 	[[[self superview] layer] addAnimation:animation forKey:@"layerAnimation"];
-	[super removeFromSuperview];
 }
 
 - (UIImage *)addBackground

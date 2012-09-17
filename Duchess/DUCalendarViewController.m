@@ -61,7 +61,11 @@ BOOL calendarLoaded = NO;
     [dateComps setSecond:0];
     
     firstDayOfMonth = [dateComps date];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    calendarLoaded = NO;
     [self setupCalendarView];
 }
 
@@ -117,8 +121,11 @@ BOOL calendarLoaded = NO;
 
 - (void)setupCalendarCells
 {
-    backingArray = [NSArray new];
-    [self dataHasLoaded];
+    if(calendarLoaded)
+    {
+        backingArray = [NSArray new];
+        [self dataHasLoaded];
+    }
     
     [selected setBackgroundImage:[UIImage imageNamed:@"calendar_cell_normal.png"] forState:UIControlStateNormal];    
     selected = nil;
@@ -210,9 +217,10 @@ BOOL calendarLoaded = NO;
 - (void)loadDataSet
 {
     @autoreleasepool
-    {
+    {        
         DUDataSingleton *dataProvider = [DUDataSingleton instance];
-        backingArray = [dataProvider getEventsByDate:[NSDate date]];
+        backingArray = [dataProvider getEventsByDate:[CalendarUtils getTodayAsDateOnly]];
+                
         [self dataHasLoaded];
     }
 }

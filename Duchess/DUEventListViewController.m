@@ -46,10 +46,10 @@
     if (status == NotReachable)
     {
         [[[UIAlertView alloc] initWithTitle:@"Network Problem" message:@"Could not connect to the Internet" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [downloadActivityIndicator removeSpinner];
     }
     else
     {
-        //[downloadActivityIndicator removeSpinner];
         [self performSelectorInBackground:@selector(loadDataSet) withObject:nil];
     }
 }
