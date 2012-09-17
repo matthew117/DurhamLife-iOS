@@ -43,6 +43,8 @@
     BOOL _isEventScopeTag;
     BOOL _isEventPrivacyTag;
     BOOL _isCategoryTag;
+    BOOL _isStartTimeTag;
+    BOOL _isEndTimeTag;
 }
 
 @property (nonatomic, strong) NSMutableArray *eventList;

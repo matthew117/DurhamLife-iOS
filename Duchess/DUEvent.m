@@ -31,5 +31,7 @@
 @synthesize eventScope = _eventScope;
 @synthesize eventPrivacy = _eventPrivacy;
 @synthesize categories = _categories;
+@synthesize startTime = _startTime;
+@synthesize endTime = _endTime;
 
 @end

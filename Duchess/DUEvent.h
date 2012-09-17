@@ -48,6 +48,8 @@ typedef enum eventPrivacyEnum
     EventScope   _eventScope;
     EventPrivacy _eventPrivacy;
     NSSet     *_categories;
+    NSDate    *_startTime;
+    NSDate    *_endTime;
 }
 
 @property (nonatomic)        NSInteger    eventID;
@@ -71,5 +73,7 @@ typedef enum eventPrivacyEnum
 @property (nonatomic)        EventScope   eventScope;
 @property (nonatomic)        EventPrivacy eventPrivacy;
 @property (nonatomic,strong) NSSet       *categories;
+@property (nonatomic,strong) NSDate      *startTime;
+@property (nonatomic,strong) NSDate      *endTime;
 
 @end

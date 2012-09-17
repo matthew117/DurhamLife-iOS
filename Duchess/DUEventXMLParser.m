@@ -135,6 +135,14 @@
     {
         _isCategoryTag = true;
     }
+    else if ([elementName isEqualToString:@"startTime"])
+    {
+        _isStartTimeTag = true;
+    }
+    else if ([elementName isEqualToString:@"endTime"])
+    {
+        _isEndDateTag = true;
+    }
         
 }
 
@@ -255,6 +263,14 @@
         _currentEvent.categories = _currentCategories;
         _currentCategories = nil;
     }
+    else if ([elementName isEqualToString:@"startTime"])
+    {
+        _isStartTimeTag = false;
+    }
+    else if ([elementName isEqualToString:@"endTime"])
+    {
+        _isEndDateTag = false;
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
@@ -362,6 +378,18 @@
     else if (_isICalURLTag)
     {
         _currentEvent.iCalURL = [NSString stringWithString:string];
+    }
+    else if (_isStartTimeTag)
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        _currentEvent.startTime = [dateFormatter dateFromString:string];
+    }
+    else if (_isEndTimeTag)
+    {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        _currentEvent.endTime = [dateFormatter dateFromString:string];
     }
 }
 
