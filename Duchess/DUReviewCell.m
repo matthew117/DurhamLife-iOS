@@ -3,7 +3,7 @@
 //  Durham Life
 //
 //  Created by Jamie Bates on 06/09/2012.
-//
+//  Copyright (C) 2012 Durham University. All Rights Reserved.
 //
 
 #import "DUReviewCell.h"

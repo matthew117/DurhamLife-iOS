@@ -3,7 +3,7 @@
 //  Durham Life
 //
 //  Created by Matthew Bates on 22/08/2012.
-//
+//  Copyright (C) 2012 Durham University. All Rights Reserved.
 //
 
 #import "DURoundedBorderLabel.h"
