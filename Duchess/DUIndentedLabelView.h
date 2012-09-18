@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DUIndentedLabelView : UILabel
+@interface DUIndentedLabelView : UIButton
 
 @end

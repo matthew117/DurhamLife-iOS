@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "DUDashboardBackground.h"
+#import "DUIndentedLabelView.h"
 
 @interface DUDashboardViewController : UIViewController
 {
     NSString *adLink;
 }
 
-@property (strong, nonatomic) IBOutlet UIButton *adButton;
-@property (strong, nonatomic) IBOutlet UILabel *adText;
+@property (strong, nonatomic) IBOutlet DUIndentedLabelView *adText;
 @property (strong, nonatomic) IBOutlet UIImageView *adImage;
 @property (strong, nonatomic) IBOutlet DUDashboardBackground *visitorBoard;
 @property (strong, nonatomic) IBOutlet DUDashboardBackground *normalBoard;
@@ -29,6 +29,6 @@
 - (IBAction)societiesAction:(UIButton *)sender;
 - (IBAction)mySocietiesAction:(UIButton *)sender;
 
-- (IBAction)adAction:(UIButton *)sender;
+- (IBAction)adAction:(id *)sender;
 
 @end

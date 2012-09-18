@@ -20,7 +20,6 @@
 
 @implementation DUDashboardViewController
 
-@synthesize adButton;
 @synthesize adText;
 @synthesize adImage;
 @synthesize visitorBoard;
@@ -66,7 +65,6 @@
 
 - (void)viewDidUnload
 {
-    [self setAdButton:nil];
     [self setAdText:nil];
     [self setAdImage:nil];
 
@@ -116,7 +114,7 @@
     [self presentModalViewController:aboutView animated:YES];
 }
 
-- (IBAction)adAction:(UIButton *)sender
+- (IBAction)adAction:(id *)sender
 {
     NSURL *url = [NSURL URLWithString:adLink];
     [[UIApplication sharedApplication] openURL:url];
@@ -174,13 +172,14 @@
 		
 		NSString *downloadedString = [[NSString alloc] initWithData:loadedData encoding:NSUTF8StringEncoding];
 		NSArray *adSpec = [downloadedString componentsSeparatedByString: @"\n"];
-		adText.text = [adSpec objectAtIndex:1];
+		adText.titleLabel.text = [adSpec objectAtIndex:1];
+        [adText setNeedsDisplay];
+        [adText addTarget:self action:@selector(adAction:) forControlEvents:UIControlEventTouchUpInside];
 		adLink = [adSpec objectAtIndex:3];
 		NSURL *url = [NSURL URLWithString: [adSpec objectAtIndex:2]];
 		adImage.image = [[UIImage imageWithData: [NSData dataWithContentsOfURL:url]] crop:adImage.frame];
-        [UIView animateWithDuration:1.5f animations:^{[adButton setAlpha:0.5f];}];
         [UIView animateWithDuration:1.5f animations:^{[adImage setAlpha:1];}];
-        [UIView animateWithDuration:1.5f animations:^{[adText setAlpha:0.6f];}];
+        [UIView animateWithDuration:1.5f animations:^{[adText setAlpha:1];}];
 	}
 	else
 	{

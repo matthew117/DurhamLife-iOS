@@ -13,24 +13,24 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if (self)
+    {
+        
     }
     return self;
 }
 
-- (void)drawTextInRect:(CGRect)rect
-{
-    [super drawTextInRect: CGRectInset(rect, 5, 0)];
-}
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:rect];
+    [[UIColor colorWithWhite:0 alpha:0.5] setFill];
+    [rectPath fill];
+    
+    [[UIColor whiteColor] setFill];
+    [self.titleLabel.text drawInRect:CGRectInset(rect, 5, 3) withFont:[UIFont systemFontOfSize:17.0] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+    
+    UIImage *navigationIndicator = [UIImage imageNamed:@"ad_navigation.png"];
+    [navigationIndicator drawAtPoint:CGPointMake(self.bounds.size.width - navigationIndicator.size.width, 0)];
 }
-*/
 
 @end
