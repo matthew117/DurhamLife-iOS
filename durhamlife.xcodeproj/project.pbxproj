@@ -78,6 +78,9 @@
 		47B3E75D15F77A4F0046EE52 /* DURatingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3E75C15F77A4F0046EE52 /* DURatingBar.m */; };
 		47CCBF711609E39000AF6C49 /* DUBookmarkTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF701609E39000AF6C49 /* DUBookmarkTutorial.xib */; };
 		47CCBF741609E53000AF6C49 /* DUSocietyTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF731609E53000AF6C49 /* DUSocietyTutorial.xib */; };
+		47CCBF781609E7C900AF6C49 /* bookmark_tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF751609E7C900AF6C49 /* bookmark_tutorial.png */; };
+		47CCBF791609E7C900AF6C49 /* bookmark_watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF761609E7C900AF6C49 /* bookmark_watermark.png */; };
+		47CCBF7A1609E7C900AF6C49 /* my_society_watermark.png in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF771609E7C900AF6C49 /* my_society_watermark.png */; };
 		47CF719615FF56DA00B5F09E /* DUReviewEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CF719515FF56DA00B5F09E /* DUReviewEditor.m */; };
 		47CF719815FF56FE00B5F09E /* DUReviewEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */; };
 		47D527241600AE8F0095133B /* DUVisitorDashboardGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D527231600AE8F0095133B /* DUVisitorDashboardGrid.xib */; };
@@ -230,6 +233,9 @@
 		47B3E75C15F77A4F0046EE52 /* DURatingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DURatingBar.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		47CCBF701609E39000AF6C49 /* DUBookmarkTutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUBookmarkTutorial.xib; sourceTree = "<group>"; };
 		47CCBF731609E53000AF6C49 /* DUSocietyTutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUSocietyTutorial.xib; sourceTree = "<group>"; };
+		47CCBF751609E7C900AF6C49 /* bookmark_tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_tutorial.png; sourceTree = "<group>"; };
+		47CCBF761609E7C900AF6C49 /* bookmark_watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookmark_watermark.png; sourceTree = "<group>"; };
+		47CCBF771609E7C900AF6C49 /* my_society_watermark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_society_watermark.png; sourceTree = "<group>"; };
 		47CF719415FF56DA00B5F09E /* DUReviewEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewEditor.h; sourceTree = "<group>"; };
 		47CF719515FF56DA00B5F09E /* DUReviewEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUReviewEditor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewEditor.xib; sourceTree = "<group>"; };
@@ -299,6 +305,9 @@
 		2F4E632B15C6E3D9008815F9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				47CCBF751609E7C900AF6C49 /* bookmark_tutorial.png */,
+				47CCBF761609E7C900AF6C49 /* bookmark_watermark.png */,
+				47CCBF771609E7C900AF6C49 /* my_society_watermark.png */,
 				2FCE185B16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png */,
 				2FCE185916073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png */,
 				2FCE18541607374800CCF8C6 /* dashboardButtonBackgroundNormalLong.png */,
@@ -646,6 +655,9 @@
 				2FCE185C16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png in Resources */,
 				47CCBF711609E39000AF6C49 /* DUBookmarkTutorial.xib in Resources */,
 				47CCBF741609E53000AF6C49 /* DUSocietyTutorial.xib in Resources */,
+				47CCBF781609E7C900AF6C49 /* bookmark_tutorial.png in Resources */,
+				47CCBF791609E7C900AF6C49 /* bookmark_watermark.png in Resources */,
+				47CCBF7A1609E7C900AF6C49 /* my_society_watermark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
