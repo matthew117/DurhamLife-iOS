@@ -76,6 +76,8 @@
 		47B3E75015F7593F0046EE52 /* DUGradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3E74F15F7593F0046EE52 /* DUGradientBackground.m */; };
 		47B3E75315F76C9E0046EE52 /* DUReviewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B3E75215F76C9E0046EE52 /* DUReviewTableCell.xib */; };
 		47B3E75D15F77A4F0046EE52 /* DURatingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B3E75C15F77A4F0046EE52 /* DURatingBar.m */; };
+		47CCBF711609E39000AF6C49 /* DUBookmarkTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF701609E39000AF6C49 /* DUBookmarkTutorial.xib */; };
+		47CCBF741609E53000AF6C49 /* DUSocietyTutorial.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CCBF731609E53000AF6C49 /* DUSocietyTutorial.xib */; };
 		47CF719615FF56DA00B5F09E /* DUReviewEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 47CF719515FF56DA00B5F09E /* DUReviewEditor.m */; };
 		47CF719815FF56FE00B5F09E /* DUReviewEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */; };
 		47D527241600AE8F0095133B /* DUVisitorDashboardGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D527231600AE8F0095133B /* DUVisitorDashboardGrid.xib */; };
@@ -226,6 +228,8 @@
 		47B3E75215F76C9E0046EE52 /* DUReviewTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewTableCell.xib; sourceTree = "<group>"; };
 		47B3E75B15F77A4F0046EE52 /* DURatingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = DURatingBar.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		47B3E75C15F77A4F0046EE52 /* DURatingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DURatingBar.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		47CCBF701609E39000AF6C49 /* DUBookmarkTutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUBookmarkTutorial.xib; sourceTree = "<group>"; };
+		47CCBF731609E53000AF6C49 /* DUSocietyTutorial.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUSocietyTutorial.xib; sourceTree = "<group>"; };
 		47CF719415FF56DA00B5F09E /* DUReviewEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUReviewEditor.h; sourceTree = "<group>"; };
 		47CF719515FF56DA00B5F09E /* DUReviewEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DUReviewEditor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUReviewEditor.xib; sourceTree = "<group>"; };
@@ -484,6 +488,8 @@
 				47CF719715FF56FE00B5F09E /* DUReviewEditor.xib */,
 				47E5F056160717C800640757 /* DULoadingView.h */,
 				47E5F057160717C800640757 /* DULoadingView.m */,
+				47CCBF701609E39000AF6C49 /* DUBookmarkTutorial.xib */,
+				47CCBF731609E53000AF6C49 /* DUSocietyTutorial.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -638,6 +644,8 @@
 				2FCE18571607374800CCF8C6 /* dashboardButtonBackgroundSelectedLong.png in Resources */,
 				2FCE185A16073E9100CCF8C6 /* dashboardButtonBackgroundNormalLong@2x.png in Resources */,
 				2FCE185C16073EAE00CCF8C6 /* dashboardButtonBackgroundSelectedLong@2x.png in Resources */,
+				47CCBF711609E39000AF6C49 /* DUBookmarkTutorial.xib in Resources */,
+				47CCBF741609E53000AF6C49 /* DUSocietyTutorial.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
