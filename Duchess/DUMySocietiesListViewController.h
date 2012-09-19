@@ -11,4 +11,6 @@
 
 @interface DUMySocietiesListViewController : DUSocietyListViewController
 
+@property (strong, nonatomic) IBOutlet UIView *tutorialView;
+
 @end

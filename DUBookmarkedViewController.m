@@ -63,4 +63,17 @@
     }
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    [[NSBundle mainBundle] loadNibNamed:@"DUBookmarkTutorial" owner:self options:nil];
+
+    return self.tutorialView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (backingArray.count < 1) return 416;
+    else return 0;
+}
+
 @end

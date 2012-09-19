@@ -14,4 +14,6 @@
     NSArray* _backingArray;
 }
 
+@property (strong, nonatomic) IBOutlet UIView *tutorialView;
+
 @end
