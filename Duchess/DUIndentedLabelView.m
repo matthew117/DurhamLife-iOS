@@ -27,7 +27,7 @@
     [rectPath fill];
     
     [[UIColor whiteColor] setFill];
-    [self.titleLabel.text drawInRect:CGRectInset(rect, 5, 3) withFont:[UIFont systemFontOfSize:17.0] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
+    [self.titleLabel.text drawInRect:CGRectInset(rect, 5, 5) withFont:[UIFont systemFontOfSize:17.0] lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentLeft];
     
     UIImage *navigationIndicator = [UIImage imageNamed:@"ad_navigation.png"];
     [navigationIndicator drawAtPoint:CGPointMake(self.bounds.size.width - navigationIndicator.size.width, 0)];
