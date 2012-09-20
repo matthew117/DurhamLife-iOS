@@ -15,6 +15,7 @@
 + (void)saveUser:(DUUser*)user;
 + (void)setDefaults;
 + (BOOL)appOpenedForFirstTime;
++ (void)setAppOpenedForFirstTime;
 + (NSString*)userDefaultsToString;
 
 @end

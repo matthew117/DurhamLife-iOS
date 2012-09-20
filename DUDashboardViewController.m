@@ -53,7 +53,10 @@
     {
         NSLog(@"This is a first time run.");
         NSLog(@"%@",[SessionHandler userDefaultsToString]);
+        [[[UIAlertView alloc] initWithTitle:@"Welcome to Durham Life!" message:@"Customize this application via the Settings button above the dashboard." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
+    
+    [SessionHandler setAppOpenedForFirstTime];
     
     // ==================================================================
     // Set first time use to NO
