@@ -40,7 +40,7 @@
     {
         _eventList = [NSMutableArray new];
         DUNetworkedDataProvider* apiProvider = [DUNetworkedDataProvider new];
-        [apiProvider downloadAndParseEvents:_eventList fromURL:@"http://www.dur.ac.uk/cs.seg01/duchess/api/v1/events.php"];
+        [apiProvider downloadAndParseEvents:_eventList fromURL:@"https://api.dur.ac.uk/events?category=50"];
         return [NSArray arrayWithArray:_eventList];
     }
 }
@@ -160,7 +160,8 @@
             [categoryEvents addObject:event];
         }
     }
-    return [NSArray arrayWithArray:categoryEvents];
+    //return [NSArray arrayWithArray:categoryEvents];
+    return eventList;
 }
 
 + (BOOL)arrayContainsEventID:(NSArray*)array: (NSInteger)eventID
